@@ -19,6 +19,6 @@ indexRouter.appRoute(app);
 
 // start our server on port 4201
 app.listen(port, function() {
-    console.log("Server now listening on 4201");
+    console.log("Server now listening on port " + port);
 });
 export default app;
