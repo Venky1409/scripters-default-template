@@ -1,40 +1,57 @@
 {
-  "name": "angexpress",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
+  "name": "scripters-template",
+  "version": "0.0.0",
   "scripts": {
-    "client-install": "cd views && npm install",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "server": "nodemon server.js",
-    "client": "npm start --prefix views",
-    "start": "nodemon --exec babel-node app.js",
-    // "heroku-postbuild": "cd views && npm install && npm run build"
+    "ng": "ng",
+    "start": "node app.js",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    "dev": "ng build && node app.js",
+    "heroku-postbuild": "ng build --prod"
   },
   "engines": {
-    "node": "10.14.1",
-    "npm": "6.4.1"
+    "node": "~10.16.3",
+    "npm": "~6.9.0"
   },
-  "author": "Venkatesh Pinku",
-  "license": "MIT",
+  "private": true,
   "dependencies": {
-    "@angular/cli": "^8.3.6",
-    "body-parser": "^1.15.2",
-    "cookie-parser": "^1.4.3",
+    "@angular/animations": "~7.2.0",
+    "@angular/common": "~7.2.0",
+    "@angular/compiler": "~7.2.0",
+    "@angular/core": "~7.2.0",
+    "@angular/forms": "~7.2.0",
+    "@angular/platform-browser": "~7.2.0",
+    "@angular/platform-browser-dynamic": "~7.2.0",
+    "@angular/router": "~7.2.0",
+    "core-js": "^2.5.4",
     "express": "^4.17.1",
-    "http": "0.0.0",
-    "path": "^0.12.7",
-    "morgan": "^1.8.1",
-    "rimraf": "^2.6.1"
+    "rxjs": "~6.3.3",
+    "tslib": "^1.9.0",
+    "zone.js": "~0.8.26",
+    "typescript": "~3.2.2"
   },
   "devDependencies": {
-    "@babel/cli": "^7.6.2",
-    "@babel/core": "^7.6.2",
-    "@babel/node": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "babel-cli": "^6.24.0",
-    "babel-preset-es2015": "^6.24.0",
-    "nodemon": "^1.19.3",
-    "rimraf": "^2.6.1"
+    "@angular-devkit/build-angular": "~0.13.0",
+    "@angular/cli": "~7.3.9",
+    "@angular/compiler-cli": "~7.2.0",
+    "@angular/language-service": "~7.2.0",
+    "@types/node": "~8.9.4",
+    "@types/jasmine": "~2.8.8",
+    "@types/jasminewd2": "~2.0.3",
+    "codelyzer": "~4.5.0",
+    "jasmine-core": "~2.99.1",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~4.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "~2.0.1",
+    "karma-jasmine": "~1.1.2",
+    "karma-jasmine-html-reporter": "^0.2.2",
+    "protractor": "~5.4.0",
+    "ts-node": "~7.0.0",
+    "tslint": "~5.11.0",
+    "typescript": "~3.2.2"
   }
 }
+
