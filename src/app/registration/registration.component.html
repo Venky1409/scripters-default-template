@@ -1,0 +1,191 @@
+<button mat-raised-button (click)="isLinear = !isLinear" id="toggle-linear">
+    {{!isLinear ? 'Enable linear mode' : 'Disable linear mode'}}
+  </button>
+  <mat-horizontal-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup">
+        <ng-template matStepLabel>Fill out your details</ng-template>
+        <div fxLayout="row">
+        <mat-form-field class="spacer">
+          <input matInput placeholder=" First name" formControlName="firstCtrl" required>
+        </mat-form-field>
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="Last name " formControlName="lastCtrl" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="email id" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="phone" formControlName="phone" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="birthdate" formControlName="Date Of Birth" required>
+        </mat-form-field>
+      </div>
+      <div class="label"> Home Address</div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="address1" formControlName="address1" required>
+        </mat-form-field>
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="address2" formControlName="address2" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="city" formControlName="city" required>
+        </mat-form-field>
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="state" formControlName="state" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="zipcode" formControlName="zipcode" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <div class="label">Are you Married</div>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button class="spacer" value="1">Married</mat-radio-button>
+            <mat-radio-button class="spacer" value="2">Single</mat-radio-button>
+          </mat-radio-group>
+      </div>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your Spouse Details</ng-template>
+        <div fxLayout="row">
+        <mat-form-field class="spacer">
+          <input matInput placeholder=" Spouse First name" formControlName="spousefnameCtrl" required>
+        </mat-form-field>
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="Spouse Last name " formControlName="spouselnameCtrl" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="email id" formControlName="email" required>
+        </mat-form-field>
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="phone" formControlName="phone" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+        <mat-form-field  class="spacer">
+          <input matInput placeholder="birthdate" formControlName="Date Of Birth" required>
+        </mat-form-field>
+      </div>
+      <div fxLayout="row">
+          <div class="label">Employment Status</div>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button class="spacer" value="Employed">Employed</mat-radio-button>
+            <mat-radio-button class="spacer"value="HomeMaker">Home Maker</mat-radio-button>
+          </mat-radio-group>
+      </div>
+      <div fxLayout="row">
+          <button mat-button (click)="showChildForm()">Add Children</button>
+      </div>
+
+      <div fxLayout="row" #AddChildren>
+          <mat-form-field class="spacer">
+            <input matInput placeholder=" Child name" formControlName="childnameCtrl" required>
+          </mat-form-field>
+      </div>
+      <div fxLayout="row" #AddChildren>
+          <span class="label">Gender</span>
+          <mat-radio-group aria-label="Select an option">
+            <mat-radio-button class="spacer" value="M">Male</mat-radio-button>
+            <mat-radio-button class="spacer" value="F">Female</mat-radio-button>
+          </mat-radio-group>
+          <mat-form-field class="spacer">
+              <input matInput placeholder="Grade" formControlName="grade" required>
+          </mat-form-field>
+      </div>
+
+      <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+      <form [formGroup]="thirdFormGroup">
+      <ng-template matStepLabel>reference Details</ng-template>
+      <div fxLayout="row">
+          <mat-form-field class="spacer">
+            <input matInput placeholder=" Reference First name" formControlName="referencefnameCtrl" required>
+          </mat-form-field>
+          <mat-form-field  class="spacer">
+            <input matInput placeholder="Reference Last name " formControlName="referencelnameCtrl" required>
+          </mat-form-field>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field class="spacer">
+              <input matInput placeholder="Contact Phone" formControlName="contactphone" required>
+            </mat-form-field>
+        </div>
+         
+        <div fxLayout="row">
+            <span class="label">Do u own any business</span>
+            <mat-radio-group aria-label="Select an option">
+              <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>
+              <mat-radio-button class="spacer" value="N">No</mat-radio-button>
+            </mat-radio-group>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field class="spacer">
+              <input matInput placeholder="Business name" formControlName="businessname" required>
+            </mat-form-field>
+            <mat-form-field class="spacer">
+                <input matInput placeholder="Website Url" formControlName="websiteurl" required>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label class="label">Business Details</mat-label>
+                <textarea matInput formControlName="businessdetails"
+                          cdkTextareaAutosize
+                          #autosize="cdkTextareaAutosize"
+                          cdkAutosizeMinRows="1"
+                          cdkAutosizeMaxRows="5"></textarea>
+              </mat-form-field>
+        </div>
+        <div fxLayout="row">
+          <div class="label">Your Areas of Interest</div>
+                <mat-checkbox class="spacer">Cultural</mat-checkbox>
+                <mat-checkbox class="spacer">Sports</mat-checkbox>
+                <mat-checkbox class="spacer">Business</mat-checkbox>
+                <mat-checkbox class="spacer">Political</mat-checkbox>
+                <mat-checkbox class="spacer">Religious</mat-checkbox>
+                <mat-checkbox class="spacer">Service</mat-checkbox>
+        </div>
+        <div fxLayout="row">
+            <mat-form-field class="spacer">
+              <input matInput placeholder="Username" formControlName="username" required>
+            </mat-form-field>
+            <mat-form-field class="spacer">
+                <input matInput placeholder="Password" formControlName="password" required>
+            </mat-form-field>
+            <mat-form-field class="spacer">
+                <input matInput placeholder="Confirm Password" formControlName="cpassword" required>
+              </mat-form-field>
+        </div>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button>MakePayment</button>
+      </div>
+    </form>
+    </mat-step>
+  </mat-horizontal-stepper>
+  
+  
+  <!-- Copyright 2019 Google Inc. All Rights Reserved.
+      Use of this source code is governed by an MIT-style license that
+      can be found in the LICENSE file at http://angular.io/license -->
