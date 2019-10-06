@@ -89,6 +89,9 @@
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "scripters-default-template:build"
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
