@@ -1,7 +1,7 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-
+import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ToastrModule, ToastContainerModule } from "ngx-toastr";
 import { RouterModule, Routes } from "@angular/router";
@@ -21,6 +21,7 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegistrationComponent } from "./registration/registration.component";
+import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -56,15 +57,18 @@ const appRoutes: Routes = [
       closeButton: true // show close button
     }),
     ToastContainerModule,
-    UserIdleModule.forRoot({ idle: 0, timeout: 0, ping: 0 })
+    UserIdleModule.forRoot({ idle: 0, timeout: 0, ping: 0 }),
+    MDBBootstrapModule.forRoot()
   ],
   providers: [],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
-    MatRippleModule
+    MatRippleModule,
+    MDBBootstrapModule
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule {}
