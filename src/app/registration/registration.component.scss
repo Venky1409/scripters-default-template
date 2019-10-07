@@ -1,6 +1,38 @@
-.spacer{
-    margin: 20px;
+.spacer {
+  margin: 20px;
 }
-.label{
-    margin-left:20px;
+.label {
+  margin-left: 20px;
+}
+.form-header {
+  text-align: center;
+  background-color: #fff;
+}
+.registration-heading {
+  font-size: 22px;
+  color: #453e79;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  padding: 5px 15px;
+  display: inline-block;
+  border: 1px solid #dad8e4;
+  margin-bottom: 75px;
+}
+
+.nextButton {
+  padding: 0;
+  border: none;
+  display: inline-flex;
+  height: 41px;
+  width: 135px;
+  align-items: center;
+  background: #e9e0cf;
+  font-family: muli-semibold;
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  padding-left: 28px;
+}
+.mat-form-field {
+  display: block;
 }
