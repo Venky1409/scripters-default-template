@@ -26,7 +26,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/favicon.ico"
+              "src/favicon.ico",
+              "src/css",
+              "src/js"
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
@@ -38,6 +40,7 @@
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss",
               "src/css/mdb.min.css",
+              "src/css/bootstrap.min.css",
               "src/css/style.min.css"
             ],
             "scripts": [
