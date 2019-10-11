@@ -21,12 +21,14 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegistrationComponent } from "./registration/registration.component";
+import { SampleComponent } from "./sample/sample.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "profile", component: ProfileComponent },
-  { path: "register", component: RegistrationComponent }
+  { path: "register", component: RegistrationComponent },
+  { path: "sample", component: SampleComponent }
 ];
 
 @NgModule({
@@ -36,7 +38,8 @@ const appRoutes: Routes = [
     HeaderComponent,
     SidebarComponent,
     ProfileComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    SampleComponent
   ],
   imports: [
     BrowserModule,

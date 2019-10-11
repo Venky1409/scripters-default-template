@@ -28,7 +28,8 @@
               "src/assets",
               "src/favicon.ico",
               "src/css",
-              "src/js"
+              "src/js",
+              "src/img"
             ],
             "styles": [
               "node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss",
@@ -50,7 +51,9 @@
               "node_modules/hammerjs/hammer.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js",
               "src/js/mdb.min.js",
-              "src/js/popper.min.js"
+              "src/js/popper.min.js",
+              "src/js/jquery.steps.js",
+              "src/js/main.js"
             ]
           },
           "configurations": {
