@@ -17,6 +17,7 @@
   display: inline-block;
   border: 1px solid #dad8e4;
   margin-bottom: 75px;
+  font-weight: 400;
 }
 
 /*.nextButton {
@@ -27,7 +28,7 @@
   width: 135px;
   align-items: center;
   background: #e9e0cf;
-  font-family: muli-semibold;
+  font-family: "Muli-Regular !important";
   color: #666;
   cursor: pointer;
   position: relative;
@@ -37,6 +38,12 @@
   display: block;
 }
 
+::ng-deep .mat-stepper-horizontal, .mat-stepper-vertical {
+  font-family: "Muli-SemiBold";
+}
+::ng-deep .mat-form-field {
+  font-family: "Muli-SemiBold";
+}
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-label {
   display: none;
 }

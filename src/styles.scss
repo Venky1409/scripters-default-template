@@ -15,10 +15,13 @@
 }
 
 body {
-  font-family: "Muli-Regular" !important;
+  font-family: "Muli-Regular !important";
   font-size: 15px;
   color: #999;
   margin: 0;
+}
+.mat-button {
+  font-family: "Muli-Regular" !important;
 }
 .basic-container {
   padding: 30px;

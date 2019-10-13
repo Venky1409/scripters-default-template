@@ -13,10 +13,13 @@
 }
 
 body {
-  font-family: "Muli-Regular";
+  font-family: "Muli-Regular" !important;
   font-size: 15px;
   color: #999;
   margin: 0;
+}
+.mat-button {
+  font-family: "Muli-Regular" !important;
 }
 .sidebar-fixed {
   height: 100vh;
