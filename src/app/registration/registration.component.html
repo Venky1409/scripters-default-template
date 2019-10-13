@@ -328,13 +328,18 @@
       </div>
       </div>
       <div fxLayout="row" class="d-flex">
-        <div class="label">Your Areas of Interest</div>
-        <mat-checkbox class="spacer">Cultural</mat-checkbox>
-        <mat-checkbox class="spacer">Sports</mat-checkbox>
-        <mat-checkbox class="spacer">Business</mat-checkbox>
-        <mat-checkbox class="spacer">Political</mat-checkbox>
-        <mat-checkbox class="spacer">Religious</mat-checkbox>
-        <mat-checkbox class="spacer">Service</mat-checkbox>
+        <div class="p-2 flex-fill">
+          <div class="label">Your Areas of Interest</div>
+          <mat-form-field>
+            <select matNativeControl placeholder="Select" formControlName="intrests">
+              <option value="Cultural">Cultural</option>
+              <option value="Sports">Sports</option>
+              <option value="Business">Business</option>
+              <option value="Political">Political</option>
+              <option value="Political">Service</option>
+            </select>
+          </mat-form-field>
+        </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">

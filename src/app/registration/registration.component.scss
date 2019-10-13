@@ -19,21 +19,6 @@
   margin-bottom: 75px;
   font-weight: 400;
 }
-
-/*.nextButton {
-  padding: 0;
-  border: none;
-  display: inline-flex;
-  height: 41px;
-  width: 135px;
-  align-items: center;
-  background: #e9e0cf;
-  font-family: "Muli-Regular !important";
-  color: #666;
-  cursor: pointer;
-  position: relative;
-  padding-left: 28px;
-}*/
 .mat-form-field {
   display: block;
 }
@@ -66,6 +51,9 @@
 }
 ::ng-deep .mat-step-header {
   left: 41%;
+}
+::ng-deep .mat-form-field-type-mat-native-select {
+  margin-left: 20px;
 }
 button {
   padding: 0;

@@ -47,6 +47,7 @@ export class RegistrationComponent implements OnInit {
       businessname: ['', Validators.required],
       websiteurl: ['', Validators.required],
       businessdetails: ['', Validators.required],
+      intrests: ['', Validators.required],
       username: ['', Validators.required],
       password: ['', Validators.required],
       cpassword: ['', Validators.required]
