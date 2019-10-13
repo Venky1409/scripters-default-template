@@ -26,12 +26,15 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="Phone" formControlName="phone" required />
+            <input matInput type="number" placeholder="Phone" formControlName="phone" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="Birth Date" formControlName="Date Of Birth" required />
+            <input matInput [matDatepicker]="picker" placeholder="Birth Date" formControlName="Date Of Birth"
+              required />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
           </mat-form-field>
         </div>
       </div>
@@ -39,35 +42,35 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="address1" formControlName="address1" required />
+            <input matInput placeholder="Address1" formControlName="address1" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="address2" formControlName="address2" required />
+            <input matInput placeholder="Address2" formControlName="address2" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="city" formControlName="city" required />
+            <input matInput placeholder="City" formControlName="city" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="state" formControlName="state" required />
+            <input matInput placeholder="State" formControlName="state" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="zipcode" formControlName="zipcode" required />
+            <input matInput placeholder="Zipcode" type="number" formControlName="zipcode" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <div class="label">Are you Married</div>
-          <mat-radio-group aria-label="Select an option"
-            [ngModelOptions]="{standalone: true}" [(ngModel)]="maritalStatus">
+          <mat-radio-group aria-label="Select an option" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="maritalStatus">
             <mat-radio-button class="spacer" value="1">Married</mat-radio-button>
             <mat-radio-button class="spacer" value="2">Single</mat-radio-button>
           </mat-radio-group>
@@ -88,7 +91,7 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder=" Spouse First Name" formControlName="spousefnameCtrl" required />
+            <input matInput placeholder="Spouse First Name" formControlName="spousefnameCtrl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
@@ -105,14 +108,17 @@
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="Phone" formControlName="phone" required />
+            <input matInput type="number" placeholder="Phone" formControlName="phone" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="Birth Date" formControlName="Date Of Birth" required />
+            <input matInput [matDatepicker]="picker" placeholder="Birth Date" formControlName="Date Of Birth"
+              required />
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker touchUi #picker></mat-datepicker>
           </mat-form-field>
         </div>
       </div>
@@ -132,7 +138,7 @@
       <div fxLayout="row" #AddChildren class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder=" Child Name" formControlName="childnameCtrl" required />
+            <input matInput placeholder="Child Name" formControlName="childnameCtrl" required />
           </mat-form-field>
         </div>
       </div>
@@ -167,7 +173,7 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder=" Reference First Name" formControlName="referencefnameCtrl" required />
+            <input matInput placeholder="Reference First Name" formControlName="referencefnameCtrl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
@@ -179,7 +185,7 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input matInput placeholder="Contact Phone" formControlName="contactphone" required />
+            <input matInput type="number" placeholder="Contact Phone" formControlName="contactphone" required />
           </mat-form-field>
         </div>
       </div>
@@ -187,13 +193,14 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <span class="label">Do u own any business</span>
-          <mat-radio-group aria-label="Select an option">
+          <mat-radio-group aria-label="Select an option" [ngModelOptions]="{standalone: true}"
+            [(ngModel)]="ownBusiness">
             <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>
             <mat-radio-button class="spacer" value="N">No</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>
-      <div fxLayout="row" class="d-flex">
+      <div fxLayout="row" *ngIf="ownBusiness === 'Y'" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
             <input matInput placeholder="Business Name" formControlName="businessname" required />

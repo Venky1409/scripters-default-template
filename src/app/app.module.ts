@@ -6,7 +6,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ToastrModule, ToastContainerModule } from "ngx-toastr";
 import { RouterModule, Routes } from "@angular/router";
 import { UserIdleModule } from "angular-user-idle";
+import {MatNativeDateModule} from '@angular/material/core';
 import { MatStepperModule } from "@angular/material/stepper";
+import { MatDatepickerModule } from '@angular/material/datepicker';
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -73,6 +75,8 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",
@@ -94,9 +98,10 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
-    MatIconModule
+    MatIconModule,
+    MatDatepickerModule
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }
