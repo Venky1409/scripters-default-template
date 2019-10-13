@@ -21,7 +21,7 @@
   </mat-toolbar>
 
   <mat-sidenav-container fxFlexFill>
-    <mat-sidenav #sidenav>
+    <mat-sidenav id="nonAuthMatSideNav" #sidenav>
       <mat-nav-list>
         <!-- <a (click)="sidenav.toggle()" mat-list-item>Close</a> -->
         <a href="#/login" (click)="sidenav.toggle()" mat-list-item>LOGIN</a>
@@ -34,7 +34,5 @@
         <a href="#" (click)="sidenav.toggle()" mat-list-item>CONTANCT US</a>
       </mat-nav-list>
     </mat-sidenav>
-    <!-- <mat-sidenav-content fxFlexFill>
-    </mat-sidenav-content> -->
   </mat-sidenav-container>
 </div>

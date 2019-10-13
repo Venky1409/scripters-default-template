@@ -16,14 +16,14 @@
   padding: 5px 15px;
   display: inline-block;
   border: 1px solid #dad8e4;
-  margin-bottom: 75px;
   font-weight: 400;
 }
 .mat-form-field {
   display: block;
 }
 
-::ng-deep .mat-stepper-horizontal, .mat-stepper-vertical {
+::ng-deep .mat-stepper-horizontal,
+.mat-stepper-vertical {
   font-family: "Muli-SemiBold";
 }
 ::ng-deep .mat-form-field {
@@ -47,27 +47,27 @@
   width: 50px;
   flex: none;
   position: relative;
-  left: 41%;
+  left: 36%;
 }
 ::ng-deep .mat-step-header {
-  left: 41%;
+  left: 36%;
 }
 ::ng-deep .mat-form-field-type-mat-native-select {
   margin-left: 20px;
 }
 button {
   padding: 0;
-    border: none;
-    display: inline-flex;
-    height: 41px;
-    width: 135px;
-    align-items: center;
-    background: #e9e0cf;
-    font-family: "Muli-SemiBold";
-    color: #666;
-    cursor: pointer;
-    position: relative;
-    margin-left: 20px;
+  border: none;
+  display: inline-flex;
+  height: 41px;
+  width: 135px;
+  align-items: center;
+  background: #e9e0cf;
+  font-family: "Muli-SemiBold";
+  color: #666;
+  cursor: pointer;
+  position: relative;
+  margin-left: 20px;
 }
 ::ng-deep .mat-button-wrapper {
   width: 100% !important;
@@ -78,14 +78,23 @@ button {
 }
 @media (max-width: 767px) {
   ::ng-deep
-  .mat-horizontal-stepper-header-container
-  .mat-stepper-horizontal-line {
+    .mat-horizontal-stepper-header-container
+    .mat-stepper-horizontal-line {
     left: 9%;
   }
   ::ng-deep .mat-step-header {
-  left: 9%;
+    left: 9%;
   }
   ::ng-deep .d-flex {
     flex-direction: column !important;
   }
+}
+@media (min-width: 1200px) {
+  ::ng-deep .container-fluid {
+    width: 75% !important;
+  }
+}
+
+::ng-deep .mainContainer {
+  background: #f9f6f1;
 }
