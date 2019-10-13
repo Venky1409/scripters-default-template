@@ -21,6 +21,8 @@ export class RegistrationComponent implements OnInit {
   thirdFormGroup: FormGroup;
   AddChildrenFlag: boolean;
   enableSecondStep: boolean;
+  maritalStatus: string;
+  ownBusiness: string;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
 
   ngOnInit() {
