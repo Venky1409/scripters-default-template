@@ -19,7 +19,7 @@
   margin-bottom: 75px;
 }
 
-.nextButton {
+/*.nextButton {
   padding: 0;
   border: none;
   display: inline-flex;
@@ -32,7 +32,7 @@
   cursor: pointer;
   position: relative;
   padding-left: 28px;
-}
+}*/
 .mat-form-field {
   display: block;
 }
@@ -56,6 +56,27 @@
 }
 ::ng-deep .mat-step-header {
   left: 41%;
+}
+button {
+  padding: 0;
+    border: none;
+    display: inline-flex;
+    height: 41px;
+    width: 135px;
+    align-items: center;
+    background: #e9e0cf;
+    font-family: "Muli-SemiBold";
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    margin-left: 20px;
+}
+::ng-deep .mat-button-wrapper {
+  width: 100% !important;
+}
+.submit-btn {
+  background: #6d7f52;
+  color: white;
 }
 @media (max-width: 767px) {
   ::ng-deep
