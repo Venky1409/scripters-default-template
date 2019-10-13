@@ -36,3 +36,19 @@
 .mat-form-field {
   display: block;
 }
+
+::ng-deep .mat-horizontal-stepper-header-container .mat-step-label {
+  display: none;
+}
+::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
+  display: none;
+}
+::ng-deep
+  .mat-horizontal-stepper-header-container
+  .mat-stepper-horizontal-line {
+  border-top-style: solid;
+  height: 0;
+  margin: 0 -16px;
+  width: 50px;
+  flex: none;
+}
