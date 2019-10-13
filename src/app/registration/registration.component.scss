@@ -51,4 +51,22 @@
   margin: 0 -16px;
   width: 50px;
   flex: none;
+  position: relative;
+  left: 36%;
+}
+::ng-deep .mat-step-header {
+  left: 36%;
+}
+@media (max-width: 767px) {
+  ::ng-deep
+  .mat-horizontal-stepper-header-container
+  .mat-stepper-horizontal-line {
+    left: 3%;
+  }
+  ::ng-deep .mat-step-header {
+  left: 3%;
+  }
+  ::ng-deep label {
+    display: block;
+  }
 }
