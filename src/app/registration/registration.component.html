@@ -1,4 +1,4 @@
-<div class="form-header pt-5">
+<div id="registerationTitleContainer" class="form-header pt-5">
   <h3 class="registration-heading">Registration</h3>
 </div>
 <mat-horizontal-stepper [linear]="isLinear" #stepper>
@@ -9,54 +9,29 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder=" First Name"
-              formControlName="firstCtrl"
-              required
-            />
+            <input matInput placeholder=" First Name" formControlName="firstCtrl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Last Name "
-              formControlName="lastCtrl"
-              required
-            />
+            <input matInput placeholder="Last Name " formControlName="lastCtrl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Email"
-              formControlName="email"
-              required
-            />
+            <input matInput placeholder="Email" formControlName="email" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Phone"
-              formControlName="phone"
-              required
-            />
+            <input matInput placeholder="Phone" formControlName="phone" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Birth Date"
-              formControlName="Date Of Birth"
-              required
-            />
+            <input matInput placeholder="Birth Date" formControlName="Date Of Birth" required />
           </mat-form-field>
         </div>
       </div>
@@ -64,62 +39,35 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="address1"
-              formControlName="address1"
-              required
-            />
+            <input matInput placeholder="address1" formControlName="address1" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="address2"
-              formControlName="address2"
-              required
-            />
+            <input matInput placeholder="address2" formControlName="address2" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="city"
-              formControlName="city"
-              required
-            />
+            <input matInput placeholder="city" formControlName="city" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="state"
-              formControlName="state"
-              required
-            />
+            <input matInput placeholder="state" formControlName="state" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="zipcode"
-              formControlName="zipcode"
-              required
-            />
+            <input matInput placeholder="zipcode" formControlName="zipcode" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <div class="label">Are you Married</div>
           <mat-radio-group aria-label="Select an option">
-            <mat-radio-button class="spacer" value="1"
-              >Married</mat-radio-button
-            >
+            <mat-radio-button class="spacer" value="1">Married</mat-radio-button>
             <mat-radio-button class="spacer" value="2">Single</mat-radio-button>
           </mat-radio-group>
         </div>
@@ -133,62 +81,37 @@
       </div>
     </form>
   </mat-step>
-  <mat-step [stepControl]="secondFormGroup">
+  <mat-step *ngIf="enableSecondStep" [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder=" Spouse First Name"
-              formControlName="spousefnameCtrl"
-              required
-            />
+            <input matInput placeholder=" Spouse First Name" formControlName="spousefnameCtrl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Spouse Last Name "
-              formControlName="spouselnameCtrl"
-              required
-            />
+            <input matInput placeholder="Spouse Last Name " formControlName="spouselnameCtrl" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Email"
-              formControlName="email"
-              required
-            />
+            <input matInput placeholder="Email" formControlName="email" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Phone"
-              formControlName="phone"
-              required
-            />
+            <input matInput placeholder="Phone" formControlName="phone" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Birth Date"
-              formControlName="Date Of Birth"
-              required
-            />
+            <input matInput placeholder="Birth Date" formControlName="Date Of Birth" required />
           </mat-form-field>
         </div>
       </div>
@@ -196,12 +119,8 @@
         <div class="p-2 flex-fill">
           <div class="label">Employment Status</div>
           <mat-radio-group aria-label="Select an option">
-            <mat-radio-button class="spacer" value="Employed"
-              >Employed</mat-radio-button
-            >
-            <mat-radio-button class="spacer" value="HomeMaker"
-              >Home Maker</mat-radio-button
-            >
+            <mat-radio-button class="spacer" value="Employed">Employed</mat-radio-button>
+            <mat-radio-button class="spacer" value="HomeMaker">Home Maker</mat-radio-button>
           </mat-radio-group>
         </div>
       </div>
@@ -212,12 +131,7 @@
       <div fxLayout="row" #AddChildren class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder=" Child Name"
-              formControlName="childnameCtrl"
-              required
-            />
+            <input matInput placeholder=" Child Name" formControlName="childnameCtrl" required />
           </mat-form-field>
         </div>
       </div>
@@ -231,12 +145,7 @@
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Grade"
-              formControlName="grade"
-              required
-            />
+            <input matInput placeholder="Grade" formControlName="grade" required />
           </mat-form-field>
         </div>
       </div>
@@ -257,34 +166,19 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder=" Reference First Name"
-              formControlName="referencefnameCtrl"
-              required
-            />
+            <input matInput placeholder=" Reference First Name" formControlName="referencefnameCtrl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Reference Last Name "
-              formControlName="referencelnameCtrl"
-              required
-            />
+            <input matInput placeholder="Reference Last Name " formControlName="referencelnameCtrl" required />
           </mat-form-field>
         </div>
       </div>
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Contact Phone"
-              formControlName="contactphone"
-              required
-            />
+            <input matInput placeholder="Contact Phone" formControlName="contactphone" required />
           </mat-form-field>
         </div>
       </div>
@@ -301,35 +195,19 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Business Name"
-              formControlName="businessname"
-              required
-            />
+            <input matInput placeholder="Business Name" formControlName="businessname" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Website Url"
-              formControlName="websiteurl"
-              required
-            />
+            <input matInput placeholder="Website Url" formControlName="websiteurl" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field>
             <mat-label class="label">Business Details</mat-label>
-            <textarea
-              matInput
-              formControlName="businessdetails"
-              cdkTextareaAutosize
-              #autosize="cdkTextareaAutosize"
-              cdkAutosizeMinRows="1"
-              cdkAutosizeMaxRows="5"
-            ></textarea>
+            <textarea matInput formControlName="businessdetails" cdkTextareaAutosize #autosize="cdkTextareaAutosize"
+              cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
           </mat-form-field>
         </div>
       </div>
@@ -350,32 +228,17 @@
       <div fxLayout="row" class="d-flex">
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Username"
-              formControlName="username"
-              required
-            />
+            <input matInput placeholder="Username" formControlName="username" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Password"
-              formControlName="password"
-              required
-            />
+            <input matInput placeholder="Password" formControlName="password" required />
           </mat-form-field>
         </div>
         <div class="p-2 flex-fill">
           <mat-form-field class="spacer">
-            <input
-              matInput
-              placeholder="Confirm Password"
-              formControlName="cpassword"
-              required
-            />
+            <input matInput placeholder="Confirm Password" formControlName="cpassword" required />
           </mat-form-field>
         </div>
       </div>

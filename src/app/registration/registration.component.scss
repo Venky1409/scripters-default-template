@@ -8,6 +8,9 @@
   text-align: center;
   background-color: #fff;
 }
+#registerationTitleContainer {
+  padding-top: 13px !important;
+}
 .registration-heading {
   font-size: 22px;
   color: #453e79;
@@ -38,9 +41,7 @@
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
   display: none;
 }
-::ng-deep
-  .mat-horizontal-stepper-header-container
-  .mat-stepper-horizontal-line {
+::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
   border-top-style: solid;
   height: 0;
   margin: 0 -16px;
@@ -76,10 +77,18 @@ button {
   background: #6d7f52;
   color: white;
 }
+
+// To Disable Click Event on Stepper Icons
+::ng-deep .mat-horizontal-stepper-header {
+  pointer-events: none !important;
+}
+
+:host ::ng-deep .mat-form-field{
+  margin: 3px !important;
+}
+
 @media (max-width: 767px) {
-  ::ng-deep
-    .mat-horizontal-stepper-header-container
-    .mat-stepper-horizontal-line {
+  ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
     left: 9%;
   }
   ::ng-deep .mat-step-header {

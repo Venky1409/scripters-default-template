@@ -15,11 +15,12 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 export class RegistrationComponent implements OnInit {
   constructor(private _formBuilder: FormBuilder, private renderer: Renderer2) {}
 
-  isLinear = false;
+  isLinear = true;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   AddChildrenFlag: boolean;
+  enableSecondStep: boolean;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
 
   ngOnInit() {
@@ -57,6 +58,7 @@ export class RegistrationComponent implements OnInit {
       cpassword: ['', Validators.required]
     });
     this.AddChildrenFlag = false;
+    this.enableSecondStep = true;
   }
 
   showChildForm() {
