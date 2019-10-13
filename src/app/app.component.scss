@@ -21,3 +21,8 @@ position:absolute;
     margin-top: 60px;
     padding-top: 15px;
 }
+@media (max-width: 767px) {
+  .container-fluid {
+  	padding-top: 65px;
+  }
+}

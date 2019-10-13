@@ -61,12 +61,15 @@
   ::ng-deep
   .mat-horizontal-stepper-header-container
   .mat-stepper-horizontal-line {
-    left: 3%;
+    left: 9%;
   }
   ::ng-deep .mat-step-header {
-  left: 3%;
+  left: 9%;
   }
   ::ng-deep label {
     display: block;
+  }
+  ::ng-deep .d-flex {
+    flex-direction: column !important;
   }
 }
