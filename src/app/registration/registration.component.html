@@ -134,7 +134,8 @@
   <mat-step [stepControl]="secondFormGroup">
     <form [formGroup]="secondFormGroup">
       <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
-      <div fxLayout="row">
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -143,6 +144,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -152,7 +155,9 @@
           />
         </mat-form-field>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -161,6 +166,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -170,7 +177,9 @@
           />
         </mat-form-field>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -180,7 +189,9 @@
           />
         </mat-form-field>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <div class="label">Employment Status</div>
         <mat-radio-group aria-label="Select an option">
           <mat-radio-button class="spacer" value="Employed"
@@ -191,11 +202,13 @@
           >
         </mat-radio-group>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
         <button mat-button (click)="showChildForm()">Add Children</button>
       </div>
 
-      <div fxLayout="row" #AddChildren>
+      <div fxLayout="row" #AddChildren class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -205,12 +218,16 @@
           />
         </mat-form-field>
       </div>
-      <div fxLayout="row" #AddChildren>
+      </div>
+      <div fxLayout="row" #AddChildren class="d-flex">
+        <div class="p-2 flex-fill">
         <span class="label">Gender</span>
         <mat-radio-group aria-label="Select an option">
           <mat-radio-button class="spacer" value="M">Male</mat-radio-button>
           <mat-radio-button class="spacer" value="F">Female</mat-radio-button>
         </mat-radio-group>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -219,6 +236,7 @@
             required
           />
         </mat-form-field>
+      </div>
       </div>
 
       <div>
@@ -230,7 +248,8 @@
   <mat-step [stepControl]="thirdFormGroup">
     <form [formGroup]="thirdFormGroup">
       <!-- <ng-template matStepLabel>reference Details</ng-template> -->
-      <div fxLayout="row">
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -239,6 +258,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -248,7 +269,9 @@
           />
         </mat-form-field>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -258,15 +281,19 @@
           />
         </mat-form-field>
       </div>
+      </div>
 
-      <div fxLayout="row">
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <span class="label">Do u own any business</span>
         <mat-radio-group aria-label="Select an option">
           <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>
           <mat-radio-button class="spacer" value="N">No</mat-radio-button>
         </mat-radio-group>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -275,6 +302,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -283,6 +312,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field>
           <mat-label class="label">Business Details</mat-label>
           <textarea
@@ -295,7 +326,8 @@
           ></textarea>
         </mat-form-field>
       </div>
-      <div fxLayout="row">
+      </div>
+      <div fxLayout="row" class="d-flex">
         <div class="label">Your Areas of Interest</div>
         <mat-checkbox class="spacer">Cultural</mat-checkbox>
         <mat-checkbox class="spacer">Sports</mat-checkbox>
@@ -304,7 +336,8 @@
         <mat-checkbox class="spacer">Religious</mat-checkbox>
         <mat-checkbox class="spacer">Service</mat-checkbox>
       </div>
-      <div fxLayout="row">
+      <div fxLayout="row" class="d-flex">
+        <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -313,6 +346,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -321,6 +356,8 @@
             required
           />
         </mat-form-field>
+      </div>
+      <div class="p-2 flex-fill">
         <mat-form-field class="spacer">
           <input
             matInput
@@ -329,6 +366,7 @@
             required
           />
         </mat-form-field>
+      </div>
       </div>
       <div>
         <button mat-button matStepperPrevious>Back</button>
