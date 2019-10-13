@@ -90,14 +90,17 @@ button {
 }
 @media (max-width: 767px) {
   ::ng-deep
-  .mat-horizontal-stepper-header-container
-  .mat-stepper-horizontal-line {
+    .mat-horizontal-stepper-header-container
+    .mat-stepper-horizontal-line {
     left: 9%;
   }
   ::ng-deep .mat-step-header {
-  left: 9%;
+    left: 9%;
   }
   ::ng-deep .d-flex {
     flex-direction: column !important;
   }
+}
+::ng-deep .container-fluid {
+  width: 75% !important;
 }

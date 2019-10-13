@@ -14,7 +14,10 @@ import {
   MatRippleModule,
   MatRadioModule,
   MatCheckboxModule,
-  MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule
+  MatToolbarModule,
+  MatSidenavModule,
+  MatListModule,
+  MatIconModule
 } from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 
@@ -26,10 +29,10 @@ import { ProfileComponent } from "./profile/profile.component";
 import { RegistrationComponent } from "./registration/registration.component";
 import { SampleComponent } from "./sample/sample.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
-import { NonauthheaderComponent } from './nonauthheader/nonauthheader.component';
-import { WelcomeComponent } from './welcome/welcome.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { LoginComponent } from './login/login.component';
+import { NonauthheaderComponent } from "./nonauthheader/nonauthheader.component";
+import { WelcomeComponent } from "./welcome/welcome.component";
+import { DashboardComponent } from "./dashboard/dashboard.component";
+import { LoginComponent } from "./login/login.component";
 
 const appRoutes: Routes = [
   { path: "", component: WelcomeComponent },
@@ -66,7 +69,10 @@ const appRoutes: Routes = [
     MatRippleModule,
     MatRadioModule,
     MatCheckboxModule,
-    MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",
@@ -85,7 +91,10 @@ const appRoutes: Routes = [
     MatInputModule,
     MatRippleModule,
     MDBBootstrapModule,
-    MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule
+    MatToolbarModule,
+    MatSidenavModule,
+    MatListModule,
+    MatIconModule
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
