@@ -13,8 +13,11 @@ import {
   MatInputModule,
   MatRippleModule,
   MatRadioModule,
-  MatCheckboxModule
+  MatCheckboxModule,
+  MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule
 } from "@angular/material";
+import { FlexLayoutModule } from "@angular/flex-layout";
+
 import { AppComponent } from "./app.component";
 import { HeaderComponent } from "./header/header.component";
 import { SidebarComponent } from "./sidebar/sidebar.component";
@@ -23,12 +26,18 @@ import { ProfileComponent } from "./profile/profile.component";
 import { RegistrationComponent } from "./registration/registration.component";
 import { SampleComponent } from "./sample/sample.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
+import { NonauthheaderComponent } from './nonauthheader/nonauthheader.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './login/login.component';
 
 const appRoutes: Routes = [
-  { path: "", component: HomeComponent },
+  { path: "", component: WelcomeComponent },
+  { path: "dashboard", component: DashboardComponent },
   { path: "profile", component: ProfileComponent },
   { path: "register", component: RegistrationComponent },
-  { path: "sample", component: SampleComponent }
+  { path: "sample", component: SampleComponent },
+  { path: "login", component: LoginComponent }
 ];
 
 @NgModule({
@@ -39,7 +48,11 @@ const appRoutes: Routes = [
     SidebarComponent,
     ProfileComponent,
     RegistrationComponent,
-    SampleComponent
+    SampleComponent,
+    NonauthheaderComponent,
+    WelcomeComponent,
+    DashboardComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +66,7 @@ const appRoutes: Routes = [
     MatRippleModule,
     MatRadioModule,
     MatCheckboxModule,
+    MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule,
     RouterModule.forRoot(appRoutes, { useHash: true }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",
@@ -61,7 +75,8 @@ const appRoutes: Routes = [
     }),
     ToastContainerModule,
     UserIdleModule.forRoot({ idle: 0, timeout: 0, ping: 0 }),
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    FlexLayoutModule
   ],
   providers: [],
   exports: [
@@ -69,7 +84,8 @@ const appRoutes: Routes = [
     MatFormFieldModule,
     MatInputModule,
     MatRippleModule,
-    MDBBootstrapModule
+    MDBBootstrapModule,
+    MatToolbarModule, MatSidenavModule, MatListModule, MatIconModule
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
