@@ -1,6 +1,6 @@
 <div class="registration-container">
   <div class="image-holder">
-    <img src="img/form-wizard-1.jpg" alt="" />
+    <img src="img/upasa_web.png" alt="" class="logo-image" />
   </div>
 
   <div class="stepper-container">
@@ -157,119 +157,119 @@
       <mat-step *ngIf="maritalStatus === '1'" [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <div class="second-section">
-          <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Spouse First Name"
-                  formControlName="spousefnameCtrl"
-                  required
-                />
-              </mat-form-field>
+            <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Spouse First Name"
+                    formControlName="spousefnameCtrl"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Spouse Last Name "
+                    formControlName="spouselnameCtrl"
+                    required
+                  />
+                </mat-form-field>
+              </div>
             </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Spouse Last Name "
-                  formControlName="spouselnameCtrl"
-                  required
-                />
-              </mat-form-field>
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Email"
+                    formControlName="email"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    type="number"
+                    placeholder="Phone"
+                    formControlName="phone"
+                    required
+                  />
+                </mat-form-field>
+              </div>
             </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Email"
-                  formControlName="email"
-                  required
-                />
-              </mat-form-field>
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    [matDatepicker]="picker"
+                    placeholder="Birth Date"
+                    formControlName="Date Of Birth"
+                    required
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="picker"
+                  ></mat-datepicker-toggle>
+                  <mat-datepicker touchUi #picker></mat-datepicker>
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button class="spacer" value="Employed"
+                    >Employed</mat-radio-button
+                  >
+                  <mat-radio-button class="spacer" value="HomeMaker"
+                    >Home Maker</mat-radio-button
+                  >
+                </mat-radio-group>
+              </div>
             </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  type="number"
-                  placeholder="Phone"
-                  formControlName="phone"
-                  required
-                />
-              </mat-form-field>
+            <div fxLayout="row" class="d-flex">
+              <button mat-button (click)="showChildForm()">Add Children</button>
             </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  [matDatepicker]="picker"
-                  placeholder="Birth Date"
-                  formControlName="Date Of Birth"
-                  required
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker"
-                ></mat-datepicker-toggle>
-                <mat-datepicker touchUi #picker></mat-datepicker>
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-radio-group aria-label="Select an option">
-                <mat-radio-button class="spacer" value="Employed"
-                  >Employed</mat-radio-button
-                >
-                <mat-radio-button class="spacer" value="HomeMaker"
-                  >Home Maker</mat-radio-button
-                >
-              </mat-radio-group>
-            </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <button mat-button (click)="showChildForm()">Add Children</button>
-          </div>
 
-          <div fxLayout="row" #AddChildren class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Child Name"
-                  formControlName="childnameCtrl"
-                  required
-                />
-              </mat-form-field>
+            <div fxLayout="row" #AddChildren class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Child Name"
+                    formControlName="childnameCtrl"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" #AddChildren class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-radio-group aria-label="Select an option">
+                  <mat-radio-button class="spacer" value="M"
+                    >Male</mat-radio-button
+                  >
+                  <mat-radio-button class="spacer" value="F"
+                    >Female</mat-radio-button
+                  >
+                </mat-radio-group>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Grade"
+                    formControlName="grade"
+                    required
+                  />
+                </mat-form-field>
+              </div>
             </div>
           </div>
-          <div fxLayout="row" #AddChildren class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-radio-group aria-label="Select an option">
-                <mat-radio-button class="spacer" value="M"
-                  >Male</mat-radio-button
-                >
-                <mat-radio-button class="spacer" value="F"
-                  >Female</mat-radio-button
-                >
-              </mat-radio-group>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Grade"
-                  formControlName="grade"
-                  required
-                />
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
           <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
               <i class="material-icons">arrow_back</i> Previous
@@ -283,145 +283,147 @@
       <mat-step [stepControl]="thirdFormGroup">
         <form [formGroup]="thirdFormGroup">
           <div class="second-section">
-          <!-- <ng-template matStepLabel>reference Details</ng-template> -->
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Reference First Name"
-                  formControlName="referencefnameCtrl"
-                  required
-                />
-              </mat-form-field>
+            <!-- <ng-template matStepLabel>reference Details</ng-template> -->
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Reference First Name"
+                    formControlName="referencefnameCtrl"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Reference Last Name "
+                    formControlName="referencelnameCtrl"
+                    required
+                  />
+                </mat-form-field>
+              </div>
             </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Reference Last Name "
-                  formControlName="referencelnameCtrl"
-                  required
-                />
-              </mat-form-field>
-            </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  type="number"
-                  placeholder="Contact Phone"
-                  formControlName="contactphone"
-                  required
-                />
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <span class="label">Do you own business</span>
-              <mat-radio-group
-                aria-label="Select an option"
-                [ngModelOptions]="{ standalone: true }"
-                [(ngModel)]="ownBusiness"
-                class="business-section"
-              >
-                <mat-radio-button class="spacer" value="Y"
-                  >Yes</mat-radio-button
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    type="number"
+                    placeholder="Contact Phone"
+                    formControlName="contactphone"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <span class="label">Do you own business</span>
+                <mat-radio-group
+                  aria-label="Select an option"
+                  [ngModelOptions]="{ standalone: true }"
+                  [(ngModel)]="ownBusiness"
+                  class="business-section"
                 >
-                <mat-radio-button class="spacer" value="N">No</mat-radio-button>
-              </mat-radio-group>
-            </div>  
+                  <mat-radio-button class="spacer" value="Y"
+                    >Yes</mat-radio-button
+                  >
+                  <mat-radio-button class="spacer" value="N"
+                    >No</mat-radio-button
+                  >
+                </mat-radio-group>
+              </div>
+            </div>
+            <div fxLayout="row" *ngIf="ownBusiness === 'Y'" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Business Name"
+                    formControlName="businessname"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Website Url"
+                    formControlName="websiteurl"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field>
+                  <mat-label class="label">Business Details</mat-label>
+                  <textarea
+                    matInput
+                    formControlName="businessdetails"
+                    cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize"
+                    cdkAutosizeMinRows="1"
+                    cdkAutosizeMaxRows="5"
+                  ></textarea>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <div class="label">Your Areas of Interest</div>
+                <mat-form-field>
+                  <select
+                    matNativeControl
+                    placeholder="Select"
+                    formControlName="intrests"
+                  >
+                    <option value="Cultural">Cultural</option>
+                    <option value="Sports">Sports</option>
+                    <option value="Business">Business</option>
+                    <option value="Political">Political</option>
+                    <option value="Political">Service</option>
+                  </select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Username"
+                    formControlName="username"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Password"
+                    formControlName="password"
+                    type="password"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Confirm Password"
+                    formControlName="cpassword"
+                    type="password"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+            </div>
           </div>
-          <div fxLayout="row" *ngIf="ownBusiness === 'Y'" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Business Name"
-                  formControlName="businessname"
-                  required
-                />
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Website Url"
-                  formControlName="websiteurl"
-                  required
-                />
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field>
-                <mat-label class="label">Business Details</mat-label>
-                <textarea
-                  matInput
-                  formControlName="businessdetails"
-                  cdkTextareaAutosize
-                  #autosize="cdkTextareaAutosize"
-                  cdkAutosizeMinRows="1"
-                  cdkAutosizeMaxRows="5"
-                ></textarea>
-              </mat-form-field>
-            </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <div class="label">Your Areas of Interest</div>
-              <mat-form-field>
-                <select
-                  matNativeControl
-                  placeholder="Select"
-                  formControlName="intrests"
-                >
-                  <option value="Cultural">Cultural</option>
-                  <option value="Sports">Sports</option>
-                  <option value="Business">Business</option>
-                  <option value="Political">Political</option>
-                  <option value="Political">Service</option>
-                </select>
-              </mat-form-field>
-            </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Username"
-                  formControlName="username"
-                  required
-                />
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Password"
-                  formControlName="password"
-                  type="password"
-                  required
-                />
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Confirm Password"
-                  formControlName="cpassword"
-                  type="password"
-                  required
-                />
-              </mat-form-field>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex justify-content-center d-buttons">
+          <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
               <i class="material-icons">arrow_back</i> Previous
             </button>

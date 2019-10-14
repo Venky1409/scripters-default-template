@@ -156,3 +156,12 @@ button {
 ::ng-deep .mat-horizontal-content-container {
   padding: 0 24px 16px 24px !important;
 }
+::ng-deep .logo-image {
+  width: 350px !important;
+  height: 350px !important;
+}
+::ng-deep .image-holder {
+  background: #ccc;
+  display: flex;
+  align-items: center;
+}
