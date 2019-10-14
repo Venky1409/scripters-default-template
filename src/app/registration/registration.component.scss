@@ -68,7 +68,7 @@ button {
   color: #666;
   cursor: pointer;
   position: relative;
-  margin-left: 20px;
+  margin-right: 15px;
 }
 ::ng-deep .mat-button-wrapper {
   width: 100% !important;
@@ -96,6 +96,9 @@ button {
   }
   ::ng-deep .d-flex {
     flex-direction: column !important;
+  }
+  ::ng-deep .d-buttons {
+    flex-direction: inherit !important;
   }
 }
 @media (min-width: 1200px) {
