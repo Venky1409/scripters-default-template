@@ -109,6 +109,9 @@ button {
   .image-holder {
     display: none;
   }
+  ::ng-deep .business-section {
+    display: block;
+  }
 }
 @media (min-width: 1200px) {
   ::ng-deep .container-fluid {
