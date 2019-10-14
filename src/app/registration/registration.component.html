@@ -156,6 +156,7 @@
       </mat-step>
       <mat-step *ngIf="maritalStatus === '1'" [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
+          <div class="second-section">
           <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
@@ -219,10 +220,7 @@
                 <mat-datepicker touchUi #picker></mat-datepicker>
               </mat-form-field>
             </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
-              <div class="label">Employment Status</div>
               <mat-radio-group aria-label="Select an option">
                 <mat-radio-button class="spacer" value="Employed"
                   >Employed</mat-radio-button
@@ -251,7 +249,6 @@
           </div>
           <div fxLayout="row" #AddChildren class="d-flex">
             <div class="p-2 flex-fill">
-              <div class="label">Gender</div>
               <mat-radio-group aria-label="Select an option">
                 <mat-radio-button class="spacer" value="M"
                   >Male</mat-radio-button
@@ -272,7 +269,7 @@
               </mat-form-field>
             </div>
           </div>
-
+        </div>
           <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
               <i class="material-icons">arrow_back</i> Backward
@@ -285,6 +282,7 @@
       </mat-step>
       <mat-step [stepControl]="thirdFormGroup">
         <form [formGroup]="thirdFormGroup">
+          <div class="second-section">
           <!-- <ng-template matStepLabel>reference Details</ng-template> -->
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
@@ -320,9 +318,6 @@
                 />
               </mat-form-field>
             </div>
-          </div>
-
-          <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <span class="label">Do u own any business</span>
               <mat-radio-group
@@ -335,7 +330,7 @@
                 >
                 <mat-radio-button class="spacer" value="N">No</mat-radio-button>
               </mat-radio-group>
-            </div>
+            </div>  
           </div>
           <div fxLayout="row" *ngIf="ownBusiness === 'Y'" class="d-flex">
             <div class="p-2 flex-fill">
@@ -422,7 +417,8 @@
               </mat-form-field>
             </div>
           </div>
-          <div class="d-flex justify-content-center d-buttons">
+        </div>
+        <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
               <i class="material-icons">arrow_back</i> Backward
             </button>

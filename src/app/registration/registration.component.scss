@@ -1,9 +1,6 @@
 .spacer {
   margin: 20px;
 }
-.label {
-  margin-left: 20px;
-}
 .form-header {
   text-align: center;
   background-color: #fff;
@@ -94,10 +91,14 @@ button {
   ::ng-deep
     .mat-horizontal-stepper-header-container
     .mat-stepper-horizontal-line {
-    left: 9%;
+    left: 14%;
   }
   ::ng-deep .mat-step-header {
-    left: 9%;
+    left: 14%;
+  }
+  ::ng-deep .container-fluid {
+    padding-top: 5px !important;
+    padding: 10px 5px 5px 5px;
   }
   ::ng-deep .d-flex {
     flex-direction: column !important;
@@ -105,10 +106,18 @@ button {
   ::ng-deep .d-buttons {
     flex-direction: inherit !important;
   }
+  .image-holder {
+    display: none;
+  }
 }
 @media (min-width: 1200px) {
   ::ng-deep .container-fluid {
-    width: 75% !important;
+    margin-top: 7%;
+    width: 70% !important;
+  }
+  ::ng-deep .second-section {
+    height: 325px;
+    overflow: auto;
   }
 }
 
@@ -139,5 +148,8 @@ button {
   margin: 20px 0 0 20px !important;
 }
 ::ng-deep .mat-horizontal-content-container .d-buttons {
-  margin-top: 21px;
+  margin-top: 25px;
+}
+::ng-deep .mat-horizontal-content-container {
+  padding: 0 24px 16px 24px !important;
 }
