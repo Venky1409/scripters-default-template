@@ -41,7 +41,9 @@
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
   display: none;
 }
-::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
+::ng-deep
+  .mat-horizontal-stepper-header-container
+  .mat-stepper-horizontal-line {
   border-top-style: solid;
   height: 0;
   margin: 0 -16px;
@@ -81,14 +83,17 @@ button {
 // To Disable Click Event on Stepper Icons
 ::ng-deep .mat-horizontal-stepper-header {
   pointer-events: none !important;
+  height: 50px !important;
 }
 
-:host ::ng-deep .mat-form-field{
+:host ::ng-deep .mat-form-field {
   margin: 3px !important;
 }
 
 @media (max-width: 767px) {
-  ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
+  ::ng-deep
+    .mat-horizontal-stepper-header-container
+    .mat-stepper-horizontal-line {
     left: 9%;
   }
   ::ng-deep .mat-step-header {
@@ -109,4 +114,30 @@ button {
 
 ::ng-deep .mainContainer {
   background: #f9f6f1;
+}
+::ng-deep .registration-container {
+  display: flex;
+}
+
+::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon {
+  height: 15px;
+  width: 15px;
+}
+::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-selected {
+  background: #6d7f52;
+}
+::ng-deep .mat-horizontal-stepper-header-container .mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 0px;
+}
+::ng-deep .mat-form-field-underline {
+  position: initial !important;
+}
+::ng-deep .spacer.mat-radio-button {
+  margin: 20px 0 0 20px !important;
+}
+::ng-deep .mat-horizontal-content-container .d-buttons {
+  margin-top: 21px;
 }
