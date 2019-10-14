@@ -15,133 +15,70 @@
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder=" First Name"
-                  formControlName="firstCtrl"
-                  required
-                />
+                <input matInput placeholder=" First Name" formControlName="firstCtrl" required />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Last Name "
-                  formControlName="lastCtrl"
-                  required
-                />
+                <input matInput placeholder="Last Name " formControlName="lastCtrl" required />
               </mat-form-field>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Email"
-                  formControlName="email"
-                  required
-                />
+                <input matInput placeholder="Email" formControlName="email" required />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  type="number"
-                  placeholder="Phone"
-                  formControlName="phone"
-                  required
-                />
+                <input matInput type="number" placeholder="Phone" formControlName="phone" required />
               </mat-form-field>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  [matDatepicker]="picker"
-                  placeholder="Birth Date"
-                  formControlName="Date Of Birth"
-                  required
-                />
-                <mat-datepicker-toggle
-                  matSuffix
-                  [for]="picker"
-                ></mat-datepicker-toggle>
-                <mat-datepicker touchUi #picker></mat-datepicker>
+                <input matInput [matDatepicker]="personalDoBPicker" placeholder="Birth Date" formControlName="Date Of Birth"
+                  required (click)="personalDoBPicker.open()" (keydown)="false" (focus)="personalDoBPicker.open()"/>
+                <mat-datepicker-toggle matSuffix [for]="personalDoBPicker"></mat-datepicker-toggle>
+                <mat-datepicker touchUi #personalDoBPicker></mat-datepicker>
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
-              <mat-radio-group
-                aria-label="Select an option"
-                [ngModelOptions]="{ standalone: true }"
-                [(ngModel)]="maritalStatus"
-              >
-                <mat-radio-button class="spacer" value="1"
-                  >Married</mat-radio-button
-                >
-                <mat-radio-button class="spacer" value="2"
-                  >Single</mat-radio-button
-                >
+              <mat-radio-group aria-label="Select an option" [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="maritalStatus">
+                <mat-radio-button class="spacer" value="1">Married</mat-radio-button>
+                <mat-radio-button class="spacer" value="2">Single</mat-radio-button>
               </mat-radio-group>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Home Address1"
-                  formControlName="address1"
-                  required
-                />
+                <input matInput placeholder="Home Address1" formControlName="address1" required />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Home Address2"
-                  formControlName="address2"
-                  required
-                />
+                <input matInput placeholder="Home Address2" formControlName="address2" required />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="City"
-                  formControlName="city"
-                  required
-                />
+                <input matInput placeholder="City" formControlName="city" required />
               </mat-form-field>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="State"
-                  formControlName="state"
-                  required
-                />
+                <input matInput placeholder="State" formControlName="state" required />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Zipcode"
-                  type="number"
-                  formControlName="zipcode"
-                  required
-                  maxlength="8"
-                />
+                <input matInput placeholder="Zipcode" type="number" formControlName="zipcode" required maxlength="8" />
               </mat-form-field>
             </div>
           </div>
@@ -161,73 +98,40 @@
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Spouse First Name"
-                    formControlName="spousefnameCtrl"
-                    required
-                  />
+                  <input matInput placeholder="Spouse First Name" formControlName="spousefnameCtrl" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Spouse Last Name "
-                    formControlName="spouselnameCtrl"
-                    required
-                  />
+                  <input matInput placeholder="Spouse Last Name " formControlName="spouselnameCtrl" required />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Email"
-                    formControlName="email"
-                    required
-                  />
+                  <input matInput placeholder="Email" formControlName="email" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    type="number"
-                    placeholder="Phone"
-                    formControlName="phone"
-                    required
-                  />
+                  <input matInput type="number" placeholder="Phone" formControlName="phone" required />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    [matDatepicker]="picker"
-                    placeholder="Birth Date"
-                    formControlName="Date Of Birth"
-                    required
-                  />
-                  <mat-datepicker-toggle
-                    matSuffix
-                    [for]="picker"
-                  ></mat-datepicker-toggle>
-                  <mat-datepicker touchUi #picker></mat-datepicker>
+                  <input matInput [matDatepicker]="spouseDoBPicker" placeholder="Birth Date" formControlName="Date Of Birth"
+                    required (click)="spouseDoBPicker.open()" (keydown)="false" (focus)="spouseDoBPicker.open()"/>
+                  <mat-datepicker-toggle matSuffix [for]="spouseDoBPicker"></mat-datepicker-toggle>
+                  <mat-datepicker touchUi #spouseDoBPicker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-radio-group aria-label="Select an option">
-                  <mat-radio-button class="spacer" value="Employed"
-                    >Employed</mat-radio-button
-                  >
-                  <mat-radio-button class="spacer" value="HomeMaker"
-                    >Home Maker</mat-radio-button
-                  >
+                  <mat-radio-button class="spacer" value="Employed">Employed</mat-radio-button>
+                  <mat-radio-button class="spacer" value="HomeMaker">Home Maker</mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
@@ -238,34 +142,20 @@
             <div fxLayout="row" #AddChildren class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Child Name"
-                    formControlName="childnameCtrl"
-                    required
-                  />
+                  <input matInput placeholder="Child Name" formControlName="childnameCtrl" required />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" #AddChildren class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-radio-group aria-label="Select an option">
-                  <mat-radio-button class="spacer" value="M"
-                    >Male</mat-radio-button
-                  >
-                  <mat-radio-button class="spacer" value="F"
-                    >Female</mat-radio-button
-                  >
+                  <mat-radio-button class="spacer" value="M">Male</mat-radio-button>
+                  <mat-radio-button class="spacer" value="F">Female</mat-radio-button>
                 </mat-radio-group>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Grade"
-                    formControlName="grade"
-                    required
-                  />
+                  <input matInput placeholder="Grade" formControlName="grade" required />
                 </mat-form-field>
               </div>
             </div>
@@ -287,86 +177,46 @@
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Reference First Name"
-                    formControlName="referencefnameCtrl"
-                    required
-                  />
+                  <input matInput placeholder="Reference First Name" formControlName="referencefnameCtrl" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Reference Last Name "
-                    formControlName="referencelnameCtrl"
-                    required
-                  />
+                  <input matInput placeholder="Reference Last Name " formControlName="referencelnameCtrl" required />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    type="number"
-                    placeholder="Contact Phone"
-                    formControlName="contactphone"
-                    required
-                  />
+                  <input matInput type="number" placeholder="Contact Phone" formControlName="contactphone" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <span class="label">Do you own business</span>
-                <mat-radio-group
-                  aria-label="Select an option"
-                  [ngModelOptions]="{ standalone: true }"
-                  [(ngModel)]="ownBusiness"
-                  class="business-section"
-                >
-                  <mat-radio-button class="spacer" value="Y"
-                    >Yes</mat-radio-button
-                  >
-                  <mat-radio-button class="spacer" value="N"
-                    >No</mat-radio-button
-                  >
+                <mat-radio-group aria-label="Select an option" [ngModelOptions]="{ standalone: true }"
+                  [(ngModel)]="ownBusiness" class="business-section">
+                  <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>
+                  <mat-radio-button class="spacer" value="N">No</mat-radio-button>
                 </mat-radio-group>
               </div>
             </div>
             <div fxLayout="row" *ngIf="ownBusiness === 'Y'" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Business Name"
-                    formControlName="businessname"
-                    required
-                  />
+                  <input matInput placeholder="Business Name" formControlName="businessname" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Website Url"
-                    formControlName="websiteurl"
-                    required
-                  />
+                  <input matInput placeholder="Website Url" formControlName="websiteurl" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field>
                   <mat-label class="label">Business Details</mat-label>
-                  <textarea
-                    matInput
-                    formControlName="businessdetails"
-                    cdkTextareaAutosize
-                    #autosize="cdkTextareaAutosize"
-                    cdkAutosizeMinRows="1"
-                    cdkAutosizeMaxRows="5"
-                  ></textarea>
+                  <textarea matInput formControlName="businessdetails" cdkTextareaAutosize
+                    #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
                 </mat-form-field>
               </div>
             </div>
@@ -374,11 +224,7 @@
               <div class="p-2 flex-fill">
                 <div class="label">Your Areas of Interest</div>
                 <mat-form-field>
-                  <select
-                    matNativeControl
-                    placeholder="Select"
-                    formControlName="intrests"
-                  >
+                  <select matNativeControl placeholder="Select" formControlName="intrests">
                     <option value="Cultural">Cultural</option>
                     <option value="Sports">Sports</option>
                     <option value="Business">Business</option>
@@ -391,34 +237,17 @@
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Username"
-                    formControlName="username"
-                    required
-                  />
+                  <input matInput placeholder="Username" formControlName="username" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Password"
-                    formControlName="password"
-                    type="password"
-                    required
-                  />
+                  <input matInput placeholder="Password" formControlName="password" type="password" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Confirm Password"
-                    formControlName="cpassword"
-                    type="password"
-                    required
-                  />
+                  <input matInput placeholder="Confirm Password" formControlName="cpassword" type="password" required />
                 </mat-form-field>
               </div>
             </div>
