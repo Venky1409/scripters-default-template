@@ -21,7 +21,7 @@ export class RegistrationComponent implements OnInit {
   thirdFormGroup: FormGroup;
   AddChildrenFlag: boolean;
   enableSecondStep: boolean;
-  maritalStatus: string;
+  maritalStatus: string = '1';
   ownBusiness: string;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
 
