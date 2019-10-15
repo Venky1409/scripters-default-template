@@ -78,7 +78,11 @@
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput placeholder="State" formControlName="state" required />
+                <select matNativeControl required formControlName="states" id="states" class='form-control' placeholder="Select State">
+                  <option *ngFor="let state of states; let i = index" [value]="states[i].id">
+                    {{states[i].name}}
+                  </option>
+                </select>
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
