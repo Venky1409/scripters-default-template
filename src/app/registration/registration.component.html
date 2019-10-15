@@ -27,12 +27,12 @@
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput placeholder="Email" formControlName="email" required />
+                <input matInput placeholder="Email" formControlName="email" type="email" required />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput type="number" placeholder="Phone" formControlName="phone" required />
+                <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="phone" id="phone-number" required />
               </mat-form-field>
             </div>
           </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput placeholder="Home Address2" formControlName="address2" required />
+                <input matInput placeholder="Home Address2" formControlName="address2" />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
@@ -85,7 +85,7 @@
           <div class="d-flex justify-content-center d-buttons">
             <div class="nextButton">
               <button mat-button matStepperNext>
-                Forward <i class="material-icons">arrow_forward</i>
+                Next <i class="material-icons">arrow_forward</i>
               </button>
             </div>
           </div>
@@ -110,12 +110,12 @@
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Email" formControlName="email" required />
+                  <input matInput placeholder="Email" formControlName="email" type="email" required />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="number" placeholder="Phone" formControlName="phone" required />
+                  <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="phone" id="phone-number" required />
                 </mat-form-field>
               </div>
             </div>
@@ -162,10 +162,10 @@
           </div>
           <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
-              <i class="material-icons">arrow_back</i> Previous
+              <i class="material-icons">arrow_back</i> Back
             </button>
             <button mat-button matStepperNext class="submit-btn">
-              Forward <i class="material-icons">arrow_forward</i>
+              Next <i class="material-icons">arrow_forward</i>
             </button>
           </div>
         </form>
@@ -177,21 +177,16 @@
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Reference First Name" formControlName="referencefnameCtrl" required />
+                  <input matInput placeholder="Reference First Name" formControlName="referencefnameCtrl" required maxlength="8" />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Reference Last Name " formControlName="referencelnameCtrl" required />
+                  <input matInput placeholder="Reference Last Name " formControlName="referencelnameCtrl" required maxlength="8" />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
-              <div class="p-2 flex-fill">
-                <mat-form-field class="spacer">
-                  <input matInput type="number" placeholder="Contact Phone" formControlName="contactphone" required />
-                </mat-form-field>
-              </div>
               <div class="p-2 flex-fill">
                 <span class="label">Do you own business</span>
                 <mat-radio-group aria-label="Select an option" [ngModelOptions]="{ standalone: true }"
@@ -199,6 +194,11 @@
                   <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>
                   <mat-radio-button class="spacer" value="N">No</mat-radio-button>
                 </mat-radio-group>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input matInput type="text" placeholder="Contact Phone" formControlName="contactphone" appPhoneMask id="phone-number"required />
+                </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" *ngIf="ownBusiness === 'Y'" class="d-flex">
@@ -254,7 +254,7 @@
           </div>
           <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
-              <i class="material-icons">arrow_back</i> Previous
+              <i class="material-icons">arrow_back</i> Back
             </button>
             <button mat-button class="submit-btn">
               Submit <i class="material-icons">check</i>

@@ -29,11 +29,11 @@ export class RegistrationComponent implements OnInit {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ["", Validators.required],
       lastCtrl: ["", Validators.required],
-      email: ["", Validators.required],
+      email: ["", Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
       phone: ["", Validators.required],
       "Date Of Birth": ["", Validators.required],
       address1: ["", Validators.required],
-      address2: ["", Validators.required],
+      address2: [""],
       city: ["", Validators.required],
       state: ["", Validators.required],
       zipcode: ["", Validators.required]
@@ -41,7 +41,7 @@ export class RegistrationComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       spousefnameCtrl: ["", Validators.required],
       spouselnameCtrl: ["", Validators.required],
-      email: ["", Validators.required],
+      email: ["", Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
       phone: ["", Validators.required],
       "Date Of Birth": ["", Validators.required],
       childnameCtrl: ["", Validators.required],

@@ -29,6 +29,7 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegistrationComponent } from "./registration/registration.component";
+import { PhoneMaskDirective } from './registration/phone-mask.directive';
 import { SampleComponent } from "./sample/sample.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { NonauthheaderComponent } from "./nonauthheader/nonauthheader.component";
@@ -57,7 +58,8 @@ const appRoutes: Routes = [
     NonauthheaderComponent,
     WelcomeComponent,
     DashboardComponent,
-    LoginComponent
+    LoginComponent,
+    PhoneMaskDirective
   ],
   imports: [
     BrowserModule,
@@ -99,7 +101,8 @@ const appRoutes: Routes = [
     MatSidenavModule,
     MatListModule,
     MatIconModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    PhoneMaskDirective
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
