@@ -32,17 +32,22 @@
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="phone" id="phone-number" required />
+                <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="phone" id="phone-number"
+                  required />
               </mat-form-field>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput [matDatepicker]="personalDoBPicker" placeholder="Birth Date" formControlName="Date Of Birth"
-                  required (click)="personalDoBPicker.open()" (keydown)="false" (focus)="personalDoBPicker.open()"/>
+                <input matInput [matDatepicker]="personalDoBPicker" placeholder="Birth Date(Minimum 16 years)"
+                  formControlName="DateOfBirth" required (click)="personalDoBPicker.open()" (keydown)="false"
+                  (focus)="personalDoBPicker.open()" />
                 <mat-datepicker-toggle matSuffix [for]="personalDoBPicker"></mat-datepicker-toggle>
                 <mat-datepicker touchUi #personalDoBPicker></mat-datepicker>
+                <!-- <mat-error *ngIf="DateOfBirth.errors?.urlValid">
+                  <sup>Age should be minimum 16 years</sup>
+                </mat-error> -->
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
@@ -115,15 +120,17 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="phone" id="phone-number" required />
+                  <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="phone" id="phone-number"
+                    required />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput [matDatepicker]="spouseDoBPicker" placeholder="Birth Date" formControlName="Date Of Birth"
-                    required (click)="spouseDoBPicker.open()" (keydown)="false" (focus)="spouseDoBPicker.open()"/>
+                  <input matInput [matDatepicker]="spouseDoBPicker" placeholder="Birth Date(Minimum 16 years)"
+                    formControlName="Date Of Birth" required (click)="spouseDoBPicker.open()" (keydown)="false"
+                    (focus)="spouseDoBPicker.open()" />
                   <mat-datepicker-toggle matSuffix [for]="spouseDoBPicker"></mat-datepicker-toggle>
                   <mat-datepicker touchUi #spouseDoBPicker></mat-datepicker>
                 </mat-form-field>
@@ -177,12 +184,14 @@
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Reference First Name" formControlName="referencefnameCtrl" required maxlength="8" />
+                  <input matInput placeholder="Reference First Name" formControlName="referencefnameCtrl" required
+                    maxlength="8" />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Reference Last Name " formControlName="referencelnameCtrl" required maxlength="8" />
+                  <input matInput placeholder="Reference Last Name " formControlName="referencelnameCtrl" required
+                    maxlength="8" />
                 </mat-form-field>
               </div>
             </div>
@@ -197,7 +206,8 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="text" placeholder="Contact Phone" formControlName="contactphone" appPhoneMask id="phone-number"required />
+                  <input matInput type="text" placeholder="Contact Phone" formControlName="contactphone" appPhoneMask
+                    id="phone-number" required />
                 </mat-form-field>
               </div>
             </div>

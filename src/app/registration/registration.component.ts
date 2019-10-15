@@ -5,7 +5,8 @@ import {
   ElementRef,
   Renderer2
 } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, ValidatorFn, AbstractControl } from "@angular/forms";
+import * as moment from 'moment';
 
 @Component({
   selector: "app-registration",
@@ -13,9 +14,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   styleUrls: ["./registration.component.scss"]
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private _formBuilder: FormBuilder, private renderer: Renderer2) {}
+  constructor(private _formBuilder: FormBuilder, private renderer: Renderer2) { }
 
-  isLinear = true;
+  isLinear = false;
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
@@ -29,9 +30,9 @@ export class RegistrationComponent implements OnInit {
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ["", Validators.required],
       lastCtrl: ["", Validators.required],
-      email: ["", Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
+      email: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
       phone: ["", Validators.required],
-      "Date Of Birth": ["", Validators.required],
+      DateOfBirth: ["", [Validators.required, urlValidator]],
       address1: ["", Validators.required],
       address2: [""],
       city: ["", Validators.required],
@@ -41,9 +42,9 @@ export class RegistrationComponent implements OnInit {
     this.secondFormGroup = this._formBuilder.group({
       spousefnameCtrl: ["", Validators.required],
       spouselnameCtrl: ["", Validators.required],
-      email: ["", Validators.compose([Validators.required,Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
+      email: ["", Validators.compose([Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')])],
       phone: ["", Validators.required],
-      "Date Of Birth": ["", Validators.required],
+      "Date Of Birth": ["", [Validators.required, urlValidator]],
       childnameCtrl: ["", Validators.required],
       grade: ["", Validators.required]
     });
@@ -68,4 +69,24 @@ export class RegistrationComponent implements OnInit {
     var text = "<h1>Hi</h1>";
     // this.renderer.appendChild(this.AddChildren, this.AddChildren);
   }
+
+  // get DateOfBirth() {
+  //   return this.firstFormGroup.get('DateOfBirth');
+  // }
+}
+
+/*
+* Validator function return object or null
+* Returns object if validations fails
+* Returns null if validations passes
+**/
+export function urlValidator(control: AbstractControl) {
+  const dob = control.value;
+  const today = moment().startOf('day');
+  const delta = today.diff(dob, 'years', false);
+
+  if (delta <= 16) {
+    return { urlValid: true }; // must return object
+  }
+  return null;
 }
