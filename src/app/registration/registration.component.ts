@@ -48,7 +48,8 @@ export class RegistrationComponent implements OnInit {
       phone: ["", Validators.required],
       "Date Of Birth": ["", [Validators.required, urlValidator]],
       childnameCtrl: ["", Validators.required],
-      grade: ["", Validators.required]
+      grade: ["", Validators.required],
+      spouseoccupation: ["", Validators.required]
     });
     this.thirdFormGroup = this._formBuilder.group({
       referencefnameCtrl: ['', Validators.required],

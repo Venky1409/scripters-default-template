@@ -140,10 +140,16 @@
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
-                <mat-radio-group aria-label="Select an option">
+                <!-- <mat-radio-group aria-label="Select an option">
                   <mat-radio-button class="spacer" value="Employed">Employed</mat-radio-button>
                   <mat-radio-button class="spacer" value="HomeMaker">Home Maker</mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group> -->
+                <mat-form-field class="spacer">
+                    <select matNativeControl placeholder="Select" formControlName="spouseoccupation">
+                      <option value="Employed">Employed</option>
+                      <option value="HomeMaker">Home Maker</option>
+                    </select>
+                  </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
