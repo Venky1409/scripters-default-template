@@ -6,9 +6,9 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ToastrModule, ToastContainerModule } from "ngx-toastr";
 import { RouterModule, Routes } from "@angular/router";
 import { UserIdleModule } from "angular-user-idle";
-import {MatNativeDateModule} from '@angular/material/core';
+import { MatNativeDateModule } from "@angular/material/core";
 import { MatStepperModule } from "@angular/material/stepper";
-import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDatepickerModule } from "@angular/material/datepicker";
 import {
   MatButtonModule,
   MatFormFieldModule,
@@ -19,7 +19,8 @@ import {
   MatToolbarModule,
   MatSidenavModule,
   MatListModule,
-  MatIconModule
+  MatIconModule,
+  MatSelectModule
 } from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 
@@ -29,7 +30,7 @@ import { SidebarComponent } from "./sidebar/sidebar.component";
 import { HomeComponent } from "./home/home.component";
 import { ProfileComponent } from "./profile/profile.component";
 import { RegistrationComponent } from "./registration/registration.component";
-import { PhoneMaskDirective } from './registration/phone-mask.directive';
+import { PhoneMaskDirective } from "./registration/phone-mask.directive";
 import { SampleComponent } from "./sample/sample.component";
 import { MDBBootstrapModule } from "angular-bootstrap-md";
 import { NonauthheaderComponent } from "./nonauthheader/nonauthheader.component";
@@ -70,6 +71,7 @@ const appRoutes: Routes = [
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatSelectModule,
     MatRippleModule,
     MatRadioModule,
     MatCheckboxModule,
@@ -102,9 +104,10 @@ const appRoutes: Routes = [
     MatListModule,
     MatIconModule,
     MatDatepickerModule,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    MatSelectModule
   ],
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}
