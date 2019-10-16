@@ -110,7 +110,8 @@ export class RegistrationComponent implements OnInit {
       intrests: ["", Validators.required],
       username: ["", Validators.required],
       password: ["", Validators.required],
-      cpassword: ["", Validators.required]
+      cpassword: ["", Validators.required],
+      referalId: ["", Validators.required]
     });
     this.enableSecondStep = true;
   }
