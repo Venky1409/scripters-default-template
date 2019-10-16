@@ -20,7 +20,8 @@ import {
   MatSidenavModule,
   MatListModule,
   MatIconModule,
-  MatSelectModule
+  MatSelectModule,
+  MatOptionModule
 } from "@angular/material";
 import { FlexLayoutModule } from "@angular/flex-layout";
 

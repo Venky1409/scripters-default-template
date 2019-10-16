@@ -12,7 +12,8 @@ import {
   FormGroup,
   Validators,
   ValidatorFn,
-  AbstractControl
+  AbstractControl,
+  NgModel
 } from "@angular/forms";
 import * as moment from "moment";
 @Component({
@@ -36,6 +37,8 @@ export class RegistrationComponent implements OnInit {
   ownBusiness: string;
   states: any[];
   selected = "option2";
+  selectedInterests: any[];
+  interests: any[];
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
     { value: "1", viewValue: "Male" },
@@ -63,6 +66,13 @@ export class RegistrationComponent implements OnInit {
   viewContainer: ViewContainerRef;
   @ViewChild("template", { static: false }) template: TemplateRef<any>;
   ngOnInit() {
+    this.interests = [
+      { id: 1, viewValue: "Cultural" },
+      { id: 2, viewValue: "Sports" },
+      { id: 3, viewValue: "Business" },
+      { id: 4, viewValue: "Political" },
+      { id: 5, viewValue: "Service" }
+    ];
     this.firstFormGroup = this._formBuilder.group({
       firstCtrl: ["", Validators.required],
       lastCtrl: ["", Validators.required],
@@ -111,7 +121,8 @@ export class RegistrationComponent implements OnInit {
       username: ["", Validators.required],
       password: ["", Validators.required],
       cpassword: ["", Validators.required],
-      referalId: ["", Validators.required]
+      referalId: ["", Validators.required],
+      interest: ["", Validators.required]
     });
     this.enableSecondStep = true;
   }
