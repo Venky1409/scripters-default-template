@@ -55,11 +55,12 @@
                   appPhoneMask
                   formControlName="phone"
                   id="phone-number"
-                  maxlength="16"
+                  maxlength="18"
                   minlength="16"
                   required
                 />
               </mat-form-field>
+              <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11 digits</mat-error>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
@@ -218,11 +219,12 @@
                     appPhoneMask
                     formControlName="phone"
                     id="phone-number"
-                    maxlength="16"
+                    maxlength="18"
                     minlength="16"
                     required
                   />
                 </mat-form-field>
+                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11 digits</mat-error>
               </div>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="flex-start">
@@ -392,11 +394,12 @@
                     formControlName="contactphone"
                     appPhoneMask
                     id="phone-number"
-                    maxlength="16"
+                    maxlength="18"
                     minlength="16"
                     required
                   />
                 </mat-form-field>
+                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11 digits</mat-error>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
