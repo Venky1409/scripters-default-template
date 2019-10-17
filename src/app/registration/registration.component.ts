@@ -107,12 +107,6 @@ export class RegistrationComponent implements OnInit {
       phone: ["", Validators.required],
       "Date Of Birth": ["", [Validators.required, urlValidator]],
       childnameCtrl: ["", Validators.required],
-      childrenList: this._formBuilder.array([
-        this._formBuilder.group({
-          childnameCtrl: this._formBuilder.control(null),
-          grade: this._formBuilder.control(null)
-        })
-      ]),
       grade: [""],
       childSelect: [""],
       gender: [""],
