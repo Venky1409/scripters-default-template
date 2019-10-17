@@ -60,7 +60,10 @@
                   required
                 />
               </mat-form-field>
-              <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11 digits</mat-error>
+              <mat-error *ngIf="firstFormGroup.get('phone')?.invalid"
+                >First digit should be 1 if the phone number is 11
+                digits</mat-error
+              >
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
@@ -224,7 +227,10 @@
                     required
                   />
                 </mat-form-field>
-                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11 digits</mat-error>
+                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid"
+                  >First digit should be 1 if the phone number is 11
+                  digits</mat-error
+                >
               </div>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="flex-start">
@@ -283,41 +289,43 @@
               </div>
             </div>
             <ng-container #viewContainer></ng-container>
-
-            <ng-template #template>
-              <div fxLayout="row wrap" class="d-flex">
-                <div class="p-2 flex-fill col-4">
-                  <mat-form-field class="spacer">
-                    <input
-                      matInput
-                      placeholder="Child Name"
-                      formControlName="childnameCtrl"
-                      required
-                    />
-                  </mat-form-field>
-                </div>
-
-                <div class="p-2 flex-fill col-4">
-                  <mat-form-field>
-                    <mat-label>Gender</mat-label>
-                    <select matNativeControl required>
-                      <option value="M">Male</option>
-                      <option value="F">Female</option>
-                    </select>
-                  </mat-form-field>
-                </div>
-                <div class="p-2 flex-fill col-4">
-                  <mat-form-field class="spacer">
-                    <input
-                      matInput
-                      placeholder="Grade"
-                      formControlName="grade"
-                      required
-                    />
-                  </mat-form-field>
-                </div>
+            <div
+              fxLayout="row wrap"
+              formArrayName="childrenList"
+              *ngFor="let child of children; let i = index"
+              class="d-flex"
+            >
+              <div class="p-2 flex-fill col-4">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Child Name"
+                    formControlName="childnameCtrl"
+                    required
+                  />
+                </mat-form-field>
               </div>
-            </ng-template>
+
+              <div class="p-2 flex-fill col-4">
+                <mat-form-field>
+                  <mat-label>Gender</mat-label>
+                  <select matNativeControl required>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                  </select>
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill col-4">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Grade"
+                    formControlName="grade"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+            </div>
           </div>
           <div class="d-flex justify-content-center d-buttons">
             <button mat-button matStepperPrevious>
@@ -399,7 +407,10 @@
                     required
                   />
                 </mat-form-field>
-                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11 digits</mat-error>
+                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid"
+                  >First digit should be 1 if the phone number is 11
+                  digits</mat-error
+                >
               </div>
             </div>
             <div fxLayout="row" class="d-flex">

@@ -39,6 +39,7 @@ export class RegistrationComponent implements OnInit {
   selected = "option2";
   selectedInterests: any[];
   interests: any[];
+  children: Number[];
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
     { value: "1", viewValue: "Male" },
@@ -48,18 +49,19 @@ export class RegistrationComponent implements OnInit {
     { value: "employed", viewValue: "Employed" },
     { value: "home-maker", viewValue: "Home Maker" }
   ];
+
   childs = [
-    { value: "0", viewValue: "0" },
-    { value: "1", viewValue: "1" },
-    { value: "2", viewValue: "2" },
-    { value: "3", viewValue: "3" },
-    { value: "4", viewValue: "4" },
-    { value: "5", viewValue: "5" },
-    { value: "6", viewValue: "6" },
-    { value: "7", viewValue: "7" },
-    { value: "8", viewValue: "8" },
-    { value: "9", viewValue: "9" },
-    { value: "10", viewValue: "10" }
+    { value: 0, viewValue: "0" },
+    { value: 1, viewValue: "1" },
+    { value: 2, viewValue: "2" },
+    { value: 3, viewValue: "3" },
+    { value: 4, viewValue: "4" },
+    { value: 5, viewValue: "5" },
+    { value: 6, viewValue: "6" },
+    { value: 7, viewValue: "7" },
+    { value: 8, viewValue: "8" },
+    { value: 9, viewValue: "9" },
+    { value: 10, viewValue: "10" }
   ];
   // @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   @ViewChild("viewContainer", { read: ViewContainerRef, static: false })
@@ -105,6 +107,12 @@ export class RegistrationComponent implements OnInit {
       phone: ["", Validators.required],
       "Date Of Birth": ["", [Validators.required, urlValidator]],
       childnameCtrl: ["", Validators.required],
+      childrenList: this._formBuilder.array([
+        this._formBuilder.group({
+          childnameCtrl: this._formBuilder.control(null),
+          grade: this._formBuilder.control(null)
+        })
+      ]),
       grade: [""],
       childSelect: [""],
       gender: [""],
@@ -183,12 +191,14 @@ export class RegistrationComponent implements OnInit {
     ];
   }
   onChildSelection() {
-    const childRowsToAssign = this.selectedChild;
-    this.viewContainer.clear();
-    for (let i = 0; i < childRowsToAssign; i++) {
-      const template = this.template.createEmbeddedView(null);
-      this.viewContainer.insert(template);
-    }
+    this.children = Array.from({ length: this.selectedChild }, (v, k) => k + 1);
+    // const childRowsToAssign = this.selectedChild;
+    // this.viewContainer.clear();
+    // for (let i = 0; i < childRowsToAssign; i++) {
+    //   const template = this.template.createEmbeddedView(null);
+    //   console.log(template, "template");
+    //   this.viewContainer.insert(template);
+    // }
   }
 }
 
