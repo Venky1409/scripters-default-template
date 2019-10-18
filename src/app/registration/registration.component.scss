@@ -21,6 +21,10 @@
 .mat-form-field {
   display: block;
 }
+::ng-deep .mat-error  {
+  font-size: 7px;
+  font-weight: inherit;
+}
 
 ::ng-deep .mat-stepper-horizontal,
 .mat-stepper-vertical {

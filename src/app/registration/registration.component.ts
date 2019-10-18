@@ -115,15 +115,24 @@ export class RegistrationComponent implements OnInit {
     this.thirdFormGroup = this._formBuilder.group({
       referencefnameCtrl: ["", Validators.required],
       referencelnameCtrl: ["", Validators.required],
+      referalId: ["", Validators.compose([
+          Validators.required,
+          Validators.pattern("^[0-9a-zA-Z]+$")
+        ])],
       contactphone: ["", Validators.required],
       businessname: ["", Validators.required],
       websiteurl: ["", Validators.required],
       businessdetails: ["", Validators.required],
       intrests: ["", Validators.required],
       username: ["", Validators.required],
-      password: ["", Validators.required],
-      cpassword: ["", Validators.required],
-      referalId: ["", Validators.required],
+      password: ["", Validators.compose([
+          Validators.required,
+          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
+        ])],
+      cpassword: ["", Validators.compose([
+          Validators.required,
+          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
+        ])],
       interest: ["", Validators.required]
     });
     this.enableSecondStep = true;
