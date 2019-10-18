@@ -116,6 +116,12 @@ button {
   ::ng-deep .business-section {
     display: block;
   }
+  ::ng-deep .col-6, .col-4 {
+    max-width: 100%;
+  }
+  ::ng-deep .spouse-personal {
+    display: block !important;
+  }
 }
 @media (min-width: 1200px) {
   ::ng-deep .container-fluid {
