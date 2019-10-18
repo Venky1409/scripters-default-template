@@ -85,14 +85,21 @@ export class RegistrationComponent implements OnInit {
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ],
+      homeaddress: this._formBuilder.group({
+        address1: ["", Validators.required],
+        address2: [""],
+        city: ["", Validators.required],
+        state: ["", Validators.required],
+        zipcode: ["", Validators.required],
+      }),
       phone: ["", Validators.required],
       DateOfBirth: ["", [Validators.required, urlValidator]],
-      address1: ["", Validators.required],
-      address2: [""],
-      city: ["", Validators.required],
-      state: ["", Validators.required],
-      zipcode: ["", Validators.required],
-      states: [""]
+      // address1: ["", Validators.required],
+      // address2: [""],
+      // city: ["", Validators.required],
+      // state: ["", Validators.required],
+      // zipcode: ["", Validators.required],
+      // states: [""]
     });
     this.secondFormGroup = this._formBuilder.group({
       spousefnameCtrl: ["", Validators.required],
@@ -202,6 +209,14 @@ export class RegistrationComponent implements OnInit {
     //   console.log(template, "template");
     //   this.viewContainer.insert(template);
     // }
+  }
+  register(){
+    console.log(this.firstFormGroup);
+    console.log(this.secondFormGroup);
+    console.log(this.thirdFormGroup);
+    var postdata = this.firstFormGroup.value;
+    postdata['married'] = this.maritalStatus;
+    console.log(postdata);
   }
 }
 
