@@ -115,11 +115,14 @@ export class RegistrationComponent implements OnInit {
       "Date Of Birth": ["", [Validators.required, urlValidator]],
       childSelect: [""],
       occupation: [""],
-      children : this._formBuilder.group({
+      // children : this._formBuilder.group({
+      // childnameCtrl: ["", Validators.required],
+      // gender: [""],
+      // grade: [""]
+      // })
       childnameCtrl: ["", Validators.required],
       gender: [""],
       grade: [""]
-      })
     });
     this.thirdFormGroup = this._formBuilder.group({
       refererdetails: this._formBuilder.group({
@@ -208,6 +211,7 @@ export class RegistrationComponent implements OnInit {
   }
   onChildSelection() {
     this.children = Array.from({ length: this.selectedChild }, (v, k) => k + 1);
+    console.log("Hiiii", this.children);
     // const childRowsToAssign = this.selectedChild;
     // this.viewContainer.clear();
     // for (let i = 0; i < childRowsToAssign; i++) {
