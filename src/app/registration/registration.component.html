@@ -374,6 +374,9 @@
                     minlength="8"
                   />
                 </mat-form-field>
+                <mat-error *ngIf="firstFormGroup.get('referalId')?.invalid"
+                  >Alpha numeric with Min 8 chars</mat-error
+                >
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
@@ -513,6 +516,9 @@
                       required
                     />
                   </mat-form-field>
+                  <mat-error *ngIf="firstFormGroup.get('password')?.invalid"
+                  >Min 8 chars with atleast 1 letter, number and special char</mat-error
+                >
                 </div>
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
@@ -524,6 +530,9 @@
                       required
                     />
                   </mat-form-field>
+                  <mat-error *ngIf="firstFormGroup.get('cpassword')?.invalid"
+                  >Min 8 chars with atleast 1 letter, number and special char</mat-error
+                >
                 </div>
               </div>
             </div>
