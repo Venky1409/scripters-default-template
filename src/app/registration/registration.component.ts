@@ -113,23 +113,29 @@ export class RegistrationComponent implements OnInit {
       ],
       phone: ["", Validators.required],
       "Date Of Birth": ["", [Validators.required, urlValidator]],
-      childnameCtrl: ["", Validators.required],
-      grade: [""],
       childSelect: [""],
+      occupation: [""],
+      children : this._formBuilder.group({
+      childnameCtrl: ["", Validators.required],
       gender: [""],
-      occupation: [""]
+      grade: [""]
+      })
     });
     this.thirdFormGroup = this._formBuilder.group({
+      refererdetails: this._formBuilder.group({
       referencefnameCtrl: ["", Validators.required],
       referencelnameCtrl: ["", Validators.required],
       referalId: ["", Validators.compose([
           Validators.required,
           Validators.pattern("^[0-9a-zA-Z]+$")
-        ])],
+        ])]
+      }),
       contactphone: ["", Validators.required],
+      business: this._formBuilder.group({
       businessname: ["", Validators.required],
       websiteurl: ["", Validators.required],
-      businessdetails: ["", Validators.required],
+      businessdetails: ["", Validators.required]
+      }),
       intrests: ["", Validators.required],
       username: ["", Validators.required],
       password: ["", Validators.compose([
@@ -216,6 +222,14 @@ export class RegistrationComponent implements OnInit {
     console.log(this.thirdFormGroup);
     var postdata = this.firstFormGroup.value;
     postdata['married'] = this.maritalStatus;
+    postdata['spousedetails'] = this.secondFormGroup.value;
+    postdata['referredby'] = this.thirdFormGroup.value.refererdetails;
+    postdata.referredby['mobile'] = this.thirdFormGroup.value.contactphone;
+    postdata['businessinfo'] = this.thirdFormGroup.value.business;
+    postdata['ownbusiness'] = this.ownBusiness;
+    postdata['areasofinterests'] = this.thirdFormGroup.value.interest;
+    postdata['username'] = this.thirdFormGroup.value.username;
+    postdata['password'] = this.thirdFormGroup.value.password;
     console.log(postdata);
   }
 }
