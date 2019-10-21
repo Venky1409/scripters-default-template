@@ -105,69 +105,69 @@
             </div>
           </div>
           <div formGroupName="homeaddress">
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Home Address1"
-                  formControlName="address1"
-                  required
-                />
-              </mat-form-field>
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Home Address1"
+                    formControlName="address1"
+                    required
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Home Address2"
+                    formControlName="address2"
+                  />
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="City"
+                    formControlName="city"
+                    required
+                  />
+                </mat-form-field>
+              </div>
             </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Home Address2"
-                  formControlName="address2"
-                />
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="City"
-                  formControlName="city"
-                  required
-                />
-              </mat-form-field>
-            </div>
-          </div>
-          <div fxLayout="row" class="d-flex">
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <mat-select
-                  required
-                  formControlName="state"
-                  id="states"
-                  placeholder="Select State"
-                >
-                  <mat-option
-                    *ngFor="let state of states; let i = index"
-                    [value]="states[i].id"
+            <div fxLayout="row" class="d-flex">
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <mat-select
+                    required
+                    formControlName="state"
+                    id="states"
+                    placeholder="Select State"
                   >
-                    {{ states[i].name }}
-                  </mat-option>
-                </mat-select>
-              </mat-form-field>
-            </div>
-            <div class="p-2 flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Zipcode"
-                  type="number"
-                  formControlName="zipcode"
-                  required
-                  maxlength="8"
-                />
-              </mat-form-field>
+                    <mat-option
+                      *ngFor="let state of states; let i = index"
+                      [value]="states[i].id"
+                    >
+                      {{ states[i].name }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+              <div class="p-2 flex-fill">
+                <mat-form-field class="spacer">
+                  <input
+                    matInput
+                    placeholder="Zipcode"
+                    type="number"
+                    formControlName="zipcode"
+                    required
+                    maxlength="8"
+                  />
+                </mat-form-field>
+              </div>
             </div>
           </div>
-        </div>
           <div class="d-flex justify-content-center d-buttons">
             <div class="nextButton">
               <button mat-button matStepperNext>
@@ -235,7 +235,11 @@
                 >
               </div>
             </div>
-            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="spouse-personal">
+            <div
+              fxLayout="row wrap"
+              fxLayoutAlign="flex-start"
+              class="spouse-personal"
+            >
               <div class="p-2 flex-fill col-4">
                 <mat-form-field class="spacer">
                   <input
@@ -293,38 +297,44 @@
             <ng-container #viewContainer></ng-container>
             <div
               fxLayout="row wrap"
-              *ngFor="let child of children; let i = index"
-              class="d-flex" 
+              *ngFor="
+                let child of secondFormGroup.get('childrenList').controls;
+                let i = index
+              "
+              class="d-flex"
+              formArrayName="childrenList"
             >
-              <div class="p-2 flex-fill col-4">
-                <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Child Name"
-                    formControlName="childnameCtrl"
-                    required
-                  />
-                </mat-form-field>
-              </div>
+              <div [formGroupName]="i" class="d-flex">
+                <div class="p-2 flex-fill col-4">
+                  <mat-form-field class="spacer">
+                    <input
+                      matInput
+                      placeholder="Child Name"
+                      formControlName="name"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
 
-              <div class="p-2 flex-fill col-4">
-                <mat-form-field>
-                  <mat-label>Gender</mat-label>
-                  <select matNativeControl required>
-                    <option value="M">Male</option>
-                    <option value="F">Female</option>
-                  </select>
-                </mat-form-field>
-              </div>
-              <div class="p-2 flex-fill col-4">
-                <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Grade"
-                    formControlName="grade"
-                    required
-                  />
-                </mat-form-field>
+                <div class="p-2 flex-fill col-4">
+                  <mat-form-field>
+                    <mat-label>Gender</mat-label>
+                    <select formControlName="gender" matNativeControl required>
+                      <option value="M">Male</option>
+                      <option value="F">Female</option>
+                    </select>
+                  </mat-form-field>
+                </div>
+                <div class="p-2 flex-fill col-4">
+                  <mat-form-field class="spacer">
+                    <input
+                      matInput
+                      placeholder="Grade"
+                      formControlName="grade"
+                      required
+                    />
+                  </mat-form-field>
+                </div>
               </div>
             </div>
           </div>
@@ -343,46 +353,45 @@
           <div class="second-section">
             <!-- <ng-template matStepLabel>reference Details</ng-template> -->
             <div formGroupName="refererdetails">
-            <div fxLayout="row" class="d-flex">
-              
-              <div class="p-2 flex-fill">
-                <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Reference First Name"
-                    formControlName="referencefnameCtrl"
-                    required
-                    maxlength="8"
-                  />
-                </mat-form-field>
+              <div fxLayout="row" class="d-flex">
+                <div class="p-2 flex-fill">
+                  <mat-form-field class="spacer">
+                    <input
+                      matInput
+                      placeholder="Reference First Name"
+                      formControlName="referencefnameCtrl"
+                      required
+                      maxlength="8"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="p-2 flex-fill">
+                  <mat-form-field class="spacer">
+                    <input
+                      matInput
+                      placeholder="Reference Last Name "
+                      formControlName="referencelnameCtrl"
+                      required
+                      maxlength="8"
+                    />
+                  </mat-form-field>
+                </div>
+                <div class="p-2 flex-fill">
+                  <mat-form-field class="spacer">
+                    <input
+                      matInput
+                      placeholder="Referal Id "
+                      formControlName="referalId"
+                      required
+                      maxlength="8"
+                      minlength="8"
+                    />
+                  </mat-form-field>
+                  <mat-error *ngIf="firstFormGroup.get('referalId')?.invalid"
+                    >Alpha numeric with Min 8 chars</mat-error
+                  >
+                </div>
               </div>
-              <div class="p-2 flex-fill">
-                <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Reference Last Name "
-                    formControlName="referencelnameCtrl"
-                    required
-                    maxlength="8"
-                  />
-                </mat-form-field>
-              </div>
-              <div class="p-2 flex-fill">
-                <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Referal Id "
-                    formControlName="referalId"
-                    required
-                    maxlength="8"
-                    minlength="8"
-                  />
-                </mat-form-field>
-                <mat-error *ngIf="firstFormGroup.get('referalId')?.invalid"
-                  >Alpha numeric with Min 8 chars</mat-error
-                >
-              </div>
-            </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
@@ -458,7 +467,12 @@
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
-              <div fxLayout="column" formGroupName="business" fxLayoutAlign="start start" class="d-flex col-6">
+              <div
+                fxLayout="column"
+                formGroupName="business"
+                fxLayoutAlign="start start"
+                class="d-flex col-6"
+              >
                 <div *ngIf="ownBusiness === 'Y'" class="col-12">
                   <div class="p-2 flex-fill">
                     <mat-form-field class="spacer">
@@ -494,7 +508,7 @@
                     </mat-form-field>
                   </div>
                 </div>
-                </div>
+              </div>
 
               <div fxLayout="column" class="d-flex col-6">
                 <div class="p-2 flex-fill">
@@ -518,8 +532,9 @@
                     />
                   </mat-form-field>
                   <mat-error *ngIf="firstFormGroup.get('password')?.invalid"
-                  >Min 8 chars with atleast 1 letter, number and special char</mat-error
-                >
+                    >Min 8 chars with atleast 1 letter, number and special
+                    char</mat-error
+                  >
                 </div>
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
@@ -532,8 +547,9 @@
                     />
                   </mat-form-field>
                   <mat-error *ngIf="firstFormGroup.get('cpassword')?.invalid"
-                  >Min 8 chars with atleast 1 letter, number and special char</mat-error
-                >
+                    >Min 8 chars with atleast 1 letter, number and special
+                    char</mat-error
+                  >
                 </div>
               </div>
             </div>

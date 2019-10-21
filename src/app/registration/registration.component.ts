@@ -13,7 +13,8 @@ import {
   Validators,
   ValidatorFn,
   AbstractControl,
-  NgModel
+  NgModel,
+  FormArray
 } from "@angular/forms";
 import * as moment from "moment";
 @Component({
@@ -39,6 +40,7 @@ export class RegistrationComponent implements OnInit {
   selected = "option2";
   selectedInterests: any[];
   interests: any[];
+  childrenList: FormArray;
   children: Number[];
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
@@ -90,10 +92,10 @@ export class RegistrationComponent implements OnInit {
         address2: [""],
         city: ["", Validators.required],
         state: ["", Validators.required],
-        zipcode: ["", Validators.required],
+        zipcode: ["", Validators.required]
       }),
       phone: ["", Validators.required],
-      DateOfBirth: ["", [Validators.required, urlValidator]],
+      DateOfBirth: ["", [Validators.required, urlValidator]]
       // address1: ["", Validators.required],
       // address2: [""],
       // city: ["", Validators.required],
@@ -115,43 +117,87 @@ export class RegistrationComponent implements OnInit {
       "Date Of Birth": ["", [Validators.required, urlValidator]],
       childSelect: [""],
       occupation: [""],
+      childrenList: this._formBuilder.array([]),
       // children : this._formBuilder.group({
       // childnameCtrl: ["", Validators.required],
       // gender: [""],
       // grade: [""]
       // })
-      childnameCtrl: ["", Validators.required],
+      // childnameCtrl: ["", Validators.required],
       gender: [""],
       grade: [""]
     });
     this.thirdFormGroup = this._formBuilder.group({
       refererdetails: this._formBuilder.group({
-      referencefnameCtrl: ["", Validators.required],
-      referencelnameCtrl: ["", Validators.required],
-      referalId: ["", Validators.compose([
-          Validators.required,
-          Validators.pattern("^[0-9a-zA-Z]+$")
-        ])]
+        referencefnameCtrl: ["", Validators.required],
+        referencelnameCtrl: ["", Validators.required],
+        referalId: [
+          "",
+          Validators.compose([
+            Validators.required,
+            Validators.pattern("^[0-9a-zA-Z]+$")
+          ])
+        ]
       }),
       contactphone: ["", Validators.required],
       business: this._formBuilder.group({
-      businessname: ["", Validators.required],
-      websiteurl: ["", Validators.required],
-      businessdetails: ["", Validators.required]
+        businessname: ["", Validators.required],
+        websiteurl: ["", Validators.required],
+        businessdetails: ["", Validators.required]
       }),
       intrests: ["", Validators.required],
       username: ["", Validators.required],
-      password: ["", Validators.compose([
+      password: [
+        "",
+        Validators.compose([
           Validators.required,
-          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
-        ])],
-      cpassword: ["", Validators.compose([
+          Validators.pattern(
+            "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}"
+          )
+        ])
+      ],
+      cpassword: [
+        "",
+        Validators.compose([
           Validators.required,
-          Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')
-        ])],
+          Validators.pattern(
+            "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}"
+          )
+        ])
+      ],
       interest: ["", Validators.required]
     });
     this.enableSecondStep = true;
+  }
+  createChild(): FormGroup {
+    return this._formBuilder.group({
+      name: "",
+      gender: "",
+      grade: ""
+    });
+  }
+  onChildSelection() {
+    this.children = Array.from({ length: this.selectedChild }, (v, k) => k + 1);
+    this.childrenList = this.secondFormGroup.get("childrenList") as FormArray;
+    console.log("Hiiii", this.children);
+    this.childrenList.clear();
+    for (let i = 0; i < this.children.length; i++) {
+      console.log("am here");
+      this.childrenList.push(this.createChild());
+    }
+    //this.addItem();
+
+    // const childRowsToAssign = this.selectedChild;
+    // this.viewContainer.clear();
+    // for (let i = 0; i < childRowsToAssign; i++) {
+    //   const template = this.template.createEmbeddedView(null);
+    //   console.log(template, "template");
+    //   this.viewContainer.insert(template);
+    // }
+  }
+  addItem(): void {
+    this.childrenList = this.secondFormGroup.get("childrenList") as FormArray;
+    this.childrenList.push(this.createChild());
   }
   getStates() {
     return [
@@ -209,31 +255,22 @@ export class RegistrationComponent implements OnInit {
       { id: "52", name: "Wyoming", value: "WY" }
     ];
   }
-  onChildSelection() {
-    this.children = Array.from({ length: this.selectedChild }, (v, k) => k + 1);
-    console.log("Hiiii", this.children);
-    // const childRowsToAssign = this.selectedChild;
-    // this.viewContainer.clear();
-    // for (let i = 0; i < childRowsToAssign; i++) {
-    //   const template = this.template.createEmbeddedView(null);
-    //   console.log(template, "template");
-    //   this.viewContainer.insert(template);
-    // }
-  }
-  register(){
+
+  register() {
     console.log(this.firstFormGroup);
     console.log(this.secondFormGroup);
     console.log(this.thirdFormGroup);
     var postdata = this.firstFormGroup.value;
-    postdata['married'] = this.maritalStatus;
-    postdata['spousedetails'] = this.secondFormGroup.value;
-    postdata['referredby'] = this.thirdFormGroup.value.refererdetails;
-    postdata.referredby['mobile'] = this.thirdFormGroup.value.contactphone;
-    postdata['businessinfo'] = this.thirdFormGroup.value.business;
-    postdata['ownbusiness'] = this.ownBusiness;
-    postdata['areasofinterests'] = this.thirdFormGroup.value.interest;
-    postdata['username'] = this.thirdFormGroup.value.username;
-    postdata['password'] = this.thirdFormGroup.value.password;
+    postdata["married"] = this.maritalStatus;
+    postdata["spousedetails"] = this.secondFormGroup.value;
+    postdata["referredby"] = this.thirdFormGroup.value.refererdetails;
+    postdata.referredby["mobile"] = this.thirdFormGroup.value.contactphone;
+    postdata["businessinfo"] = this.thirdFormGroup.value.business;
+    postdata["ownbusiness"] = this.ownBusiness;
+    postdata["areasofinterests"] = this.thirdFormGroup.value.interest;
+    postdata["username"] = this.thirdFormGroup.value.username;
+    postdata["password"] = this.thirdFormGroup.value.password;
+    postdata["childrens"] = this.secondFormGroup.value.childrenList;
     console.log(postdata);
   }
 }
