@@ -14,7 +14,8 @@ import {
   ValidatorFn,
   AbstractControl,
   NgModel,
-  FormArray
+  FormArray,
+  ValidationErrors 
 } from "@angular/forms";
 import * as moment from "moment";
 @Component({
@@ -162,7 +163,7 @@ export class RegistrationComponent implements OnInit {
           Validators.required,
           Validators.pattern(
             "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}"
-          )
+          ), matchValues('password'),
         ])
       ],
       interest: ["", Validators.required]
@@ -289,4 +290,14 @@ export function urlValidator(control: AbstractControl) {
     return { urlValid: true }; // must return object
   }
   return null;
+}
+
+export function matchValues(matchTo): (AbstractControl) => ValidationErrors | null {
+    return (control: AbstractControl): ValidationErrors | null => {
+      return !!control.parent &&
+        !!control.parent.value &&
+        control.value === control.parent.controls[matchTo].value
+        ? null
+        : { isMatching: false };
+    };
 }
