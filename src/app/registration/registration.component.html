@@ -298,7 +298,7 @@
             <div
               fxLayout="row wrap"
               *ngFor="
-                let child of secondFormGroup.get('childrenList').controls;
+                let child of secondFormGroup.get('childrenList')['controls'];
                 let i = index
               "
               class="d-flex"
