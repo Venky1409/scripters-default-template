@@ -18,13 +18,14 @@ import {
   ValidationErrors
 } from "@angular/forms";
 import * as moment from "moment";
+import { RegisterService } from '../services/register.service';
 @Component({
   selector: "app-registration",
   templateUrl: "./registration.component.html",
   styleUrls: ["./registration.component.scss"]
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private _formBuilder: FormBuilder, private renderer: Renderer2) {
+  constructor(private _formBuilder: FormBuilder, private renderer: Renderer2, private registerService: RegisterService) {
     this.states = this.getStates();
   }
   selectedChild: number;
@@ -42,6 +43,7 @@ export class RegistrationComponent implements OnInit {
   interests: any[];
   childrenList: FormArray;
   children: Number[];
+  submitSuccess: boolean = false;
   maritalStatusList = [
     { name: "Married", value: "1" },
     { name: "single", value: "0" }
@@ -269,6 +271,17 @@ export class RegistrationComponent implements OnInit {
     postdata["username"] = this.thirdFormGroup.value.username;
     postdata["password"] = this.thirdFormGroup.value.password;
     console.log(postdata);
+    this.registerService.registerUser(postdata)
+    .subscribe(res => {
+      console.log(res);
+      this.submitSuccess = true;
+        }, error => {
+          console.log(error);
+        });
+  }
+
+  retryReister() {
+    this.submitSuccess = false;
   }
 }
 

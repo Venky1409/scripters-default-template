@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule } from '@angular/common/http';
 import { ToastrModule, ToastContainerModule } from "ngx-toastr";
 import { RouterModule, Routes } from "@angular/router";
 import { UserIdleModule } from "angular-user-idle";
@@ -39,6 +40,8 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
 
+import { RegisterService } from "./services/register.service";
+
 const appRoutes: Routes = [
   { path: "", component: WelcomeComponent },
   { path: "dashboard", component: DashboardComponent },
@@ -67,6 +70,7 @@ const appRoutes: Routes = [
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     MatStepperModule,
     MatButtonModule,
@@ -93,7 +97,7 @@ const appRoutes: Routes = [
     MDBBootstrapModule.forRoot(),
     FlexLayoutModule
   ],
-  providers: [],
+  providers: [RegisterService],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
