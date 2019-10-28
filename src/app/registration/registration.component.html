@@ -18,7 +18,7 @@
                 <input
                   matInput
                   placeholder=" First Name"
-                  formControlName="firstCtrl"
+                  formControlName="firstName"
                   required
                 />
               </mat-form-field>
@@ -28,7 +28,7 @@
                 <input
                   matInput
                   placeholder="Last Name "
-                  formControlName="lastCtrl"
+                  formControlName="lastName"
                   required
                 />
               </mat-form-field>
@@ -40,7 +40,7 @@
                 <input
                   matInput
                   placeholder="Email"
-                  formControlName="email"
+                  formControlName="userEmail"
                   type="email"
                   required
                 />
@@ -53,7 +53,7 @@
                   type="text"
                   placeholder="Phone"
                   appPhoneMask
-                  formControlName="phone"
+                  formControlName="mobile"
                   id="phone-number"
                   maxlength="18"
                   minlength="16"
@@ -73,7 +73,7 @@
                   matInput
                   [matDatepicker]="personalDoBPicker"
                   placeholder="Birth Date(Minimum 16 years)"
-                  formControlName="DateOfBirth"
+                  formControlName="dateOfBirth"
                   required
                   (click)="personalDoBPicker.open()"
                   (keydown)="(false)"
@@ -92,8 +92,23 @@
             <div class="p-2 flex-fill">
               <mat-radio-group
                 aria-label="Select an option"
+                formControlName="maritalStatus"
                 [ngModelOptions]="{ standalone: true }"
-                [(ngModel)]="maritalStatus"
+                [(ngModel)]="chosenMaritalStatus"
+              >
+                <mat-radio-button
+                  class="spacer"
+                  *ngFor="let op of maritalStatusList"
+                  [value]="op.value"
+                  name="opList"
+                  >{{ op.name }}</mat-radio-button
+                >
+              </mat-radio-group>
+
+              <!-- <mat-radio-group
+                aria-label="Select an option"
+                [ngModelOptions]="{ standalone: true }"
+                formControlName="maritalStatus"
               >
                 <mat-radio-button class="spacer" value="1"
                   >Married</mat-radio-button
@@ -101,10 +116,10 @@
                 <mat-radio-button class="spacer" value="2"
                   >Single</mat-radio-button
                 >
-              </mat-radio-group>
+              </mat-radio-group> -->
             </div>
           </div>
-          <div formGroupName="homeaddress">
+          <div formGroupName="homeAddress">
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
@@ -177,7 +192,10 @@
           </div>
         </form>
       </mat-step>
-      <mat-step *ngIf="maritalStatus === '1'" [stepControl]="secondFormGroup">
+      <mat-step
+        *ngIf="chosenMaritalStatus === '1'"
+        [stepControl]="secondFormGroup"
+      >
         <form [formGroup]="secondFormGroup">
           <div class="second-section">
             <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
@@ -187,7 +205,7 @@
                   <input
                     matInput
                     placeholder="Spouse First Name"
-                    formControlName="spousefnameCtrl"
+                    formControlName="spouseFirstName"
                     required
                   />
                 </mat-form-field>
@@ -197,7 +215,7 @@
                   <input
                     matInput
                     placeholder="Spouse Last Name "
-                    formControlName="spouselnameCtrl"
+                    formControlName="spouseLastName"
                     required
                   />
                 </mat-form-field>
@@ -209,7 +227,7 @@
                   <input
                     matInput
                     placeholder="Email"
-                    formControlName="email"
+                    formControlName="spouseEmail"
                     type="email"
                     required
                   />
@@ -222,7 +240,7 @@
                     type="text"
                     placeholder="Phone"
                     appPhoneMask
-                    formControlName="phone"
+                    formControlName="spouseMobile"
                     id="phone-number"
                     maxlength="18"
                     minlength="16"
@@ -246,7 +264,7 @@
                     matInput
                     [matDatepicker]="spouseDoBPicker"
                     placeholder="Birth Date(Minimum 16 years)"
-                    formControlName="Date Of Birth"
+                    formControlName="spouseDOB"
                     required
                     (click)="spouseDoBPicker.open()"
                     (keydown)="(false)"
@@ -281,7 +299,7 @@
                   <mat-select
                     placeholder="Child"
                     [(ngModel)]="selectedChild"
-                    formControlName="childSelect"
+                    formControlName="numberOfChildren"
                     (ngModelChange)="onChildSelection()"
                   >
                     <mat-option
@@ -359,7 +377,7 @@
                     <input
                       matInput
                       placeholder="Reference First Name"
-                      formControlName="referencefnameCtrl"
+                      formControlName="referalFirstName"
                       required
                       maxlength="8"
                     />
@@ -370,7 +388,7 @@
                     <input
                       matInput
                       placeholder="Reference Last Name "
-                      formControlName="referencelnameCtrl"
+                      formControlName="referalLastName"
                       required
                       maxlength="8"
                     />
@@ -416,7 +434,7 @@
                     matInput
                     type="text"
                     placeholder="Contact Phone"
-                    formControlName="contactphone"
+                    formControlName="referalMobile"
                     appPhoneMask
                     id="phone-number"
                     maxlength="18"
@@ -436,7 +454,7 @@
                   <mat-form-field class="select-form">
                     <mat-select
                       placeholder="Area of interests"
-                      formControlName="interest"
+                      formControlName="interestSelected"
                       class="filter-select"
                       multiple
                     >
@@ -445,7 +463,7 @@
                       </mat-option>
                       <mat-option
                         *ngFor="let interest of interests"
-                        [value]="interest"
+                        [value]="interest.viewValue"
                       >
                         {{ interest.viewValue }}
                       </mat-option>
@@ -479,7 +497,7 @@
                       <input
                         matInput
                         placeholder="Business Name"
-                        formControlName="businessname"
+                        formControlName="businessName"
                         required
                       />
                     </mat-form-field>
@@ -489,7 +507,7 @@
                       <input
                         matInput
                         placeholder="Website Url"
-                        formControlName="websiteurl"
+                        formControlName="websiteUrl"
                         required
                       />
                     </mat-form-field>
@@ -499,7 +517,7 @@
                       <mat-label class="label">Business Details</mat-label>
                       <textarea
                         matInput
-                        formControlName="businessdetails"
+                        formControlName="businessDetails"
                         cdkTextareaAutosize
                         #autosize="cdkTextareaAutosize"
                         cdkAutosizeMinRows="1"

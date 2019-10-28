@@ -15,7 +15,7 @@ import {
   AbstractControl,
   NgModel,
   FormArray,
-  ValidationErrors 
+  ValidationErrors
 } from "@angular/forms";
 import * as moment from "moment";
 @Component({
@@ -35,7 +35,6 @@ export class RegistrationComponent implements OnInit {
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
   enableSecondStep: boolean;
-  maritalStatus: string = "1";
   ownBusiness: string;
   states: any[];
   selected = "option2";
@@ -43,6 +42,10 @@ export class RegistrationComponent implements OnInit {
   interests: any[];
   childrenList: FormArray;
   children: Number[];
+  maritalStatusList = [
+    { name: "Married", value: "1" },
+    { name: "single", value: "0" }
+  ];
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
     { value: "1", viewValue: "Male" },
@@ -79,59 +82,52 @@ export class RegistrationComponent implements OnInit {
       { id: 5, viewValue: "Service" }
     ];
     this.firstFormGroup = this._formBuilder.group({
-      firstCtrl: ["", Validators.required],
-      lastCtrl: ["", Validators.required],
-      email: [
+      firstName: ["", Validators.required],
+      lastName: ["", Validators.required],
+      userEmail: [
         "",
         Validators.compose([
           Validators.required,
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ],
-      homeaddress: this._formBuilder.group({
+      mobile: ["", Validators.required],
+      dateOfBirth: ["", [Validators.required, urlValidator]],
+      maritalStatus: [""],
+      homeAddress: this._formBuilder.group({
         address1: ["", Validators.required],
         address2: [""],
         city: ["", Validators.required],
         state: ["", Validators.required],
         zipcode: ["", Validators.required]
-      }),
-      phone: ["", Validators.required],
-      DateOfBirth: ["", [Validators.required, urlValidator]]
-      // address1: ["", Validators.required],
-      // address2: [""],
-      // city: ["", Validators.required],
-      // state: ["", Validators.required],
-      // zipcode: ["", Validators.required],
-      // states: [""]
+      })
     });
     this.secondFormGroup = this._formBuilder.group({
-      spousefnameCtrl: ["", Validators.required],
-      spouselnameCtrl: ["", Validators.required],
-      email: [
+      spouseFirstName: ["", Validators.required],
+      spouseLastName: ["", Validators.required],
+      spouseEmail: [
         "",
         Validators.compose([
           Validators.required,
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ],
-      phone: ["", Validators.required],
-      "Date Of Birth": ["", [Validators.required, urlValidator]],
-      childSelect: [""],
+      spouseMobile: ["", Validators.required],
+      spouseDOB: ["", [Validators.required, urlValidator]],
       occupation: [""],
-      childrenList: this._formBuilder.array([]),
+      numberOfChildren: [""],
+      childrenList: this._formBuilder.array([])
       // children : this._formBuilder.group({
       // childnameCtrl: ["", Validators.required],
       // gender: [""],
       // grade: [""]
       // })
       // childnameCtrl: ["", Validators.required],
-      gender: [""],
-      grade: [""]
     });
     this.thirdFormGroup = this._formBuilder.group({
       refererdetails: this._formBuilder.group({
-        referencefnameCtrl: ["", Validators.required],
-        referencelnameCtrl: ["", Validators.required],
+        referalFirstName: ["", Validators.required],
+        referalLastName: ["", Validators.required],
         referalId: [
           "",
           Validators.compose([
@@ -140,13 +136,13 @@ export class RegistrationComponent implements OnInit {
           ])
         ]
       }),
-      contactphone: ["", Validators.required],
+      referalMobile: ["", Validators.required],
       business: this._formBuilder.group({
-        businessname: ["", Validators.required],
-        websiteurl: ["", Validators.required],
-        businessdetails: ["", Validators.required]
+        businessName: ["", Validators.required],
+        websiteUrl: ["", Validators.required],
+        businessDetails: ["", Validators.required]
       }),
-      intrests: ["", Validators.required],
+      interestSelected: ["", Validators.required],
       username: ["", Validators.required],
       password: [
         "",
@@ -163,7 +159,8 @@ export class RegistrationComponent implements OnInit {
           Validators.required,
           Validators.pattern(
             "(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-zd$@$!%*?&].{8,}"
-          ), matchValues('password'),
+          ),
+          matchValues("password")
         ])
       ],
       interest: ["", Validators.required]
@@ -262,16 +259,15 @@ export class RegistrationComponent implements OnInit {
     console.log(this.secondFormGroup);
     console.log(this.thirdFormGroup);
     var postdata = this.firstFormGroup.value;
-    postdata["married"] = this.maritalStatus;
+    postdata["mobile"] = this.firstFormGroup.value.mobile.replace(/\D+/g, "");
     postdata["spousedetails"] = this.secondFormGroup.value;
     postdata["referredby"] = this.thirdFormGroup.value.refererdetails;
-    postdata.referredby["mobile"] = this.thirdFormGroup.value.contactphone;
+    postdata.referredby["mobile"] = this.thirdFormGroup.value.referalMobile;
     postdata["businessinfo"] = this.thirdFormGroup.value.business;
     postdata["ownbusiness"] = this.ownBusiness;
-    postdata["areasofinterests"] = this.thirdFormGroup.value.interest;
+    postdata["areasofinterests"] = this.thirdFormGroup.value.interestSelected;
     postdata["username"] = this.thirdFormGroup.value.username;
     postdata["password"] = this.thirdFormGroup.value.password;
-    postdata["childrens"] = this.secondFormGroup.value.childrenList;
     console.log(postdata);
   }
 }
@@ -292,12 +288,14 @@ export function urlValidator(control: AbstractControl) {
   return null;
 }
 
-export function matchValues(matchTo): (AbstractControl) => ValidationErrors | null {
-    return (control: AbstractControl): ValidationErrors | null => {
-      return !!control.parent &&
-        !!control.parent.value &&
-        control.value === control.parent.controls[matchTo].value
-        ? null
-        : { isMatching: false };
-    };
+export function matchValues(
+  matchTo
+): (AbstractControl) => ValidationErrors | null {
+  return (control: AbstractControl): ValidationErrors | null => {
+    return !!control.parent &&
+      !!control.parent.value &&
+      control.value === control.parent.controls[matchTo].value
+      ? null
+      : { isMatching: false };
+  };
 }
