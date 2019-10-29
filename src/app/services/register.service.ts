@@ -23,4 +23,16 @@ export class RegisterService {
     return result;
   }
 
+  validateEmail(email): Observable<any> {
+    const result: Subject<any> = new Subject();
+    this.http.post(this.serviceUrl + "validateemail", {'useremail': email}).subscribe(
+    res => {
+      result.next(res);
+    },
+    err => {
+      result.error(err);
+    });
+    return result;
+  }
+
 }

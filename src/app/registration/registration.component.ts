@@ -11,6 +11,7 @@ import {
   FormBuilder,
   FormGroup,
   Validators,
+  FormControl,
   ValidatorFn,
   AbstractControl,
   NgModel,
@@ -91,6 +92,7 @@ export class RegistrationComponent implements OnInit {
         "",
         Validators.compose([
           Validators.required,
+          this.isEmailUnique.bind(this),
           Validators.pattern("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$")
         ])
       ],
@@ -283,6 +285,22 @@ export class RegistrationComponent implements OnInit {
 
   retryReister() {
     this.submitSuccess = false;
+  }
+
+  isEmailUnique(control: FormControl) {
+    this.registerService.validateEmail(control.value)
+    .subscribe(res => {
+      console.log(res);
+        if (res.status == 0) {
+          return { 'isEmailUnique': true };
+        } else {
+          return null;
+        }
+        }, error => {
+          console.log(error);
+          return null;
+        });
+    return null;
   }
 }
 

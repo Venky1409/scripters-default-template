@@ -45,6 +45,9 @@
                   required
                 />
               </mat-form-field>
+              <mat-error *ngIf="firstFormGroup.get('userEmail').hasError('isEmailUnique')"
+                >Email already exists</mat-error
+              >
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
