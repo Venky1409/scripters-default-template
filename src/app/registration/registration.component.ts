@@ -48,6 +48,7 @@ export class RegistrationComponent implements OnInit {
     { name: "Married", value: "1" },
     { name: "single", value: "0" }
   ];
+  chosenMaritalStatus;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
     { value: "1", viewValue: "Male" },
