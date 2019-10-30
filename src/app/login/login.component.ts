@@ -65,8 +65,9 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-  	console.log(this.loginFormGroup.value);
-  	this.registerService.validateLogin(this.loginFormGroup.value)
+  	const postdata = this.loginFormGroup.value;
+  	postdata["sessionid"] = new Date().valueOf();
+  	this.registerService.validateLogin(postdata)
     .subscribe(res => {
       if (res.status > 0) alert("Login Success!!!");
       if (res.status == 0) alert(res.message);
