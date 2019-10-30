@@ -43,7 +43,7 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterService } from "./services/register.service";
 
 const appRoutes: Routes = [
-  { path: "", component: WelcomeComponent },
+  { path: "", component: RegistrationComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "profile", component: ProfileComponent },
   { path: "register", component: RegistrationComponent },

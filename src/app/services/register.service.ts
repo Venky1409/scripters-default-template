@@ -35,4 +35,28 @@ export class RegisterService {
     return result;
   }
 
+  sendEmail(email): Observable<any> {
+    const result: Subject<any> = new Subject();
+    this.http.post(this.serviceUrl + "sendforgotemail", email).subscribe(
+    res => {
+      result.next(res);
+    },
+    err => {
+      result.error(err);
+    });
+    return result;
+  }
+
+  validateLogin(userDetails): Observable<any> {
+    const result: Subject<any> = new Subject();
+    this.http.post(this.serviceUrl + "validatelogin", userDetails).subscribe(
+    res => {
+      result.next(res);
+    },
+    err => {
+      result.error(err);
+    });
+    return result;
+  }
+
 }

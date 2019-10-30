@@ -292,7 +292,7 @@ export class RegistrationComponent implements OnInit {
     .subscribe(res => {
       console.log(res);
         if (res.status == 0) {
-          return { 'isEmailUnique': true };
+          return { isEmailUnique: true };
         } else {
           return null;
         }
