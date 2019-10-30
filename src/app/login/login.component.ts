@@ -19,6 +19,7 @@ import {
   ValidationErrors
 } from "@angular/forms";
 import { RegisterService } from '../services/register.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,7 @@ import { RegisterService } from '../services/register.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private _formBuilder: FormBuilder, private registerService: RegisterService) { }
+  constructor(private _formBuilder: FormBuilder, private registerService: RegisterService, private router: Router) { }
 
   loginFormGroup: FormGroup;
   forgotFormGroup: FormGroup;
@@ -80,7 +81,7 @@ export class LoginComponent implements OnInit {
   	console.log(this.forgotFormGroup.value);
   	this.registerService.sendEmail(this.loginFormGroup.value)
     .subscribe(res => {
-      if (res.status > 0) alert("Email Sent Successfully!!!");
+      if (res.status > 0) this.router.navigate(['/profile']);
       	if (res.status == 0) alert(res.message);
         }, error => {
           console.log(error);

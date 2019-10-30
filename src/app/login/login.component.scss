@@ -1,7 +1,7 @@
 .spacer {
   margin: 20px;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 .form-header {
   text-align: center;
@@ -44,6 +44,7 @@ button {
   cursor: pointer;
   position: relative;
   margin-right: 15px;
+  margin-top: 25px;
   margin-bottom: 10px;
 }
 ::ng-deep .mat-button-wrapper {
@@ -82,6 +83,14 @@ button {
   }
   .image-holder {
     display: none;
+  }
+  .registration-container {
+    height: 100vh;
+  }
+  .spacer {
+    margin: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
   }
 }
 @media (min-width: 1200px) {

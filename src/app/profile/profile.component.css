@@ -25,3 +25,36 @@
 .view {
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 3px 12px 0 rgba(0, 0, 0, 0.15);
 }
+.container-for-admin{
+  background-color: #eee!important;
+}
+
+.map-container{
+	overflow:hidden;
+	padding-bottom:56.25%;
+	position:relative;
+	height:0;
+}
+.main-container {
+  margin-left: 18rem !important;
+  padding-top: 3rem !important;
+}
+.map-container iframe{
+	left:0;
+	top:0;
+	height:100%;
+	width:100%;
+	position:absolute;
+	}
+.container {
+	min-height: 76vh;
+    margin-left: 270px;
+    margin-top: 60px;
+    padding-top: 15px;
+}
+@media (max-width: 767px) {
+  .main-container {
+	margin-left: 0rem!important;
+    margin-top: 0rem;
+  }
+}
