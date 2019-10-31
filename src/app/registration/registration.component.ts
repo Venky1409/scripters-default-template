@@ -1,25 +1,8 @@
-import {
-  Component,
-  OnInit,
-  ElementRef,
-  Renderer2,
-  TemplateRef,
-  ViewChild,
-  ViewContainerRef
-} from "@angular/core";
-import {
-  FormBuilder,
-  FormGroup,
-  Validators,
-  FormControl,
-  ValidatorFn,
-  AbstractControl,
-  NgModel,
-  FormArray,
-  ValidationErrors
-} from "@angular/forms";
+import { Component, OnInit, ElementRef, Renderer2, TemplateRef, ViewChild, ViewContainerRef } from "@angular/core";
+import { FormBuilder, FormGroup, Validators, FormControl, ValidatorFn, AbstractControl, NgModel, FormArray, ValidationErrors } from "@angular/forms";
 import * as moment from "moment";
 import { RegisterService } from '../services/register.service';
+
 @Component({
   selector: "app-registration",
   templateUrl: "./registration.component.html",
@@ -76,7 +59,7 @@ export class RegistrationComponent implements OnInit {
   // @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   @ViewChild("viewContainer", { read: ViewContainerRef, static: false })
   viewContainer: ViewContainerRef;
-  @ViewChild("template", { static: false }) template: TemplateRef<any>;
+  @ViewChild("template", { static: false }) template: TemplateRef < any > ;
   ngOnInit() {
     this.interests = [
       { id: 1, viewValue: "Cultural" },
@@ -263,7 +246,7 @@ export class RegistrationComponent implements OnInit {
     console.log(this.firstFormGroup);
     console.log(this.secondFormGroup);
     console.log(this.thirdFormGroup);
-    var postdata = this.firstFormGroup.value;
+    const postdata = this.firstFormGroup.value;
     postdata["mobile"] = this.firstFormGroup.value.mobile.replace(/\D+/g, "");
     postdata["spousedetails"] = this.secondFormGroup.value;
     postdata["referredby"] = this.thirdFormGroup.value.refererdetails;
@@ -275,12 +258,12 @@ export class RegistrationComponent implements OnInit {
     postdata["password"] = this.thirdFormGroup.value.password;
     console.log(postdata);
     this.registerService.registerUser(postdata)
-    .subscribe(res => {
-      console.log(res);
-      this.submitSuccess = true;
-        }, error => {
-          console.log(error);
-        });
+      .subscribe(res => {
+        console.log(res);
+        this.submitSuccess = true;
+      }, error => {
+        console.log(error);
+      });
   }
 
   retryReister() {
@@ -289,17 +272,17 @@ export class RegistrationComponent implements OnInit {
 
   isEmailUnique(control: FormControl) {
     this.registerService.validateEmail(control.value)
-    .subscribe(res => {
-      console.log(res);
+      .subscribe(res => {
+        console.log(res);
         if (res.status == 0) {
           return { isEmailUnique: true };
         } else {
           return null;
         }
-        }, error => {
-          console.log(error);
-          return null;
-        });
+      }, error => {
+        console.log(error);
+        return null;
+      });
     return null;
   }
 }
@@ -326,8 +309,8 @@ export function matchValues(
   return (control: AbstractControl): ValidationErrors | null => {
     return !!control.parent &&
       !!control.parent.value &&
-      control.value === control.parent.controls[matchTo].value
-      ? null
-      : { isMatching: false };
+      control.value === control.parent.controls[matchTo].value ?
+      null :
+      { isMatching: false };
   };
 }

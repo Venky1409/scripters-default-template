@@ -47,6 +47,18 @@ export class RegisterService {
     return result;
   }
 
+  getProfile(id): Observable<any> {
+    const result: Subject<any> = new Subject();
+    this.http.post(this.serviceUrl + "getprofiledetails", {'sessionid': id}).subscribe(
+    res => {
+      result.next(res);
+    },
+    err => {
+      result.error(err);
+    });
+    return result;
+  }
+
   validateLogin(userDetails): Observable<any> {
     const result: Subject<any> = new Subject();
     this.http.post(this.serviceUrl + "validatelogin", userDetails).subscribe(

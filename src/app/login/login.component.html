@@ -2,74 +2,55 @@
   <div class="image-holder">
     <img src="img/upasa_web.png" alt="" class="logo-image" />
   </div>
-
   <div class="stepper-container" *ngIf='isLogin'>
     <div id="registerationTitleContainer" class="form-header pt-5">
       <h3 class="registration-heading">Login</h3>
     </div>
     <form [formGroup]="loginFormGroup">
-         <div fxLayout="row" class="d-flex">
-            <div class="flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Email"
-                  formControlName="useremail"
-                  type="email"
-                  required
-                />
-              </mat-form-field>
-            </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="flex-fill">
+          <mat-form-field class="spacer">
+            <input matInput placeholder="Email" formControlName="useremail" type="email" required />
+          </mat-form-field>
         </div>
-         <div fxLayout="row" class="d-flex">
-            <div class="flex-fill">
-                  <mat-form-field class="spacer">
-                    <input
-                      matInput
-                      placeholder="Password"
-                      formControlName="userpassword"
-                      type="password"
-                      required
-                    />
-                  </mat-form-field>
-            </div>
-          </div>
-          <div class="d-flex justify-content-center d-buttons">
-          	<button mat-button class="submit-btn" (click)="forgotpwd()">
-              Forgot Password
-            </button>
-            <button mat-button class="submit-btn" (click)="login()">
-              Login
-            </button>
-          </div>
-      </form>
+      </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="flex-fill">
+          <mat-form-field class="spacer">
+            <input matInput placeholder="Password" formControlName="userpassword" type="password" required />
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="d-flex justify-content-center d-buttons">
+        <button mat-button class="submit-btn" (click)="forgotpwd()">
+          Forgot Password
+        </button>
+        <button mat-button class="submit-btn" (click)="login()">
+          Login
+        </button>
+      </div>
+    </form>
   </div>
   <div class="stepper-container" *ngIf='isForgot'>
     <div id="registerationTitleContainer" class="form-header pt-5">
       <h3 class="registration-heading">Forgot Password</h3>
     </div>
     <form [formGroup]="forgotFormGroup">
-         <div fxLayout="row" class="d-flex">
-            <div class="flex-fill">
-              <mat-form-field class="spacer">
-                <input
-                  matInput
-                  placeholder="Email"
-                  formControlName="useremail"
-                  type="email"
-                  required
-                />
-              </mat-form-field>
-            </div>
+      <div fxLayout="row" class="d-flex">
+        <div class="flex-fill">
+          <mat-form-field class="spacer">
+            <input matInput placeholder="Email" formControlName="useremail" type="email" required />
+          </mat-form-field>
         </div>
-          <div class="d-flex justify-content-center d-buttons">
-          	<button mat-button (click)="sendBack()">
-              <i class="material-icons">arrow_back</i> Back
-            </button>
-            <button mat-button class="submit-btn" (click)="sendMail()">
-              Submit
-            </button>
-          </div>
-      </form>
+      </div>
+      <div class="d-flex justify-content-center d-buttons">
+        <button mat-button (click)="sendBack()">
+          <i class="material-icons">arrow_back</i> Back
+        </button>
+        <button mat-button class="submit-btn" (click)="sendMail()">
+          Submit
+        </button>
+      </div>
+    </form>
   </div>
 </div>
