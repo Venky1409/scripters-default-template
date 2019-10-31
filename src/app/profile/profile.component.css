@@ -79,9 +79,53 @@
   content: ': ';
 }
 
+.flex-container {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  justify-content: space-between;
+}
+.flex-container > div {
+  padding: 20px;
+  font-size: 12px;
+  width: 32%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border: 1px solid #EDEDF2;
+  border-radius: 10px;
+  background: #fff;
+}
+.pf-content {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+::ng-deep .card.card-cascade {
+  border: none;
+  box-shadow: none;
+}
+::ng-deep .card-body {
+  padding: 0px;
+}
 @media (max-width: 767px) {
   .main-container {
     margin-left: 0rem !important;
     margin-top: 0rem;
+  }
+  .flex-container { 
+    display: block;
+  }
+  .flex-container > div {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .pf-label, .pf-child {
+    display: inline-block;
+    width: 65px;
+    text-align: center;
+  }
+  .pf-table {
+    display: block;
   }
 }

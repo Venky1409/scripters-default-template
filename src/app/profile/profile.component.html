@@ -5,12 +5,11 @@
   </header>
   <main class="main-container">
     <div class="container-fluid mt-5">
-      <div class="row">
-        <div class="col-md-4">
+      <div class="flex-container">
+        <div>
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
-            <div class="card">
-              <mdb-card-body _ngcontent-nde-c9="" class="card-body">
+              <mdb-card-body _ngcontent-nde-c9="">
                 <h4 _ngcontent-nde-c9="" class="card-title">Personal Details</h4>
                 <hr _ngcontent-nde-c9="">
                 <div class="row">
@@ -25,20 +24,18 @@
                   <div class="col-md-4 pf-label">Marital Status</div>
                   <div class="col-md-8">{{maritalStatus}}</div>
                   <div class="col-md-4 pf-label">Address</div>
-                  <div class="col-md-8">{{profileInfo.homeAddress.address1}}, {{profileInfo.homeAddress.address1}},
+                  <div class="col-md-8 pf-content">{{profileInfo.homeAddress.address1}}, {{profileInfo.homeAddress.address1}},
                     {{profileInfo.homeAddress.state}}, {{profileInfo.homeAddress.zipcode}}
                   </div>
                 </div>
               </mdb-card-body>
-            </div>
           </mdb-card>
           <!--/.Card-->
         </div>
-        <div class="col-md-4">
+        <div>
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
-            <div class="card">
-              <mdb-card-body _ngcontent-nde-c9="" class="card-body">
+              <mdb-card-body _ngcontent-nde-c9="">
                 <h4 _ngcontent-nde-c9="" class="card-title">Spouse Details</h4>
                 <hr _ngcontent-nde-c9="">
                 <div class="row">
@@ -56,38 +53,36 @@
                   <div class="col-md-8">{{profileInfo.spousedetails.occupation}}</div>
                   <div class="col-md-12 pf-label">Children</div>
                   <div class="col-md-12">
-                    <div class="row">
+                    <div class="row pf-table">
                       <div class="col-md-3 pf-label">SNo</div>
                       <div class="col-md-3 pf-label">Name</div>
                       <div class="col-md-3 pf-label">Gender</div>
                       <div class="col-md-3 pf-label">Grade</div>
                     </div>
-                    <div class="row" *ngFor="let child of profileInfo.spousedetails.childrenList; let i = index">
-                      <div class="col-md-3">
+                    <div class="row pf-table" *ngFor="let child of profileInfo.spousedetails.childrenList; let i = index">
+                      <div class="col-md-3 pf-child">
                         {{i+1}}
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-3 pf-child">
                         {{child.name}}
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-3 pf-child">
                         {{child.gender}}
                       </div>
-                      <div class="col-md-3">
+                      <div class="col-md-3 pf-child">
                         {{child.grade}}
                       </div>
                     </div>
                   </div>
                 </div>
               </mdb-card-body>
-            </div>
           </mdb-card>
           <!--/.Card-->
         </div>
-        <div class="col-md-4">
+        <div>
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
-            <div class="card">
-              <mdb-card-body _ngcontent-nde-c9="" class="card-body">
+              <mdb-card-body _ngcontent-nde-c9="">
                 <h4 _ngcontent-nde-c9="" class="card-title">Other Details</h4>
                 <hr _ngcontent-nde-c9="">
                 <div class="row">
@@ -118,7 +113,6 @@
                   </div>
                 </div>
               </mdb-card-body>
-            </div>
           </mdb-card>
           <!--/.Card-->
         </div>
