@@ -89,11 +89,13 @@ export class LoginComponent implements OnInit {
   }
 
   sendBack() {
+    this.forgotFormGroup.reset();
   	this.isForgot = false;
   	this.isLogin = true;
   }
 
   forgotpwd() {
+    this.loginFormGroup.reset();
   	this.isLogin = false;
   	this.isForgot = true;
   }
