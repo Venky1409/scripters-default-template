@@ -41,6 +41,7 @@ import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
 
 import { RegisterService } from "./services/register.service";
+import { AboutComponent } from './about/about.component';
 
 const appRoutes: Routes = [
   { path: "", component: RegistrationComponent },
@@ -48,7 +49,8 @@ const appRoutes: Routes = [
   { path: "profile", component: ProfileComponent },
   { path: "register", component: RegistrationComponent },
   { path: "sample", component: SampleComponent },
-  { path: "login", component: LoginComponent }
+  { path: "login", component: LoginComponent },
+  { path: "about", component: AboutComponent }
 ];
 
 @NgModule({
@@ -64,7 +66,8 @@ const appRoutes: Routes = [
     WelcomeComponent,
     DashboardComponent,
     LoginComponent,
-    PhoneMaskDirective
+    PhoneMaskDirective,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
