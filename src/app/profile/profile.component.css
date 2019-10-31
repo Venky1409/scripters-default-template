@@ -25,36 +25,63 @@
 .view {
   box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 3px 12px 0 rgba(0, 0, 0, 0.15);
 }
-.container-for-admin{
-  background-color: #eee!important;
+.container-for-admin {
+  background-color: #eee !important;
 }
 
-.map-container{
-	overflow:hidden;
-	padding-bottom:56.25%;
-	position:relative;
-	height:0;
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
 }
 .main-container {
   margin-left: 18rem !important;
   padding-top: 3rem !important;
+  min-height: 650px;
 }
-.map-container iframe{
-	left:0;
-	top:0;
-	height:100%;
-	width:100%;
-	position:absolute;
-	}
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
 .container {
-	min-height: 76vh;
-    margin-left: 270px;
-    margin-top: 60px;
-    padding-top: 15px;
+  min-height: 76vh;
+  margin-left: 270px;
+  margin-top: 60px;
+  padding-top: 15px;
 }
+
+.card-title {
+  color: #00a6eb !important;
+}
+
+#profileFooter {
+  background-color: #00a6eb !important;
+  color: #fff !important;
+}
+
+.pf-label {
+  font-weight: 500;
+  color: #000000ad
+}
+
+.pf-header-label {
+  /* text-align: center; */
+  font-weight: 500;
+  margin-top: 9px;
+  color: #000000ad
+}
+
+.pf-header-label::after{
+  content: ': ';
+}
+
 @media (max-width: 767px) {
   .main-container {
-	margin-left: 0rem!important;
+    margin-left: 0rem !important;
     margin-top: 0rem;
   }
 }

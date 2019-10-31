@@ -1,26 +1,32 @@
 <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
   <div class="container-fluid">
     <!-- Collapse -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <!-- Links -->
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <!-- Left -->
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active d-none d-lg-block">
+        <li class="nav-item d-none d-lg-block">
+          <a class="nav-link waves-effect white">Welcome Pavan</a>
+        </li>
+        <!-- <li class="nav-item active d-none d-lg-block">
           <a class="nav-link waves-effect" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item d-none d-lg-block">
           <a class="nav-link waves-effect">About</a>
+        </li> -->
+        <li class="nav-item d-lg-none d-xl-none">
+          <a class="nav-link waves-effect" routerLink="/profile" routerLinkActive="active"><i
+              class="fa fa-user mr-3"></i>Profile</a>
         </li>
         <li class="nav-item d-lg-none d-xl-none">
-          <a class="nav-link waves-effect" routerLink="/profile" routerLinkActive="active"><i class="fa fa-user mr-3"></i>Profile</a>
-        </li>
-        <li class="nav-item d-lg-none d-xl-none">
-          <a class="nav-link waves-effect" routerLink="/register" routerLinkActive="active"><i class="fa fa-user-plus mr-3"></i>Registration</a>
+          <a class="nav-link waves-effect" routerLink="/register" routerLinkActive="active"><i
+              class="fa fa-user-plus mr-3"></i>Registration</a>
         </li>
         <li class="nav-item d-lg-none d-xl-none">
           <a class="nav-link waves-effect"><i class="fa fa-handshake mr-3"></i>Manage Invites</a>
@@ -38,7 +44,7 @@
       <!-- Right -->
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
-          <a class="nav-link waves-effect" (click)="logout()">
+          <a class="nav-link waves-effect" id="linkLogOut" (click)="logout()">
             <i class="fa fa-user-circle mr-3"></i>Logout</a>
         </li>
       </ul>
