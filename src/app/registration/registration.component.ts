@@ -86,7 +86,11 @@ export class RegistrationComponent implements OnInit {
   @ViewChild("viewContainer", { read: ViewContainerRef, static: false })
   viewContainer: ViewContainerRef;
   @ViewChild("template", { static: false }) template: TemplateRef<any>;
+
   ngOnInit() {
+    if (sessionStorage.length) {
+      this.router.navigate(['/profile']);
+    }
     this.interests = [
       { id: 1, viewValue: "Cultural" },
       { id: 2, viewValue: "Sports" },

@@ -18,6 +18,9 @@ export class LoginComponent implements OnInit {
   isForgot;
 
   ngOnInit() {
+    if (sessionStorage.length) {
+      this.router.navigate(['/profile']);
+    }
     this.loginFormGroup = this._formBuilder.group({
       useremail: [
         "",
