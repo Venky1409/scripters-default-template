@@ -9,116 +9,151 @@
         <div>
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
-              <mdb-card-body _ngcontent-nde-c9="">
-                <h4 _ngcontent-nde-c9="" class="card-title">Personal Details</h4>
-                <hr _ngcontent-nde-c9="">
-                <div class="row">
-                  <div class="col-md-4 pf-label">Name</div>
-                  <div class="col-md-8">{{profileInfo.firstName}} {{profileInfo.lastName}}</div>
-                  <div class="col-md-4 pf-label">Email</div>
-                  <div class="col-md-8">{{profileInfo.email}}</div>
-                  <div class="col-md-4 pf-label">Mobile</div>
-                  <div class="col-md-8">{{profileInfo.personal_phoneno}}</div>
-                  <div class="col-md-4 pf-label">Date of Birth</div>
-                  <div class="col-md-8">{{profileInfo.personal_dateofbirth | date: 'MM/dd/yyyy'}}</div>
-                  <div class="col-md-4 pf-label">Marital Status</div>
-                  <div class="col-md-8">{{maritalStatus}}</div>
-                  <div class="col-md-4 pf-label">Occupation</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.personal_occupation}}</div>
-                  <div class="col-md-4 pf-label">Address</div>
-                  <div class="col-md-8 pf-content">{{profileInfo.personal_address1}}, {{profileInfo.personal_address2}},
-                    {{profileInfo.personal_city}}, {{profileInfo.personal_country}}, {{profileInfo.personal_zipcode}}
-                  </div>
+            <mdb-card-body _ngcontent-nde-c9="">
+              <h4 _ngcontent-nde-c9="" class="card-title">Personal Details</h4>
+              <hr _ngcontent-nde-c9="" />
+              <div class="row">
+                <div class="col-md-4 pf-label">Name</div>
+                <div class="col-md-8">
+                  {{ profileInfo.firstName }} {{ profileInfo.lastName }}
                 </div>
-              </mdb-card-body>
+                <div class="col-md-4 pf-label">Email</div>
+                <div class="col-md-8">{{ profileInfo.email }}</div>
+                <div class="col-md-4 pf-label">Mobile</div>
+                <div class="col-md-8">{{ profileInfo.personal_phoneno }}</div>
+                <div class="col-md-4 pf-label">Date of Birth</div>
+                <div class="col-md-8">
+                  {{ profileInfo.personal_dateofbirth | date: "MM/dd/yyyy" }}
+                </div>
+                <div class="col-md-4 pf-label">Marital Status</div>
+                <div class="col-md-8">{{ maritalStatus }}</div>
+                <div class="col-md-4 pf-label">Occupation</div>
+                <div class="col-md-8">
+                  {{ profileInfo.businessinfo.personal_occupation }}
+                </div>
+                <div class="col-md-4 pf-label">Address</div>
+                <div class="col-md-8 pf-content">
+                  {{ profileInfo.personal_address1 }},
+                  {{ profileInfo.personal_address2 }},
+                  {{ profileInfo.personal_city }},
+                  {{ profileInfo.personal_country }},
+                  {{ profileInfo.personal_zipcode }}
+                </div>
+              </div>
+            </mdb-card-body>
           </mdb-card>
           <!--/.Card-->
         </div>
-        <div *ngIf="maritalStatus == 'Married">
+        <div *ngIf="maritalStatus == Married">
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
-              <mdb-card-body _ngcontent-nde-c9="">
-                <h4 _ngcontent-nde-c9="" class="card-title">Spouse Details</h4>
-                <hr _ngcontent-nde-c9="">
-                <div class="row">
-                  <div class="col-md-4 pf-label">Name</div>
-                  <div class="col-md-8">
-                    {{profileInfo.personal_spousefirstname}} {{profileInfo.personal_spouselastname}}
+            <mdb-card-body _ngcontent-nde-c9="">
+              <h4 _ngcontent-nde-c9="" class="card-title">Spouse Details</h4>
+              <hr _ngcontent-nde-c9="" />
+              <div class="row">
+                <div class="col-md-4 pf-label">Name</div>
+                <div class="col-md-8">
+                  {{ profileInfo.personal_spousefirstname }}
+                  {{ profileInfo.personal_spouselastname }}
+                </div>
+                <div class="col-md-4 pf-label">Email</div>
+                <div class="col-md-8">
+                  {{ profileInfo.personal_spouseemail }}
+                </div>
+                <div class="col-md-4 pf-label">Mobile</div>
+                <div class="col-md-8">
+                  {{ profileInfo.personal_spousemobile }}
+                </div>
+                <div class="col-md-4 pf-label">Date of Birth</div>
+                <div class="col-md-8">
+                  {{ profileInfo.personal_spousedob | date: "MM/dd/yyyy" }}
+                </div>
+                <div class="col-md-12 pf-label">Children</div>
+                <div class="col-md-12">
+                  <div class="row pf-table">
+                    <div class="col-md-3 pf-label">SNo</div>
+                    <div class="col-md-3 pf-label">Name</div>
+                    <div class="col-md-3 pf-label">Gender</div>
+                    <div class="col-md-3 pf-label">Grade</div>
                   </div>
-                  <div class="col-md-4 pf-label">Email</div>
-                  <div class="col-md-8">{{profileInfo.personal_spouseemail}}</div>
-                  <div class="col-md-4 pf-label">Mobile</div>
-                  <div class="col-md-8">{{profileInfo.personal_spousemobile}}</div>
-                  <div class="col-md-4 pf-label">Date of Birth</div>
-                  <div class="col-md-8">{{profileInfo.personal_spousedob | date: 'MM/dd/yyyy'}}</div>
-                  <div class="col-md-12 pf-label">Children</div>
-                  <div class="col-md-12">
-                    <div class="row pf-table">
-                      <div class="col-md-3 pf-label">SNo</div>
-                      <div class="col-md-3 pf-label">Name</div>
-                      <div class="col-md-3 pf-label">Gender</div>
-                      <div class="col-md-3 pf-label">Grade</div>
+                  <div
+                    class="row pf-table"
+                    *ngFor="let child of profileInfo.family; let i = index"
+                  >
+                    <div class="col-md-3 pf-child">
+                      {{ i + 1 }}
                     </div>
-                    <div class="row pf-table" *ngFor="let child of profileInfo.family; let i = index">
-                      <div class="col-md-3 pf-child">
-                        {{i+1}}
-                      </div>
-                      <div class="col-md-3 pf-child">
-                        {{child.name}}
-                      </div>
-                      <div class="col-md-3 pf-child">
-                        {{child.gender}}
-                      </div>
-                      <div class="col-md-3 pf-child">
-                        {{child.grade}}
-                      </div>
+                    <div class="col-md-3 pf-child">
+                      {{ child.name }}
+                    </div>
+                    <div class="col-md-3 pf-child">
+                      {{ child.gender }}
+                    </div>
+                    <div class="col-md-3 pf-child">
+                      {{ child.grade }}
                     </div>
                   </div>
                 </div>
-              </mdb-card-body>
+              </div>
+            </mdb-card-body>
           </mdb-card>
           <!--/.Card-->
         </div>
         <div>
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
-              <mdb-card-body _ngcontent-nde-c9="">
-                <h4 _ngcontent-nde-c9="" class="card-title">Other Details</h4>
-                <hr _ngcontent-nde-c9="">
-                <div class="row">
-                  <div class="col-md-12 pf-header-label">Referral Details</div>
+            <mdb-card-body _ngcontent-nde-c9="">
+              <h4 _ngcontent-nde-c9="" class="card-title">Other Details</h4>
+              <hr _ngcontent-nde-c9="" />
+              <div class="row">
+                <div class="col-md-12 pf-header-label">Referral Details</div>
 
-                  <div class="col-md-4 pf-label">Name</div>
-                  <div class="col-md-8">{{profileInfo.referredby.referfirstname}}
-                    {{profileInfo.referredby.referlastname}}</div>
-                  <div class="col-md-4 pf-label">Mobile</div>
-                  <div class="col-md-8">{{profileInfo.referredby.referphone}}</div>
-
-                  <div class="col-md-12 pf-header-label">Business Info</div>
-
-                  <div class="col-md-4 pf-label">Name</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.personal_businessName}}</div>
-                  <div class="col-md-4 pf-label">Website</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.personal_businessurl}}</div>
-                  <div class="col-md-4 pf-label">Details</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.personal_businessdetails}}</div>
-
-                  <div class="col-md-4 pf-label">Interests</div>
-                  <div class="col-md-8">
-                    <span *ngFor="let item of profileInfo.intrests; let i = index">
-                      {{item.name}},
-                    </span>
-                  </div>
+                <div class="col-md-4 pf-label">Name</div>
+                <div class="col-md-8">
+                  {{ profileInfo.referredby.referfirstname }}
+                  {{ profileInfo.referredby.referlastname }}
                 </div>
-              </mdb-card-body>
+                <div class="col-md-4 pf-label">Mobile</div>
+                <div class="col-md-8">
+                  {{ profileInfo.referredby.referphone }}
+                </div>
+
+                <div class="col-md-12 pf-header-label">Business Info</div>
+
+                <div class="col-md-4 pf-label">Name</div>
+                <div class="col-md-8">
+                  {{ profileInfo.businessinfo.personal_businessName }}
+                </div>
+                <div class="col-md-4 pf-label">Website</div>
+                <div class="col-md-8">
+                  {{ profileInfo.businessinfo.personal_businessurl }}
+                </div>
+                <div class="col-md-4 pf-label">Details</div>
+                <div class="col-md-8">
+                  {{ profileInfo.businessinfo.personal_businessdetails }}
+                </div>
+
+                <div class="col-md-4 pf-label">Interests</div>
+                <div class="col-md-8">
+                  <span
+                    *ngFor="let item of profileInfo.interests; let i = index"
+                  >
+                    {{ item.name }},
+                  </span>
+                </div>
+              </div>
+            </mdb-card-body>
           </mdb-card>
           <!--/.Card-->
         </div>
       </div>
     </div>
   </main>
-  <footer id="profileFooter" class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-    <hr class="my-4">
+  <footer
+    id="profileFooter"
+    class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn"
+  >
+    <hr class="my-4" />
     <div class="footer-copyright py-3">
       © 2018 Copyright:
       <a href="" target="_blank"> Scripters.com </a>

@@ -1,7 +1,25 @@
-import { Component, OnInit, ElementRef, Renderer2, TemplateRef, ViewChild, ViewContainerRef } from "@angular/core";
-import { FormBuilder, FormGroup, Validators, FormControl, ValidatorFn, AbstractControl, NgModel, FormArray, ValidationErrors } from "@angular/forms";
+import {
+  Component,
+  OnInit,
+  ElementRef,
+  Renderer2,
+  TemplateRef,
+  ViewChild,
+  ViewContainerRef
+} from "@angular/core";
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormControl,
+  ValidatorFn,
+  AbstractControl,
+  NgModel,
+  FormArray,
+  ValidationErrors
+} from "@angular/forms";
 import * as moment from "moment";
-import { RegisterService } from '../services/register.service';
+import { RegisterService } from "../services/register.service";
 
 @Component({
   selector: "app-registration",
@@ -9,7 +27,11 @@ import { RegisterService } from '../services/register.service';
   styleUrls: ["./registration.component.scss"]
 })
 export class RegistrationComponent implements OnInit {
-  constructor(private _formBuilder: FormBuilder, private renderer: Renderer2, private registerService: RegisterService) {
+  constructor(
+    private _formBuilder: FormBuilder,
+    private renderer: Renderer2,
+    private registerService: RegisterService
+  ) {
     this.states = this.getStates();
   }
   selectedChild: number;
@@ -28,6 +50,7 @@ export class RegistrationComponent implements OnInit {
   childrenList: FormArray;
   children: Number[];
   submitSuccess: boolean = false;
+  isExistedEmail: boolean = false;
   maritalStatusList = [
     { name: "Married", value: "1" },
     { name: "single", value: "0" }
@@ -59,7 +82,7 @@ export class RegistrationComponent implements OnInit {
   // @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   @ViewChild("viewContainer", { read: ViewContainerRef, static: false })
   viewContainer: ViewContainerRef;
-  @ViewChild("template", { static: false }) template: TemplateRef < any > ;
+  @ViewChild("template", { static: false }) template: TemplateRef<any>;
   ngOnInit() {
     this.interests = [
       { id: 1, viewValue: "Cultural" },
@@ -257,13 +280,15 @@ export class RegistrationComponent implements OnInit {
     postdata["username"] = this.thirdFormGroup.value.username;
     postdata["password"] = this.thirdFormGroup.value.password;
     console.log(postdata);
-    this.registerService.registerUser(postdata)
-      .subscribe(res => {
+    this.registerService.registerUser(postdata).subscribe(
+      res => {
         console.log(res);
         this.submitSuccess = true;
-      }, error => {
+      },
+      error => {
         console.log(error);
-      });
+      }
+    );
   }
 
   retryReister() {
@@ -271,19 +296,20 @@ export class RegistrationComponent implements OnInit {
   }
 
   isEmailUnique(control: FormControl) {
-    this.registerService.validateEmail(control.value)
-      .subscribe(res => {
-        console.log(res);
-        if (res.status == 0) {
-          return { isEmailUnique: true };
+    this.registerService.validateEmail(control.value).subscribe(res => {
+      if (res.status === 0 && res.message === "Invalid Email Address") {
+        this.isExistedEmail = false;
+      } else {
+        if (res.status === 0 && res.message === "Email registered earlier ") {
+          this.isExistedEmail = true;
+          this.firstFormGroup.controls["userEmail"].setErrors({
+            incorrect: true
+          });
         } else {
-          return null;
+          this.isExistedEmail = false;
         }
-      }, error => {
-        console.log(error);
-        return null;
-      });
-    return null;
+      }
+    });
   }
 }
 
@@ -309,8 +335,8 @@ export function matchValues(
   return (control: AbstractControl): ValidationErrors | null => {
     return !!control.parent &&
       !!control.parent.value &&
-      control.value === control.parent.controls[matchTo].value ?
-      null :
-      { isMatching: false };
+      control.value === control.parent.controls[matchTo].value
+      ? null
+      : { isMatching: false };
   };
 }
