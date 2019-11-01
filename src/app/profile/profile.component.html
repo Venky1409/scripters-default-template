@@ -16,23 +16,25 @@
                   <div class="col-md-4 pf-label">Name</div>
                   <div class="col-md-8">{{profileInfo.firstName}} {{profileInfo.lastName}}</div>
                   <div class="col-md-4 pf-label">Email</div>
-                  <div class="col-md-8">{{profileInfo.userEmail}}</div>
+                  <div class="col-md-8">{{profileInfo.email}}</div>
                   <div class="col-md-4 pf-label">Mobile</div>
-                  <div class="col-md-8">{{profileInfo.mobile}}</div>
+                  <div class="col-md-8">{{profileInfo.personal_phoneno}}</div>
                   <div class="col-md-4 pf-label">Date of Birth</div>
-                  <div class="col-md-8">{{profileInfo.dateOfBirth | date: 'MM/dd/yyyy'}}</div>
+                  <div class="col-md-8">{{profileInfo.personal_dateofbirth | date: 'MM/dd/yyyy'}}</div>
                   <div class="col-md-4 pf-label">Marital Status</div>
                   <div class="col-md-8">{{maritalStatus}}</div>
+                  <div class="col-md-4 pf-label">Occupation</div>
+                  <div class="col-md-8">{{profileInfo.businessinfo.personal_occupation}}</div>
                   <div class="col-md-4 pf-label">Address</div>
-                  <div class="col-md-8 pf-content">{{profileInfo.homeAddress.address1}}, {{profileInfo.homeAddress.address1}},
-                    {{profileInfo.homeAddress.state}}, {{profileInfo.homeAddress.zipcode}}
+                  <div class="col-md-8 pf-content">{{profileInfo.personal_address1}}, {{profileInfo.personal_address2}},
+                    {{profileInfo.personal_city}}, {{profileInfo.personal_country}}, {{profileInfo.personal_zipcode}}
                   </div>
                 </div>
               </mdb-card-body>
           </mdb-card>
           <!--/.Card-->
         </div>
-        <div>
+        <div *ngIf="maritalStatus == 'Married">
           <!--Card-->
           <mdb-card cascade="true" narrower="true">
               <mdb-card-body _ngcontent-nde-c9="">
@@ -41,16 +43,14 @@
                 <div class="row">
                   <div class="col-md-4 pf-label">Name</div>
                   <div class="col-md-8">
-                    {{profileInfo.spousedetails.spouseFirstName}} {{profileInfo.spouseLastName}}
+                    {{profileInfo.personal_spousefirstname}} {{profileInfo.personal_spouselastname}}
                   </div>
                   <div class="col-md-4 pf-label">Email</div>
-                  <div class="col-md-8">{{profileInfo.spousedetails.spouseEmail}}</div>
+                  <div class="col-md-8">{{profileInfo.personal_spouseemail}}</div>
                   <div class="col-md-4 pf-label">Mobile</div>
-                  <div class="col-md-8">{{profileInfo.spousedetails.spouseMobile}}</div>
+                  <div class="col-md-8">{{profileInfo.personal_spousemobile}}</div>
                   <div class="col-md-4 pf-label">Date of Birth</div>
-                  <div class="col-md-8">{{profileInfo.spousedetails.spouseDOB | date: 'MM/dd/yyyy'}}</div>
-                  <div class="col-md-4 pf-label">Occupation</div>
-                  <div class="col-md-8">{{profileInfo.spousedetails.occupation}}</div>
+                  <div class="col-md-8">{{profileInfo.personal_spousedob | date: 'MM/dd/yyyy'}}</div>
                   <div class="col-md-12 pf-label">Children</div>
                   <div class="col-md-12">
                     <div class="row pf-table">
@@ -59,7 +59,7 @@
                       <div class="col-md-3 pf-label">Gender</div>
                       <div class="col-md-3 pf-label">Grade</div>
                     </div>
-                    <div class="row pf-table" *ngFor="let child of profileInfo.spousedetails.childrenList; let i = index">
+                    <div class="row pf-table" *ngFor="let child of profileInfo.family; let i = index">
                       <div class="col-md-3 pf-child">
                         {{i+1}}
                       </div>
@@ -89,26 +89,24 @@
                   <div class="col-md-12 pf-header-label">Referral Details</div>
 
                   <div class="col-md-4 pf-label">Name</div>
-                  <div class="col-md-8">{{profileInfo.referredby.referalFirstName}}
-                    {{profileInfo.referredby.referalLastName}}</div>
-                  <div class="col-md-4 pf-label">ID</div>
-                  <div class="col-md-8">{{profileInfo.referredby.referalId}}</div>
+                  <div class="col-md-8">{{profileInfo.referredby.referfirstname}}
+                    {{profileInfo.referredby.referlastname}}</div>
                   <div class="col-md-4 pf-label">Mobile</div>
-                  <div class="col-md-8">{{profileInfo.referredby.mobile}}</div>
+                  <div class="col-md-8">{{profileInfo.referredby.referphone}}</div>
 
                   <div class="col-md-12 pf-header-label">Business Info</div>
 
                   <div class="col-md-4 pf-label">Name</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.businessName}}</div>
+                  <div class="col-md-8">{{profileInfo.businessinfo.personal_businessName}}</div>
                   <div class="col-md-4 pf-label">Website</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.websiteUrl}}</div>
+                  <div class="col-md-8">{{profileInfo.businessinfo.personal_businessurl}}</div>
                   <div class="col-md-4 pf-label">Details</div>
-                  <div class="col-md-8">{{profileInfo.businessinfo.businessDetails}}</div>
+                  <div class="col-md-8">{{profileInfo.businessinfo.personal_businessdetails}}</div>
 
                   <div class="col-md-4 pf-label">Interests</div>
                   <div class="col-md-8">
-                    <span *ngFor="let item of profileInfo.areasofinterests; let i = index">
-                      {{item}},
+                    <span *ngFor="let item of profileInfo.intrests; let i = index">
+                      {{item.name}},
                     </span>
                   </div>
                 </div>
