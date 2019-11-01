@@ -39,6 +39,7 @@ import { NonauthheaderComponent } from "./nonauthheader/nonauthheader.component"
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
+import { LoaderComponent } from './loader/loader.component';
 
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from './about/about.component';
@@ -67,7 +68,8 @@ const appRoutes: Routes = [
     DashboardComponent,
     LoginComponent,
     PhoneMaskDirective,
-    AboutComponent
+    AboutComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

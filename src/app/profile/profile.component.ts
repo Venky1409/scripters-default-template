@@ -14,19 +14,30 @@ export class ProfileComponent implements OnInit {
   constructor(private toastrService: ToastrService, private router: Router, private registerService: RegisterService) { }
   sessionid;
   profileInfo;
-  maritalStatus;
+  isDataAvailale = false;
+  maritalStatus = "Single";
+  loading = false;
 
   ngOnInit() {
+    this.loading = true;
     if (!sessionStorage.length) {
       this.router.navigate(['/login']);
     } else {
     this.sessionid = sessionStorage.getItem('sessionid');
     this.registerService.getProfile(this.sessionid)
       .subscribe(res => {
-        this.profileInfo = res.userinfo;
-        this.maritalStatus = (this.profileInfo.personal_maritalstatus === "1") ? "Married" : "Single";
+        this.loading = false;
+        if (!res.userinfo) {
+          this.isDataAvailale = false;
+        } else {
+          this.isDataAvailale = true;
+          this.profileInfo = res.userinfo;
+          this.maritalStatus = (this.profileInfo && this.profileInfo.personal_maritalstatus === "1") ? "Married" : "Single";
+        }
       }, error => {
         console.log(error);
+        this.loading = false;
+        this.isDataAvailale = false;
       });
     }
   }

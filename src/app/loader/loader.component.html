@@ -1,0 +1,9 @@
+<div class="daf-loader is-overlay" [style.position]="position" [ngClass]="{ 'modal-background': position == 'fixed', 'is-in-front': isInFront }">
+    <div class="row is-fullheight has-layout-vertical-center {{ orientation == 'vertical' ? 'has-layout-horizontal-center' : '' }}">
+        <div class="has-text-centered" [ngClass]="{ 'box': position == 'fixed' }">
+            <div *ngIf="orientation == 'vertical'">
+                <div><img src="https://loading.io/spinners/microsoft/index.svg"></div><span>{{content}}</span>
+            </div>
+        </div>
+    </div>
+</div>

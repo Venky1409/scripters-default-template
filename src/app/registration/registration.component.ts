@@ -19,6 +19,7 @@ import {
   ValidationErrors
 } from "@angular/forms";
 import * as moment from "moment";
+import { Router } from '@angular/router';
 import { RegisterService } from "../services/register.service";
 
 @Component({
@@ -30,7 +31,8 @@ export class RegistrationComponent implements OnInit {
   constructor(
     private _formBuilder: FormBuilder,
     private renderer: Renderer2,
-    private registerService: RegisterService
+    private registerService: RegisterService,
+    private router: Router
   ) {
     this.states = this.getStates();
   }
@@ -294,8 +296,8 @@ export class RegistrationComponent implements OnInit {
     );
   }
 
-  retryReister() {
-    this.submitSuccess = false;
+  login() {
+    this.router.navigate(['/login']);
   }
 
   isEmailUnique(control: FormControl) {

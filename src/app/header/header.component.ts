@@ -15,7 +15,7 @@ export class HeaderComponent implements OnInit {
     private registerService: RegisterService
   ) {}
   sessionid: any;
-  profileInfo;
+  profileInfo = '';
 
   ngOnInit() {
     if (!sessionStorage.length) {
@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
       this.sessionid = sessionStorage.getItem("sessionid");
       this.registerService.getProfile(this.sessionid).subscribe(
         res => {
-          this.profileInfo = res.userinfo;
+          if (res.userinfo) this.profileInfo = res.userinfo.firstName;
         },
         error => {
           console.log(error);

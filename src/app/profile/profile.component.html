@@ -1,3 +1,4 @@
+<app-loader *ngIf="loading" [position]="'fixed'"></app-loader>
 <div class="container-for-admin">
   <header>
     <app-header></app-header>
@@ -5,9 +6,8 @@
   </header>
   <main class="main-container">
     <div class="container-fluid mt-5">
-      <div class="flex-container">
+      <div class="flex-container" *ngIf="isDataAvailale">
         <div>
-          <!--Card-->
           <mdb-card cascade="true" narrower="true">
             <mdb-card-body _ngcontent-nde-c9="">
               <h4 _ngcontent-nde-c9="" class="card-title">Personal Details</h4>
@@ -42,10 +42,8 @@
               </div>
             </mdb-card-body>
           </mdb-card>
-          <!--/.Card-->
         </div>
-        <div *ngIf="maritalStatus == Married">
-          <!--Card-->
+        <div *ngIf="maritalStatus == 'Married'">
           <mdb-card cascade="true" narrower="true">
             <mdb-card-body _ngcontent-nde-c9="">
               <h4 _ngcontent-nde-c9="" class="card-title">Spouse Details</h4>
@@ -97,10 +95,8 @@
               </div>
             </mdb-card-body>
           </mdb-card>
-          <!--/.Card-->
         </div>
         <div>
-          <!--Card-->
           <mdb-card cascade="true" narrower="true">
             <mdb-card-body _ngcontent-nde-c9="">
               <h4 _ngcontent-nde-c9="" class="card-title">Other Details</h4>
@@ -144,8 +140,10 @@
               </div>
             </mdb-card-body>
           </mdb-card>
-          <!--/.Card-->
         </div>
+      </div>
+      <div *ngIf="!isDataAvailale" class="no-data-section">
+        Hey there!!! No data found for this session.
       </div>
     </div>
   </main>
