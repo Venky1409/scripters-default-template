@@ -122,6 +122,22 @@
           <div formGroupName="homeAddress">
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
+                <mat-radio-group
+                  aria-label="Select an option"
+                  formControlName="userGender"
+                  [ngModelOptions]="{ standalone: true }"
+                  [(ngModel)]="chosenUserGender"
+                >
+                  <mat-radio-button
+                    class="spacer"
+                    *ngFor="let op of genders"
+                    [value]="op.value"
+                    name="opList"
+                    >{{ op.viewValue }}</mat-radio-button
+                  >
+                </mat-radio-group>
+              </div>
+              <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
                   <input
                     matInput
@@ -131,7 +147,7 @@
                   />
                 </mat-form-field>
               </div>
-              <div class="p-2 flex-fill">
+              <!-- <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
                   <input
                     matInput
@@ -139,7 +155,7 @@
                     formControlName="address2"
                   />
                 </mat-form-field>
-              </div>
+              </div> -->
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
                   <input

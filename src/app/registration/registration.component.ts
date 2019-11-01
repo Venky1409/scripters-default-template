@@ -56,6 +56,7 @@ export class RegistrationComponent implements OnInit {
     { name: "single", value: "0" }
   ];
   chosenMaritalStatus;
+  chosenUserGender;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
     { value: "1", viewValue: "Male" },
@@ -107,7 +108,7 @@ export class RegistrationComponent implements OnInit {
       maritalStatus: [""],
       homeAddress: this._formBuilder.group({
         address1: ["", Validators.required],
-        address2: [""],
+        userGender: ["", Validators.required],
         city: ["", Validators.required],
         state: ["", Validators.required],
         zipcode: ["", Validators.required]
@@ -279,6 +280,8 @@ export class RegistrationComponent implements OnInit {
     postdata["areasofinterests"] = this.thirdFormGroup.value.interestSelected;
     postdata["username"] = this.thirdFormGroup.value.username;
     postdata["password"] = this.thirdFormGroup.value.password;
+    postdata["userGender"] = this.firstFormGroup.value.homeAddress.userGender;
+
     console.log(postdata);
     this.registerService.registerUser(postdata).subscribe(
       res => {
