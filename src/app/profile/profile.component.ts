@@ -17,6 +17,9 @@ export class ProfileComponent implements OnInit {
   maritalStatus;
 
   ngOnInit() {
+    if (!sessionStorage.length) {
+      this.router.navigate(['/login']);
+    } else {
     this.profileInfo = {
       "firstName": "shiva",
       "lastName": "audam",
@@ -79,5 +82,6 @@ export class ProfileComponent implements OnInit {
       }, error => {
         console.log(error);
       });
+    }
   }
 }
