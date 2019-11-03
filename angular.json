@@ -43,17 +43,24 @@
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.scss",
               "src/css/mdb.min.css",
-              "src/css/style.min.css"
+              "src/css/style.min.css",
+              "src/css/owl.carousel.css",
+              "src/css/responsive-tabs.css",
+              "src/css/animate.css",
+              "src/css/settings.css",
+              "src/css/style1.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
               "node_modules/chart.js/dist/Chart.js",
               "node_modules/hammerjs/hammer.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "src/js/bootstrap.min.js",
+              "src/js/jquery1.12.4.jquery.min.js",
               "src/js/mdb.min.js",
               "src/js/popper.min.js",
               "src/js/jquery.steps.js",
-              "src/js/main.js"
+              "src/js/main.js",
+              "src/js/owl.carousel.min.js",
+              "src/js/script.js","src/js/wow.js"
             ]
           },
           "configurations": {

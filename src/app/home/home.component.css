@@ -1,3 +1,58 @@
 .main-content {
   height: 450px;
 }
+.card.card-cascade .view.gradient-card-header {
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.card.card-cascade h3,
+.card.card-cascade h4 {
+  margin-bottom: 0px;
+}
+
+.blue-gradient {
+  background: -webkit-linear-gradient(50deg, #45cafc, #303f9f);
+  background: linear-gradient(40deg, #45cafc, #4285f4);
+}
+
+.font-bold {
+  font-weight: 600;
+}
+
+.card.card-cascade {
+}
+.view {
+  box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.15), 0 3px 12px 0 rgba(0, 0, 0, 0.15);
+}
+.container-for-admin {
+  background-color: #eee !important;
+}
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.main-container {
+  margin-left: 18rem !important;
+  padding-top: 3rem !important;
+  min-height: 650px;
+}
+.loader {
+  animation: spinAround 500ms infinite linear;
+  border: 2px solid gainsboro;
+  border-radius: 290486px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em; }
+@media (max-width: 767px) {
+  .main-container {
+    margin-left: 0rem !important;
+    margin-top: 0rem;
+  }
+}
