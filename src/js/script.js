@@ -30,21 +30,21 @@ jQuery(document).ready(function () {
             $(window).on('scroll', function () {
                 if ($(this).scrollTop() > 70) { // Set position from top to add class
                     $('.navbar').addClass("shrink");
-                    $('.yellow .navbar-brand> img').attr('src', 'img/yellow-dark.png');
-                    $('.green .navbar-brand> img').attr('src', 'img/green-dark.png');
-                    $('.blue .navbar-brand> img').attr('src', 'img/blue-dark.png');
-                    $('.red .navbar-brand> img').attr('src', 'img/red-dark.png');
-                    $('.orange .navbar-brand> img').attr('src', 'img/orange-dark.png');
+                    $('.yellow .navbar-brand> img').attr('src', 'images/yellow-dark.png');
+                    $('.green .navbar-brand> img').attr('src', 'images/green-dark.png');
+                    $('.blue .navbar-brand> img').attr('src', 'images/blue-dark.png');
+                    $('.red .navbar-brand> img').attr('src', 'images/red-dark.png');
+                    $('.orange .navbar-brand> img').attr('src', 'images/orange-dark.png');
 
 
                 }
                 else {
                     $('.navbar').removeClass("shrink");
-                    $('.yellow .navbar-brand> img').attr('src', 'img/yellow-white.png');
-                    $('.green .navbar-brand> img').attr('src', 'img/green-white.png');
-                    $('.blue .navbar-brand> img').attr('src', 'img/blue-white.png');
-                    $('.red .navbar-brand> img').attr('src', 'img/red-white.png');
-                    $('.orange .navbar-brand> img').attr('src', 'img/orange-white.png');
+                    $('.yellow .navbar-brand> img').attr('src', 'images/yellow-white.png');
+                    $('.green .navbar-brand> img').attr('src', 'images/green-white.png');
+                    $('.blue .navbar-brand> img').attr('src', 'images/blue-white.png');
+                    $('.red .navbar-brand> img').attr('src', 'images/red-white.png');
+                    $('.orange .navbar-brand> img').attr('src', 'images/orange-white.png');
 
                 }
 
@@ -326,8 +326,8 @@ jQuery(document).ready(function () {
     // our team image slider
     var ourTeamSlider = {
         sliderCall: function () {
-            var imglider = ' #image-slider';
-            $(imglider).owlCarousel({
+            var imageSlider = ' #image-slider';
+            $(imageSlider).owlCarousel({
                 autoPlay: 3000, //Set AutoPlay to 3 seconds
                 items: 2,
                 itemsDesktop: [1199, 2],
@@ -497,7 +497,7 @@ jQuery(document).ready(function () {
             ,
             layer: 'overlayLayer'
             ,
-            content: '<div class="overlay_map"><img src="img/markeryellow.png" alt="marker"></div>'
+            content: '<div class="overlay_map"><img src="images/markeryellow.png" alt="marker"></div>'
             ,
             verticalAlign: 'top'
             ,
