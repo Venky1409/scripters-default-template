@@ -115,3 +115,8 @@ button {
   display: flex;
   align-items: center;
 }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+   ::ng-deep .mat-form-field {
+      line-height: 3.5 !important;
+    }
+}
