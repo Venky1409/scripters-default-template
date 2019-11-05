@@ -197,4 +197,8 @@ button {
    ::ng-deep .mat-form-field {
       line-height: 3.5 !important;
     }
+    ::ng-deep .mat-input-element {
+      position: relative !important;
+      top: -15px !important;
+    }
 }
