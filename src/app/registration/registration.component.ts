@@ -21,11 +21,17 @@ import {
 import * as moment from "moment";
 import { Router } from '@angular/router';
 import { RegisterService } from "../services/register.service";
+import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
+import { AppDateAdapter, APP_DATE_FORMATS } from './format-datepicker';
 
 @Component({
   selector: "app-registration",
   templateUrl: "./registration.component.html",
-  styleUrls: ["./registration.component.scss"]
+  styleUrls: ["./registration.component.scss"],
+  providers: [
+    { provide: DateAdapter, useClass: AppDateAdapter },
+    { provide: MAT_DATE_FORMATS, useValue: APP_DATE_FORMATS }
+  ]
 })
 export class RegistrationComponent implements OnInit {
   constructor(
@@ -110,7 +116,7 @@ export class RegistrationComponent implements OnInit {
         ])
       ],
       mobile: ["", Validators.required],
-      dateOfBirth: ["", [Validators.required, urlValidator]],
+      dateOfBirth: ["", Validators.required],
       maritalStatus: [""],
       homeAddress: this._formBuilder.group({
         address1: ["", Validators.required],
@@ -131,7 +137,7 @@ export class RegistrationComponent implements OnInit {
         ])
       ],
       spouseMobile: ["", Validators.required],
-      spouseDOB: ["", [Validators.required, urlValidator]],
+      spouseDOB: ["", Validators.required],
       occupation: [""],
       numberOfChildren: [""],
       childrenList: this._formBuilder.array([])

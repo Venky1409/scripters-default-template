@@ -21,7 +21,7 @@
 .mat-form-field {
   display: block;
 }
-::ng-deep .mat-error  {
+::ng-deep .mat-error {
   font-size: 7px;
   font-weight: inherit;
 }
@@ -42,9 +42,7 @@
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
   display: none;
 }
-::ng-deep
-  .mat-horizontal-stepper-header-container
-  .mat-stepper-horizontal-line {
+::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
   border-top-style: solid;
   height: 0;
   margin: 0 -16px;
@@ -106,10 +104,21 @@ button {
   margin-top: 30px;
   padding-left: 30px;
 }
+// ::ng-deep .mat-button-wrapper {
+//   display: none;
+// }
+::ng-deep .mat-calendar-period-button {
+  display: none !important;
+}
+::ng-deep .mat-calendar-spacer {
+  display: none;
+}
+::ng-deep .mat-calendar-controls {
+  display: block;
+  justify-content: space-between;
+}
 @media (max-width: 767px) {
-  ::ng-deep
-    .mat-horizontal-stepper-header-container
-    .mat-stepper-horizontal-line {
+  ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
     left: 14%;
   }
   ::ng-deep .mat-step-header {
@@ -131,7 +140,8 @@ button {
   ::ng-deep .business-section {
     display: block;
   }
-  ::ng-deep .col-6, .col-4 {
+  ::ng-deep .col-6,
+  .col-4 {
     max-width: 100%;
   }
   ::ng-deep .spouse-personal {
@@ -194,11 +204,11 @@ button {
   align-items: center;
 }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-   ::ng-deep .mat-form-field {
-      line-height: 3.5 !important;
-    }
-    ::ng-deep .mat-input-element {
-      position: relative !important;
-      top: -15px !important;
-    }
+  ::ng-deep .mat-form-field {
+    line-height: 3.5 !important;
+  }
+  ::ng-deep .mat-input-element {
+    position: relative !important;
+    top: -15px !important;
+  }
 }
