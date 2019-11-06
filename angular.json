@@ -50,14 +50,7 @@
             ],
             "scripts": [
               "node_modules/chart.js/dist/Chart.js",
-              "node_modules/hammerjs/hammer.min.js",
-              "src/js/bootstrap.min.js",
-              "src/js/jquery1.12.4.jquery.min.js",
-              "src/js/mdb.min.js",
-              "src/js/popper.min.js",
-              "src/js/jquery.steps.js",
-              "src/js/main.js",
-              "src/js/script.js"
+              "node_modules/hammerjs/hammer.min.js"
             ]
           },
           "configurations": {
