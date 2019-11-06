@@ -52,7 +52,8 @@ const appRoutes: Routes = [
   { path: "sample", component: SampleComponent },
   { path: "login", component: LoginComponent },
   { path: "about", component: AboutComponent },
-  { path: "home", component: HomeComponent }
+  { path: "home", component: HomeComponent },
+  { path: "services", component: WelcomeComponent }
 ];
 
 @NgModule({

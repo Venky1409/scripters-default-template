@@ -45,6 +45,7 @@
               "src/css/mdb.min.css",
               "src/css/style.min.css",
               "src/css/settings.css",
+              "src/css/upasa.css",
               "src/css/layers.css"
             ],
             "scripts": [
