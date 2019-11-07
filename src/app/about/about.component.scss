@@ -61,6 +61,10 @@
 .section2{
   padding: 100px 20px;
   background: #ccc;
+  .section:hover{
+    background: #f1c30f;
+    color: #fff;
+  }
   .section{
     h2{
     margin-bottom: 20px;
@@ -103,6 +107,93 @@
     margin-bottom: 50px;
   }
 }
+
+.section3{
+  padding: 100px 0;
+  .container{
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    .left-section {
+      visibility: visible;
+      animation-name: slideInLeft;
+      margin-left:0%;
+      .top-section{
+        margin-bottom:50px;
+        h2{
+          position: relative;
+          font-family: "Raleway", sans-serif;
+          line-height: 45px;
+          margin-left: 35px;
+        }
+        span{
+          display: table;
+          position: relative;
+          left: -53px;
+          top: 52px;
+          text-transform: uppercase;
+          -webkit-transform: rotate(-90deg);
+          -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+          color: #f1c30f;
+          font-family: "Raleway", sans-serif;
+          font-size: 14px;
+          word-spacing: 8px;
+        }
+        p{
+          font-size: 13px;
+          font-family: "Open Sans", sans-serif;
+          font-weight: 400;
+          line-height: 24px;
+        }
+      }
+    }
+    .right-section{
+      margin-right: 0%;
+      .owl-carousel{
+        .owl-wrapper-outer{
+          .owl-wrapper{
+            .owl-item{
+              img{
+              vertical-align: middle;
+              border-style: none;
+              }
+            }
+          }
+      }
+      }
+      .owl-controls{
+        position: absolute;
+        left: 6px;
+      }
+    }
+    }
+  }
+
+  .section4{
+    background: url(src/img/about-us4-bg.jpg) no-repeat fixed center;
+    background-size: cover;
+    padding: 120px 0;
+    .container{
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+      h3{
+        font-family: "Raleway", sans-serif;
+        color: #ffffff;
+        line-height: 45px;
+        font-size: 32px;
+      }  
+      p{
+        font-family: "Raleway", sans-serif;
+        color: #f1c30f;
+        margin-top: 8px;
+        font-weight: 400;
+      }
+    }
+  }
 @media (max-width: 767px) {
   .about-container {
 	margin-left: 0rem!important;
@@ -137,6 +228,31 @@
     margin-top:50px;
   }
 }
-
+.section3{
+  .container{
+    .left-section{
+      p{
+        margin-bottom: 50px !important;
+        text-align: center;
+      }
+    .top-section{
+    span{
+      -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    display: block;
+    position: static;
+    margin-bottom: 15px;
+    text-align: center;
+    }
+    h2{
+      font-weight: 100;
+      margin-left:0px;
+      text-align: center;
+    }
+  }
+}
+  }
+}
   
 }
