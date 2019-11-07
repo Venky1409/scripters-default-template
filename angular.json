@@ -65,7 +65,7 @@
               "src/js/jquery.fancybox.pack.js",
               "src/js/jquery.fancybox-thumbs.js",
               "src/js/wow.js",
-              "src/js/script.js",
+              "src/js/script.js"
             ]
           },
           "configurations": {

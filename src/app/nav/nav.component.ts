@@ -13,4 +13,7 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
+  navigate(url) {
+  	window.location.href = url;
+  }
 }
