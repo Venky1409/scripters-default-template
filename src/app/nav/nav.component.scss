@@ -1,7 +1,12 @@
-.about-section {
-  padding-top: 15rem;
+.navbar-nav {
+  -webkit-box-orient: horizontal !important;
+  display: block !important;
 }
-navbar .side-menu-button {
+.navbar {
+  position: fixed !important;
+  margin: 0px !important;
+}
+.navbar .side-menu-button {
     position: absolute !important;
     top: 35px !important;
     right: 50px !important;
@@ -19,7 +24,4 @@ navbar .side-menu-button {
   .nav {
     display: block;
   }
-}
-::ng-deep .navbar .nav li a {
-  color: black !important;
 }

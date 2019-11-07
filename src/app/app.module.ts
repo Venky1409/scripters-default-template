@@ -40,6 +40,9 @@ import { WelcomeComponent } from "./welcome/welcome.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
 import { LoaderComponent } from './loader/loader.component';
+import { NavbarComponent } from './nav/nav.component';
+import { EventsComponent } from './events/events.component';
+import { SocialComponent } from './social/social.component';
 
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from './about/about.component';
@@ -53,7 +56,9 @@ const appRoutes: Routes = [
   { path: "login", component: LoginComponent },
   { path: "about", component: AboutComponent },
   { path: "home", component: HomeComponent },
-  { path: "services", component: WelcomeComponent }
+  { path: "services", component: WelcomeComponent },
+  { path: "events", component: EventsComponent },
+  { path: "social", component: SocialComponent }
 ];
 
 @NgModule({
@@ -71,7 +76,10 @@ const appRoutes: Routes = [
     LoginComponent,
     PhoneMaskDirective,
     AboutComponent,
-    LoaderComponent
+    LoaderComponent,
+    NavbarComponent,
+    EventsComponent,
+    SocialComponent
   ],
   imports: [
     BrowserModule,

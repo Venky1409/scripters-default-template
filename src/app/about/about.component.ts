@@ -11,10 +11,9 @@ export class AboutComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
-  	if (!sessionStorage.length) {
-      this.router.navigate(['/login']);
-    }
-    //window.location.reload();
+  	// if (!sessionStorage.length) {
+   //    this.router.navigate(['/login']);
+   //  }
   }
 
 }

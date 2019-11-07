@@ -216,14 +216,6 @@ button {
     top: -15px !important;
   }
 }
-.navbar-nav {
-  -webkit-box-orient: horizontal !important;
-  display: block !important;
-}
-.navbar {
-  // position: fixed !important;
-  margin: 0px !important;
-}
 .navbar .side-menu-button {
     position: absolute !important;
     top: 35px !important;
@@ -243,6 +235,6 @@ button {
     display: block;
   }
 }
-.navbar .nav li a {
-  color: black;
+::ng-deep .navbar .nav li a {
+  color: black !important;
 }
