@@ -9,6 +9,7 @@
 }
 #registerationTitleContainer {
   padding-top: 30px !important;
+  // margin-top: 125px;
 }
 .stepper-container {
   background: white;
@@ -91,6 +92,10 @@ button {
     margin: 20px;
     margin-left: 40px;
     margin-right: 40px;
+  }
+  #registerationTitleContainer {
+    padding-top: 30px !important;
+    margin-top: 125px;
   }
 }
 @media (min-width: 1200px) {
