@@ -17,7 +17,7 @@ app.get("/test", function(req, res) {
 
 // Send all other requests to the Angular app
 app.get("*", (req, res) => {
-  res.sendfile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "dist/index.html"));
 });
 
 indexRouter.appRoute(app);
