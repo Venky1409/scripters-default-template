@@ -275,37 +275,40 @@ jQuery(document).ready(function () {
 
     // scrolling animation
     var scroll = {
-      onClickScroll: function () {
-          //scroll sections on clicking Links
-          $(".scroll").on('click', function (event) {
-              event.preventDefault();
-              $('html,body').animate({scrollTop: $(this.hash).offset().top}, 1000);
-          });
-      },
+        onClickScroll: function () {
+            //scroll sections on clicking Links
+            $(".scroll").on('click', function (event) {
+                event.preventDefault();
+
+                if (this.hash) {
+                    $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+                }
+            });
+        },
         // mouse wheel scroll
-       mouseWheelScroll: function () {
-           if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
-           window.onmousewheel = document.onmousewheel = wheel;
+        mouseWheelScroll: function () {
+            if (window.addEventListener) window.addEventListener('DOMMouseScroll', wheel, false);
+            window.onmousewheel = document.onmousewheel = wheel;
 
-           function wheel(event) {
-               var delta = 0;
-               if (event.wheelDelta) delta = event.wheelDelta / 120;
-               else if (event.detail) delta = -event.detail / 3;
+            function wheel(event) {
+                var delta = 0;
+                if (event.wheelDelta) delta = event.wheelDelta / 120;
+                else if (event.detail) delta = -event.detail / 3;
 
-               handle(delta);
-               if (event.preventDefault) event.preventDefault();
-               event.returnValue = false;
-           }
+                handle(delta);
+                if (event.preventDefault) event.preventDefault();
+                event.returnValue = false;
+            }
 
-           function handle(delta) {
-               var time = 500;
-               var distance = 500;
+            function handle(delta) {
+                var time = 500;
+                var distance = 500;
 
-               $('html, body').stop().animate({
-                   scrollTop: $(window).scrollTop() - (distance * delta)
-               }, time );
-           }
-       }
+                $('html, body').stop().animate({
+                    scrollTop: $(window).scrollTop() - (distance * delta)
+                }, time);
+            }
+        }
     };
     // calling scrolling animation
     scroll.onClickScroll();
@@ -317,7 +320,7 @@ jQuery(document).ready(function () {
         callTabs: function () {
             $(tabs).responsiveTabs({
                 animation: 'slide'
-            }, {'activate': '0'});
+            }, { 'activate': '0' });
         }
     };
     responsiveTabs.callTabs();
@@ -368,9 +371,9 @@ jQuery(document).ready(function () {
     // progress bar funtion
     function progressBars() {
         var progressBar = $('.bottom-section .progress .progress-bar');
-        progressBar.css({width: 0});
+        progressBar.css({ width: 0 });
         progressBar.each(function () {
-            $(this).animate({width: $(this).attr("aria-valuenow") + "%"}, 2000)
+            $(this).animate({ width: $(this).attr("aria-valuenow") + "%" }, 2000)
         });
 
 
@@ -413,8 +416,8 @@ jQuery(document).ready(function () {
                     $getAll();
                 }
                 else {
-//            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
-//            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
+                    //            $('.filter[filter-item="'+value+'"]').removeClass('hidden');
+                    //            $(".filter").not('.filter[filter-item="'+value+'"]').addClass('hidden');
                     var $load = $('#load');
                     $load.unbind();
                     $load.text('Load More....');
@@ -461,22 +464,22 @@ jQuery(document).ready(function () {
 
     }
     if ($(window).width() < 768) {
-    $('.vertical-heading').find('br').hide();
+        $('.vertical-heading').find('br').hide();
 
-    }else {
+    } else {
         $('.vertical-heading').find('br').show();
-        $('.tabs-bg').css({"min-height": $("#responsiveTabsDemo").find('img').height() + "px"});
-        $(window).on('resize',function () {
-            $('.tabs-bg').css({"min-height": $("#responsiveTabsDemo").find('img').height() + "px"});
+        $('.tabs-bg').css({ "min-height": $("#responsiveTabsDemo").find('img').height() + "px" });
+        $(window).on('resize', function () {
+            $('.tabs-bg').css({ "min-height": $("#responsiveTabsDemo").find('img').height() + "px" });
         });
 
     }
 
 
-    if($(window).width() < 768){
-        $('.tabs-bg').css({"min-height": "350px"});
-        $(window).on('resize',function () {
-            $('.tabs-bg').css({"min-height" : "350px"});
+    if ($(window).width() < 768) {
+        $('.tabs-bg').css({ "min-height": "350px" });
+        $(window).on('resize', function () {
+            $('.tabs-bg').css({ "min-height": "350px" });
         });
     }
     /* map */
@@ -506,43 +509,41 @@ jQuery(document).ready(function () {
     }
     /* map end*/
 
-//Contact Us
-    $("#submit_btn").click(function() {
-                //get input field values
-                var user_name       = $('input[name=name]').val();
-                var user_email      = $('input[name=email]').val();
-                var user_telephone      = $('input[name=phone]').val();
-                var user_subject      = $('input[name=subject]').val();
-                var user_message    = $('textarea[name=message]').val();
+    //Contact Us
+    $("#submit_btn").click(function () {
+        //get input field values
+        var user_name = $('input[name=name]').val();
+        var user_email = $('input[name=email]').val();
+        var user_telephone = $('input[name=phone]').val();
+        var user_subject = $('input[name=subject]').val();
+        var user_message = $('textarea[name=message]').val();
 
-                //simple validation at client's end
-                var post_data, output;
-                var proceed = true;
-                if(user_name==""){
-                        proceed = false;
-                }
-                if(user_email==""){
-                        proceed = false;
-                }
-                if(user_message=="") {
-                        proceed = false;
-                }
+        //simple validation at client's end
+        var post_data, output;
+        var proceed = true;
+        if (user_name == "") {
+            proceed = false;
+        }
+        if (user_email == "") {
+            proceed = false;
+        }
+        if (user_message == "") {
+            proceed = false;
+        }
 
-                //everything looks good! proceed...
-                if(proceed)
-                {
-                        //data to be sent to server
-                        post_data = {'userName':user_name, 'userEmail':user_email, 'userTelephone':user_telephone, 'userSubject':user_subject, 'userMessage':user_message};
+        //everything looks good! proceed...
+        if (proceed) {
+            //data to be sent to server
+            post_data = { 'userName': user_name, 'userEmail': user_email, 'userTelephone': user_telephone, 'userSubject': user_subject, 'userMessage': user_message };
 
-                        //Ajax post data to server
-                        $.post('contact.php', post_data, function(response){
+            //Ajax post data to server
+            $.post('contact.php', post_data, function (response) {
 
-                                //load json data from server and output message
-                if(response.type == 'error')
-                {
-                    output = '<div class="alert-danger" style="padding:10px; margin-bottom:25px;">'+response.text+'</div>';
-                }else{
-                    output = '<div class="alert-success" style="padding:10px; margin-bottom:25px;">'+response.text+'</div>';
+                //load json data from server and output message
+                if (response.type == 'error') {
+                    output = '<div class="alert-danger" style="padding:10px; margin-bottom:25px;">' + response.text + '</div>';
+                } else {
+                    output = '<div class="alert-success" style="padding:10px; margin-bottom:25px;">' + response.text + '</div>';
 
                     //reset values in all input fields
                     $('#form-elements input').val('');
@@ -550,15 +551,15 @@ jQuery(document).ready(function () {
                 }
 
                 $("#result").hide().html(output).slideDown();
-                        }, 'json');
+            }, 'json');
 
-                }
-        });
+        }
+    });
 
-        //reset previously set border colors and hide all message on .keyup()
-        $("#form-elements input, #form-elements textarea").keyup(function() {
-                $("#result").slideUp();
-        });
+    //reset previously set border colors and hide all message on .keyup()
+    $("#form-elements input, #form-elements textarea").keyup(function () {
+        $("#result").slideUp();
+    });
 
 
 
