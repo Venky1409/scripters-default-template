@@ -14,6 +14,7 @@ export class AboutComponent implements OnInit {
   	if (!sessionStorage.length) {
       this.router.navigate(['/login']);
     }
+    //window.location.reload();
   }
 
 }

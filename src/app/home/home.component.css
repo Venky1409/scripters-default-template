@@ -16,3 +16,12 @@
        padding-left: 0px !important; 
   }
 }
+@media (max-width: 767px) {
+  .navbar-header {
+       position: absolute;
+      top: 10px;
+  }
+  .nav {
+    display: block;
+  }
+}

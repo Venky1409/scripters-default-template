@@ -10,6 +10,7 @@ export class WelcomeComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  	//window.location.reload();
   }
 
 }

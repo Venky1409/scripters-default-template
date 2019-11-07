@@ -48,7 +48,7 @@ const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "profile", component: ProfileComponent },
-  { path: "register", component: HomeComponent },
+  { path: "register", component: RegistrationComponent },
   { path: "sample", component: SampleComponent },
   { path: "login", component: LoginComponent },
   { path: "about", component: AboutComponent },

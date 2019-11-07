@@ -152,9 +152,13 @@ button {
   }
 }
 @media (min-width: 1200px) {
-  ::ng-deep .container {
-    margin-top: 7%;
+  ::ng-deep .register-container {
+    margin-top: 8%;
     width: 70% !important;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
   }
   ::ng-deep .second-section {
     height: 325px;
@@ -211,4 +215,34 @@ button {
     position: relative !important;
     top: -15px !important;
   }
+}
+.navbar-nav {
+  -webkit-box-orient: horizontal !important;
+  display: block !important;
+}
+.navbar {
+  position: fixed !important;
+  margin: 0px !important;
+}
+.navbar .side-menu-button {
+    position: absolute !important;
+    top: 35px !important;
+    right: 50px !important;
+}
+@media (min-width: 1200px) {
+  .navbar, .page-footer {
+       padding-left: 0px !important; 
+  }
+}
+@media (max-width: 767px) {
+  .navbar-header {
+       position: absolute;
+      top: 10px;
+  }
+  .nav {
+    display: block;
+  }
+}
+.navbar .nav li a {
+  color: black;
 }
