@@ -46,6 +46,7 @@ import { SocialComponent } from './social/social.component';
 
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from './about/about.component';
+import { AuthnavComponent } from './authnav/authnav.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -79,7 +80,8 @@ const appRoutes: Routes = [
     LoaderComponent,
     NavbarComponent,
     EventsComponent,
-    SocialComponent
+    SocialComponent,
+    AuthnavComponent
   ],
   imports: [
     BrowserModule,

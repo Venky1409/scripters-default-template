@@ -1,0 +1,33 @@
+.navbar-nav {
+    -webkit-box-orient: horizontal !important;
+    display: block !important;
+  }
+  .navbar {
+    position: fixed !important;
+    margin: 0px !important;
+  }
+  .navbar .side-menu-button {
+    position: absolute !important;
+    top: 35px !important;
+    right: 50px !important;
+  }
+  .nav {
+    display: block !important;
+  }
+  @media (min-width: 1200px) {
+    .navbar,
+    .page-footer {
+      padding-left: 0px !important;
+    }
+  }
+  @media (max-width: 767px) {
+    .navbar-header {
+      position: absolute;
+      top: 10px;
+    }
+    .navbar.navbar-fixed-top {
+      height: 114px;
+      background: #fff;
+    }
+  }
+  
