@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   }
 
   navigate(url) {
-  	window.location.href = url;
+    window.location.href = url;
+    window.location.reload();
   }
 }
