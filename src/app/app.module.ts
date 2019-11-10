@@ -103,7 +103,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    RouterModule.forRoot(appRoutes, { useHash: true }),
+    RouterModule.forRoot(appRoutes, { useHash: false }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",
       timeOut: 0, // disable auto-dismiss
