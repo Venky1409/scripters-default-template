@@ -32,7 +32,7 @@ export class ProfileComponent implements OnInit {
         } else {
           this.isDataAvailale = true;
           this.profileInfo = res.userinfo;
-          this.maritalStatus = (this.profileInfo && this.profileInfo.personal_maritalstatus === "1") ? "Married" : "Single";
+          this.maritalStatus = (this.profileInfo && (this.profileInfo.personal_maritalstatus === "1" || this.profileInfo.personal_maritalstatus === "married")) ? "Married" : "Single";
         }
       }, error => {
         console.log(error);

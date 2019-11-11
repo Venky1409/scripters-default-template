@@ -60,8 +60,9 @@ export class RegistrationComponent implements OnInit {
   submitSuccess: boolean = false;
   isExistedEmail: boolean = false;
   maritalStatusList = [
-    { name: "Married", value: "1" },
-    { name: "single", value: "0" }
+    { name: "Married", value: "married" },
+    { name: "Single", value: "single" },
+    { name: "Divorced", value: "divorced" }
   ];
   chosenMaritalStatus;
   chosenUserGender;
@@ -167,7 +168,6 @@ export class RegistrationComponent implements OnInit {
         businessDetails: ["", Validators.required]
       }),
       interestSelected: ["", Validators.required],
-      username: ["", Validators.required],
       password: [
         "",
         Validators.compose([
@@ -207,15 +207,6 @@ export class RegistrationComponent implements OnInit {
       console.log("am here");
       this.childrenList.push(this.createChild());
     }
-    //this.addItem();
-
-    // const childRowsToAssign = this.selectedChild;
-    // this.viewContainer.clear();
-    // for (let i = 0; i < childRowsToAssign; i++) {
-    //   const template = this.template.createEmbeddedView(null);
-    //   console.log(template, "template");
-    //   this.viewContainer.insert(template);
-    // }
   }
   addItem(): void {
     this.childrenList = this.secondFormGroup.get("childrenList") as FormArray;
@@ -290,7 +281,6 @@ export class RegistrationComponent implements OnInit {
     postdata["businessinfo"] = this.thirdFormGroup.value.business;
     postdata["ownbusiness"] = this.ownBusiness;
     postdata["areasofinterests"] = this.thirdFormGroup.value.interestSelected;
-    postdata["username"] = this.thirdFormGroup.value.username;
     postdata["password"] = this.thirdFormGroup.value.password;
     postdata["userGender"] = this.firstFormGroup.value.homeAddress.userGender;
 

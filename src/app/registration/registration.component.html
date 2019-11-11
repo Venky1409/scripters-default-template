@@ -58,18 +58,6 @@
                 <mat-radio-button class="spacer" *ngFor="let op of maritalStatusList" [value]="op.value" name="opList">
                   {{ op.name }}</mat-radio-button>
               </mat-radio-group>
-              <!-- <mat-radio-group
-                aria-label="Select an option"
-                [ngModelOptions]="{ standalone: true }"
-                formControlName="maritalStatus"
-              >
-                <mat-radio-button class="spacer" value="1"
-                  >Married</mat-radio-button
-                >
-                <mat-radio-button class="spacer" value="2"
-                  >Single</mat-radio-button
-                >
-              </mat-radio-group> -->
             </div>
           </div>
           <div formGroupName="homeAddress">
@@ -86,15 +74,6 @@
                   <input matInput placeholder="Home Address1" formControlName="address1" required />
                 </mat-form-field>
               </div>
-              <!-- <div class="p-2 flex-fill">
-                <mat-form-field class="spacer">
-                  <input
-                    matInput
-                    placeholder="Home Address2"
-                    formControlName="address2"
-                  />
-                </mat-form-field>
-              </div> -->
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
                   <input matInput placeholder="City" formControlName="city" required />
@@ -128,7 +107,7 @@
           </div>
         </form>
       </mat-step>
-      <mat-step *ngIf="chosenMaritalStatus === '1'" [stepControl]="secondFormGroup">
+      <mat-step *ngIf="chosenMaritalStatus === 'married'" [stepControl]="secondFormGroup">
         <form [formGroup]="secondFormGroup">
           <div class="second-section">
             <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
@@ -323,11 +302,6 @@
                 </div>
               </div>
               <div fxLayout="column" class="d-flex col-6">
-                <div class="p-2 flex-fill">
-                  <mat-form-field class="spacer">
-                    <input matInput placeholder="Username" formControlName="username" required />
-                  </mat-form-field>
-                </div>
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
                     <input matInput placeholder="Password" formControlName="password" type="password" required />
