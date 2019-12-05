@@ -43,6 +43,7 @@ import { LoaderComponent } from './loader/loader.component';
 import { NavbarComponent } from './nav/nav.component';
 import { EventsComponent } from './events/events.component';
 import { SocialComponent } from './social/social.component';
+import { FooterComponent } from './footer/footer.component';
 
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from './about/about.component';
@@ -81,7 +82,8 @@ const appRoutes: Routes = [
     NavbarComponent,
     EventsComponent,
     SocialComponent,
-    AuthnavComponent
+    AuthnavComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
