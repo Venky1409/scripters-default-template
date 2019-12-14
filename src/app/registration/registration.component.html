@@ -33,7 +33,7 @@
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
                 <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="mobile" id="phone-number"
-                  maxlength="18" minlength="16" required />
+                  required />
               </mat-form-field>
               <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11
                 digits</mat-error>
@@ -61,7 +61,7 @@
             </div>
           </div>
           <div formGroupName="homeAddress">
-            <div fxLayout="row" class="d-flex">
+            <div fxLayout="row" class="d-flex group-section">
               <div class="p-2 flex-fill">
                 <mat-radio-group aria-label="Select an option" formControlName="userGender"
                   [ngModelOptions]="{ standalone: true }" [(ngModel)]="chosenUserGender">
@@ -132,7 +132,7 @@
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
                   <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="spouseMobile"
-                    id="phone-number" maxlength="18" minlength="16" required />
+                    id="phone-number" required />
                 </mat-form-field>
                 <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is
                   11
@@ -234,7 +234,7 @@
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
-                <span class="label">Do you own business</span>
+                <span class="label">Do you own business ?</span>
                 <mat-radio-group aria-label="Select an option" [ngModelOptions]="{ standalone: true }"
                   [(ngModel)]="ownBusiness" class="business-section">
                   <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>

@@ -21,6 +21,10 @@
 .mat-form-field {
   display: block;
 }
+.label {
+  color:gray !important;
+  font-size: 15px;
+}
 ::ng-deep .mat-error {
   font-size: 7px;
   font-weight: inherit;
@@ -163,6 +167,9 @@ button {
   ::ng-deep .second-section {
     height: 325px;
     overflow: auto;
+  }
+  ::ng-deep .group-section {
+    margin-left: -15px;
   }
 }
 
