@@ -40,10 +40,11 @@ export class NavbarComponent implements OnInit {
   }
 
   changeView(e) {
-    this.count = this.count + 1;
+    $('.sidenav').removeClass("mySideBar");
+    $(".side-menu-button").removeClass("actives");
     setTimeout(() => {
       $('.sidenav').toggleClass("mySideBar");
       $(".side-menu-button").toggleClass("actives");
-    }, 1000);
+    }, 2000);
   }
 }
