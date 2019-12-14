@@ -48,6 +48,7 @@ import { FooterComponent } from './footer/footer.component';
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from './about/about.component';
 import { AuthnavComponent } from './authnav/authnav.component';
+import { BlogsComponent } from './blogs/blogs.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "services", component: WelcomeComponent },
   { path: "events", component: EventsComponent },
-  { path: "social", component: SocialComponent }
+  { path: "social", component: SocialComponent },
+  { path: "blogs", component: BlogsComponent }
 ];
 
 @NgModule({
@@ -83,7 +85,8 @@ const appRoutes: Routes = [
     EventsComponent,
     SocialComponent,
     AuthnavComponent,
-    FooterComponent
+    FooterComponent,
+    BlogsComponent
   ],
   imports: [
     BrowserModule,
