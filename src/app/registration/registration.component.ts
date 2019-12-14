@@ -61,8 +61,7 @@ export class RegistrationComponent implements OnInit {
   isExistedEmail: boolean = false;
   maritalStatusList = [
     { name: "Married", value: "married" },
-    { name: "Single", value: "single" },
-    { name: "Divorced", value: "divorced" }
+    { name: "Single", value: "single" }
   ];
   chosenMaritalStatus;
   chosenUserGender;
