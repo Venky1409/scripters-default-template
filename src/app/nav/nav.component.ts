@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+declare var $: any;
 
 
 @Component({
@@ -10,6 +11,7 @@ export class NavbarComponent implements OnInit {
 
   url = "/assets/js/script.js";
   loadAPI: any;
+  count = 0;
 
   constructor() {
     this.loadScript();
@@ -19,6 +21,8 @@ export class NavbarComponent implements OnInit {
     this.loadAPI = new Promise(resolve => {
       this.loadScript();
     });
+    const hamburger = $(".side-menu-button");
+    hamburger.on("click", (evt) => this.changeView(evt) );
   }
 
   public loadScript() {
@@ -33,5 +37,13 @@ export class NavbarComponent implements OnInit {
   navigate(url) {
     window.location.href = url;
     window.location.reload();
+  }
+
+  changeView(e) {
+    this.count = this.count + 1;
+    setTimeout(() => {
+      $('.sidenav').toggleClass("mySideBar");
+      $(".side-menu-button").toggleClass("actives");
+    }, 1000);
   }
 }
