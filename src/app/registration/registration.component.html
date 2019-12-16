@@ -244,7 +244,7 @@
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
                   <input matInput type="text" placeholder="Contact Phone" formControlName="referalMobile" appPhoneMask
-                    id="phone-number" maxlength="18" minlength="16" required />
+                    id="phone-number" required />
                 </mat-form-field>
                 <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is
                   11
