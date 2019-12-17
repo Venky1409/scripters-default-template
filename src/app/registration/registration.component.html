@@ -281,7 +281,7 @@
             </div>
             <div fxLayout="row" class="d-flex">
               <div fxLayout="column" formGroupName="business" fxLayoutAlign="start start" class="d-flex col-6">
-                <div *ngIf="ownBusiness === 'Y'" class="col-12">
+                <div *ngIf="ownBusiness === 'Y'" class="col-12 dynamic-colms">
                   <div class="p-2 flex-fill">
                     <mat-form-field class="spacer">
                       <input matInput placeholder="Business Name" formControlName="businessName" required />
@@ -301,7 +301,7 @@
                   </div>
                 </div>
               </div>
-              <div fxLayout="column" class="d-flex col-6">
+              <div fxLayout="column" class="d-flex col-6 user-fields">
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
                     <input matInput placeholder="Password" formControlName="password" type="password" required />
