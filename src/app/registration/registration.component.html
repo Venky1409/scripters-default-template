@@ -63,11 +63,18 @@
           <div formGroupName="homeAddress">
             <div fxLayout="row" class="d-flex group-section">
               <div class="p-2 flex-fill">
-                <mat-radio-group aria-label="Select an option" formControlName="userGender"
+                <!-- <mat-radio-group aria-label="Select an option" formControlName="userGender"
                   [ngModelOptions]="{ standalone: true }" [(ngModel)]="chosenUserGender">
                   <mat-radio-button class="spacer" *ngFor="let op of genders" [value]="op.value" name="opList">
                     {{ op.viewValue }}</mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group> -->
+                <mat-form-field class="spacer">
+                  <mat-select required formControlName="userGender" id="userGender" placeholder="Select Gender">
+                    <mat-option *ngFor="let data of genders; let i = index" [value]="genders[i].value">
+                      {{ genders[i].viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
@@ -234,12 +241,19 @@
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
-                <span class="label">Do you own business ?</span>
+                <!-- <span class="label">Do you own business ?</span>
                 <mat-radio-group aria-label="Select an option" [ngModelOptions]="{ standalone: true }"
                   [(ngModel)]="ownBusiness" class="business-section">
                   <mat-radio-button class="spacer" value="Y">Yes</mat-radio-button>
                   <mat-radio-button class="spacer" value="N">No</mat-radio-button>
-                </mat-radio-group>
+                </mat-radio-group> -->
+                <mat-form-field class="spacer">
+                  <mat-select required [(ngModel)]="ownBusiness" [ngModelOptions]="{ standalone: true }" placeholder="Do you own business ?">
+                    <mat-option *ngFor="let data of businessInfo; let i = index" [value]="businessInfo[i].value">
+                      {{ businessInfo[i].viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">

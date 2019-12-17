@@ -165,6 +165,10 @@ button {
   .success-text {
     height: 100vh;
   }
+  .stepper-container {
+    position: relative;
+    left: 2%;
+  }
 }
 @media (min-width: 1200px) {
   ::ng-deep .register-container {
@@ -179,9 +183,9 @@ button {
     height: 325px;
     overflow: auto;
   }
-  ::ng-deep .group-section {
+  /*::ng-deep .group-section {
     margin-left: -15px;
-  }
+  }*/
 }
 
 ::ng-deep .mainContainer {

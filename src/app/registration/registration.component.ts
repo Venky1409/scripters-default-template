@@ -70,6 +70,10 @@ export class RegistrationComponent implements OnInit {
     { value: "1", viewValue: "Male" },
     { value: "0", viewValue: "Female" }
   ];
+  businessInfo = [
+    { value: "Y", viewValue: "Yes" },
+    { value: "N", viewValue: "No" }
+  ];
   occupations = [
     { value: "employed", viewValue: "Employed" },
     { value: "home-maker", viewValue: "Home Maker" }
