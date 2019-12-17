@@ -19,10 +19,10 @@ import {
   ValidationErrors
 } from "@angular/forms";
 import * as moment from "moment";
-import { Router } from '@angular/router';
+import { Router } from "@angular/router";
 import { RegisterService } from "../services/register.service";
-import { DateAdapter, MAT_DATE_FORMATS } from '@angular/material/core';
-import { AppDateAdapter, APP_DATE_FORMATS } from './format-datepicker';
+import { DateAdapter, MAT_DATE_FORMATS } from "@angular/material/core";
+import { AppDateAdapter, APP_DATE_FORMATS } from "./format-datepicker";
 
 @Component({
   selector: "app-registration",
@@ -42,6 +42,7 @@ export class RegistrationComponent implements OnInit {
   ) {
     this.states = this.getStates();
   }
+  position = "before";
   selectedChild: number;
   occupation: String;
   gender: String;
@@ -59,6 +60,7 @@ export class RegistrationComponent implements OnInit {
   children: Number[];
   submitSuccess: boolean = false;
   isExistedEmail: boolean = false;
+  showBusinessFields: boolean;
   maritalStatusList = [
     { name: "Married", value: "married" },
     { name: "Single", value: "single" }
@@ -99,8 +101,9 @@ export class RegistrationComponent implements OnInit {
 
   ngOnInit() {
     if (sessionStorage.length) {
-      this.router.navigate(['/profile']);
+      this.router.navigate(["/profile"]);
     }
+    this.showBusinessFields = false;
     this.interests = [
       { id: 1, viewValue: "Cultural" },
       { id: 2, viewValue: "Sports" },
@@ -121,7 +124,7 @@ export class RegistrationComponent implements OnInit {
       ],
       mobile: ["", Validators.required],
       dateOfBirth: ["", Validators.required],
-      maritalStatus: [""],
+      maritalStatus: ["", Validators.required],
       homeAddress: this._formBuilder.group({
         address1: ["", Validators.required],
         userGender: ["", Validators.required],
@@ -155,14 +158,7 @@ export class RegistrationComponent implements OnInit {
     this.thirdFormGroup = this._formBuilder.group({
       refererdetails: this._formBuilder.group({
         referalFirstName: ["", Validators.required],
-        referalLastName: ["", Validators.required],
-        referalId: [
-          "",
-          Validators.compose([
-            Validators.required,
-            Validators.pattern("^[0-9a-zA-Z]+$")
-          ])
-        ]
+        referalLastName: ["", Validators.required]
       }),
       referalMobile: ["", Validators.required],
       business: this._formBuilder.group({
@@ -189,9 +185,11 @@ export class RegistrationComponent implements OnInit {
           ),
           matchValues("password")
         ])
-      ],
-      interest: ["", Validators.required]
+      ]
     });
+    this.thirdFormGroup.get("business")["controls"].businessName.disable();
+    this.thirdFormGroup.get("business")["controls"].websiteUrl.disable();
+    this.thirdFormGroup.get("business")["controls"].businessDetails.disable();
     this.enableSecondStep = true;
   }
   createChild(): FormGroup {
@@ -209,6 +207,17 @@ export class RegistrationComponent implements OnInit {
     for (let i = 0; i < this.children.length; i++) {
       console.log("am here");
       this.childrenList.push(this.createChild());
+    }
+  }
+  businessChecked(event) {
+    if (event === "Y") {
+      this.thirdFormGroup.get("business")["controls"].businessName.enable();
+      this.thirdFormGroup.get("business")["controls"].websiteUrl.enable();
+      this.thirdFormGroup.get("business")["controls"].businessDetails.enable();
+    } else {
+      this.thirdFormGroup.get("business")["controls"].businessName.disable();
+      this.thirdFormGroup.get("business")["controls"].websiteUrl.disable();
+      this.thirdFormGroup.get("business")["controls"].businessDetails.disable();
     }
   }
   addItem(): void {
@@ -288,19 +297,21 @@ export class RegistrationComponent implements OnInit {
     postdata["userGender"] = this.firstFormGroup.value.homeAddress.userGender;
 
     console.log(postdata);
-    this.registerService.registerUser(postdata).subscribe(
-      res => {
-        console.log(res);
-        this.submitSuccess = true;
-      },
-      error => {
-        console.log(error);
-      }
-    );
+    if (this.thirdFormGroup.valid) {
+      this.registerService.registerUser(postdata).subscribe(
+        res => {
+          console.log(res);
+          this.submitSuccess = true;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 
   login() {
-    this.router.navigate(['/login']);
+    this.router.navigate(["/login"]);
   }
 
   isEmailUnique(control: FormControl) {

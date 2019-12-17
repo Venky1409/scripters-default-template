@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from "@angular/common/http";
 import { ToastrModule, ToastContainerModule } from "ngx-toastr";
 import { RouterModule, Routes } from "@angular/router";
 import { UserIdleModule } from "angular-user-idle";
@@ -39,16 +39,17 @@ import { NonauthheaderComponent } from "./nonauthheader/nonauthheader.component"
 import { WelcomeComponent } from "./welcome/welcome.component";
 import { DashboardComponent } from "./dashboard/dashboard.component";
 import { LoginComponent } from "./login/login.component";
-import { LoaderComponent } from './loader/loader.component';
-import { NavbarComponent } from './nav/nav.component';
-import { EventsComponent } from './events/events.component';
-import { SocialComponent } from './social/social.component';
-import { FooterComponent } from './footer/footer.component';
+import { LoaderComponent } from "./loader/loader.component";
+import { NavbarComponent } from "./nav/nav.component";
+import { EventsComponent } from "./events/events.component";
+import { SocialComponent } from "./social/social.component";
+import { FooterComponent } from "./footer/footer.component";
 
 import { RegisterService } from "./services/register.service";
-import { AboutComponent } from './about/about.component';
-import { AuthnavComponent } from './authnav/authnav.component';
-import { BlogsComponent } from './blogs/blogs.component';
+import { AboutComponent } from "./about/about.component";
+import { AuthnavComponent } from "./authnav/authnav.component";
+import { BlogsComponent } from "./blogs/blogs.component";
+import { MatTooltipModule } from "@angular/material/tooltip";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -108,6 +109,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatTooltipModule,
     RouterModule.forRoot(appRoutes, { useHash: false }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",

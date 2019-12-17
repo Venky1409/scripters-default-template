@@ -14,38 +14,75 @@
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput placeholder=" First Name" formControlName="firstName" required />
+                <input
+                  matInput
+                  placeholder=" First Name"
+                  formControlName="firstName"
+                  required
+                />
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput placeholder="Last Name " formControlName="lastName" required />
+                <input
+                  matInput
+                  placeholder="Last Name "
+                  formControlName="lastName"
+                  required
+                />
               </mat-form-field>
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput placeholder="Email" formControlName="userEmail" type="email" required />
+                <input
+                  matInput
+                  placeholder="Email"
+                  formControlName="userEmail"
+                  type="email"
+                  required
+                />
               </mat-form-field>
-              <mat-error *ngIf="isExistedEmail">Email id already registered</mat-error>
+              <mat-error *ngIf="isExistedEmail"
+                >Email id already registered</mat-error
+              >
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="mobile" id="phone-number"
-                  required />
+                <input
+                  matInput
+                  type="text"
+                  placeholder="Phone"
+                  appPhoneMask
+                  formControlName="mobile"
+                  id="phone-number"
+                  required
+                />
               </mat-form-field>
-              <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11
-                digits</mat-error>
+              <mat-error *ngIf="firstFormGroup.get('phone')?.invalid"
+                >First digit should be 1 if the phone number is 11
+                digits</mat-error
+              >
             </div>
           </div>
           <div fxLayout="row" class="d-flex">
             <div class="p-2 flex-fill" id="dateOfBirthDatePicker">
               <mat-form-field class="spacer">
-                <input matInput [matDatepicker]="personalDoBPicker" placeholder="Birth Date"
-                  formControlName="dateOfBirth" required (click)="personalDoBPicker.open()" (keydown)="(false)"
-                  (focus)="personalDoBPicker.open()" />
-                <mat-datepicker-toggle matSuffix [for]="personalDoBPicker"></mat-datepicker-toggle>
+                <input
+                  matInput
+                  [matDatepicker]="personalDoBPicker"
+                  placeholder="Birth Date"
+                  formControlName="dateOfBirth"
+                  required
+                  (click)="personalDoBPicker.open()"
+                  (keydown)="(false)"
+                  (focus)="personalDoBPicker.open()"
+                />
+                <mat-datepicker-toggle
+                  matSuffix
+                  [for]="personalDoBPicker"
+                ></mat-datepicker-toggle>
                 <mat-datepicker touchUi #personalDoBPicker></mat-datepicker>
                 <!-- <mat-error *ngIf="DateOfBirth.errors?.urlValid">
                   <sup>Age should be minimum 16 years</sup>
@@ -53,10 +90,20 @@
               </mat-form-field>
             </div>
             <div class="p-2 flex-fill">
-              <mat-radio-group aria-label="Select an option" formControlName="maritalStatus"
-                [ngModelOptions]="{ standalone: true }" [(ngModel)]="chosenMaritalStatus">
-                <mat-radio-button class="spacer" *ngFor="let op of maritalStatusList" [value]="op.value" name="opList">
-                  {{ op.name }}</mat-radio-button>
+              <mat-radio-group
+                aria-label="Select an option"
+                formControlName="maritalStatus"
+                [ngModelOptions]="{ standalone: true }"
+                [(ngModel)]="chosenMaritalStatus"
+              >
+                <mat-radio-button
+                  class="spacer"
+                  *ngFor="let op of maritalStatusList"
+                  [value]="op.value"
+                  name="opList"
+                >
+                  {{ op.name }}</mat-radio-button
+                >
               </mat-radio-group>
             </div>
           </div>
@@ -69,8 +116,16 @@
                     {{ op.viewValue }}</mat-radio-button>
                 </mat-radio-group> -->
                 <mat-form-field class="spacer">
-                  <mat-select required formControlName="userGender" id="userGender" placeholder="Select Gender">
-                    <mat-option *ngFor="let data of genders; let i = index" [value]="genders[i].value">
+                  <mat-select
+                    required
+                    formControlName="userGender"
+                    id="userGender"
+                    placeholder="Select Gender"
+                  >
+                    <mat-option
+                      *ngFor="let data of genders; let i = index"
+                      [value]="genders[i].value"
+                    >
                       {{ genders[i].viewValue }}
                     </mat-option>
                   </mat-select>
@@ -78,20 +133,38 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Home Address1" formControlName="address1" required />
+                  <input
+                    matInput
+                    placeholder="Home Address1"
+                    formControlName="address1"
+                    required
+                  />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="City" formControlName="city" required />
+                  <input
+                    matInput
+                    placeholder="City"
+                    formControlName="city"
+                    required
+                  />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <mat-select required formControlName="state" id="states" placeholder="Select State">
-                    <mat-option *ngFor="let state of states; let i = index" [value]="states[i].id">
+                  <mat-select
+                    required
+                    formControlName="state"
+                    id="states"
+                    placeholder="Select State"
+                  >
+                    <mat-option
+                      *ngFor="let state of states; let i = index"
+                      [value]="states[i].id"
+                    >
                       {{ states[i].name }}
                     </mat-option>
                   </mat-select>
@@ -99,8 +172,14 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Zipcode" type="number" formControlName="zipcode" required
-                    maxlength="8" />
+                  <input
+                    matInput
+                    placeholder="Zipcode"
+                    type="number"
+                    formControlName="zipcode"
+                    required
+                    maxlength="8"
+                  />
                 </mat-form-field>
               </div>
             </div>
@@ -114,52 +193,100 @@
           </div>
         </form>
       </mat-step>
-      <mat-step *ngIf="chosenMaritalStatus === 'married'" [stepControl]="secondFormGroup">
+      <mat-step
+        *ngIf="chosenMaritalStatus === 'married'"
+        [stepControl]="secondFormGroup"
+      >
         <form [formGroup]="secondFormGroup">
           <div class="second-section">
             <!-- <ng-template matStepLabel>Fill out your Spouse Details</ng-template> -->
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Spouse First Name" formControlName="spouseFirstName" required />
+                  <input
+                    matInput
+                    placeholder="Spouse First Name"
+                    formControlName="spouseFirstName"
+                    required
+                  />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Spouse Last Name " formControlName="spouseLastName" required />
+                  <input
+                    matInput
+                    placeholder="Spouse Last Name "
+                    formControlName="spouseLastName"
+                    required
+                  />
                 </mat-form-field>
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput placeholder="Email" formControlName="spouseEmail" type="email" required />
+                  <input
+                    matInput
+                    placeholder="Email"
+                    formControlName="spouseEmail"
+                    type="email"
+                    required
+                  />
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="spouseMobile"
-                    id="phone-number" required />
+                  <input
+                    matInput
+                    type="text"
+                    placeholder="Phone"
+                    appPhoneMask
+                    formControlName="spouseMobile"
+                    id="phone-number"
+                    required
+                  />
                 </mat-form-field>
-                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is
-                  11
-                  digits</mat-error>
+                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid"
+                  >First digit should be 1 if the phone number is 11
+                  digits</mat-error
+                >
               </div>
             </div>
-            <div fxLayout="row wrap" fxLayoutAlign="flex-start" class="spouse-personal">
+            <div
+              fxLayout="row wrap"
+              fxLayoutAlign="flex-start"
+              class="spouse-personal"
+            >
               <div class="p-2 flex-fill col-4">
                 <mat-form-field class="spacer">
-                  <input matInput [matDatepicker]="spouseDoBPicker" placeholder="Birth Date"
-                    formControlName="spouseDOB" required (click)="spouseDoBPicker.open()" (keydown)="(false)"
-                    (focus)="spouseDoBPicker.open()" />
-                  <mat-datepicker-toggle matSuffix [for]="spouseDoBPicker"></mat-datepicker-toggle>
+                  <input
+                    matInput
+                    [matDatepicker]="spouseDoBPicker"
+                    placeholder="Birth Date"
+                    formControlName="spouseDOB"
+                    required
+                    (click)="spouseDoBPicker.open()"
+                    (keydown)="(false)"
+                    (focus)="spouseDoBPicker.open()"
+                  />
+                  <mat-datepicker-toggle
+                    matSuffix
+                    [for]="spouseDoBPicker"
+                  ></mat-datepicker-toggle>
                   <mat-datepicker touchUi #spouseDoBPicker></mat-datepicker>
                 </mat-form-field>
               </div>
               <div class="p-2 flex-fill col-4">
                 <mat-form-field>
-                  <mat-select placeholder="occupation" [(ngModel)]="occupation" formControlName="occupation">
-                    <mat-option *ngFor="let occupation of occupations" [value]="occupation.value">
+                  <mat-select
+                    placeholder="occupation"
+                    [(ngModel)]="occupation"
+                    formControlName="occupation"
+                  >
+                    <mat-option
+                      *ngFor="let occupation of occupations"
+                      [value]="occupation.value"
+                    >
                       {{ occupation.viewValue }}
                     </mat-option>
                   </mat-select>
@@ -167,9 +294,16 @@
               </div>
               <div class="p-2 flex-fill col-4">
                 <mat-form-field>
-                  <mat-select placeholder="Child" [(ngModel)]="selectedChild" formControlName="numberOfChildren"
-                    (ngModelChange)="onChildSelection()">
-                    <mat-option *ngFor="let child of childs" [value]="child.value">
+                  <mat-select
+                    placeholder="Child"
+                    [(ngModel)]="selectedChild"
+                    formControlName="numberOfChildren"
+                    (ngModelChange)="onChildSelection()"
+                  >
+                    <mat-option
+                      *ngFor="let child of childs"
+                      [value]="child.value"
+                    >
                       {{ child.viewValue }}
                     </mat-option>
                   </mat-select>
@@ -177,14 +311,24 @@
               </div>
             </div>
             <ng-container #viewContainer></ng-container>
-            <div fxLayout="row wrap" *ngFor="
+            <div
+              fxLayout="row wrap"
+              *ngFor="
                 let child of secondFormGroup.get('childrenList')['controls'];
                 let i = index
-              " class="d-flex" formArrayName="childrenList">
+              "
+              class="d-flex"
+              formArrayName="childrenList"
+            >
               <div [formGroupName]="i" class="d-flex">
                 <div class="p-2 flex-fill col-4">
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Child Name" formControlName="name" required />
+                    <input
+                      matInput
+                      placeholder="Child Name"
+                      formControlName="name"
+                      required
+                    />
                   </mat-form-field>
                 </div>
                 <div class="p-2 flex-fill col-4">
@@ -198,7 +342,12 @@
                 </div>
                 <div class="p-2 flex-fill col-4">
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Grade" formControlName="grade" required />
+                    <input
+                      matInput
+                      placeholder="Grade"
+                      formControlName="grade"
+                      required
+                    />
                   </mat-form-field>
                 </div>
               </div>
@@ -222,12 +371,22 @@
               <div fxLayout="row" class="d-flex">
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Reference First Name" formControlName="referalFirstName" required />
+                    <input
+                      matInput
+                      placeholder="Reference First Name"
+                      formControlName="referalFirstName"
+                      required
+                    />
                   </mat-form-field>
                 </div>
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Reference Last Name " formControlName="referalLastName" required />
+                    <input
+                      matInput
+                      placeholder="Reference Last Name "
+                      formControlName="referalLastName"
+                      required
+                    />
                   </mat-form-field>
                 </div>
                 <!-- <div class="p-2 flex-fill">
@@ -248,8 +407,18 @@
                   <mat-radio-button class="spacer" value="N">No</mat-radio-button>
                 </mat-radio-group> -->
                 <mat-form-field class="spacer">
-                  <mat-select required [(ngModel)]="ownBusiness" [ngModelOptions]="{ standalone: true }" placeholder="Do you own business ?">
-                    <mat-option *ngFor="let data of businessInfo; let i = index" [value]="businessInfo[i].value">
+                  <mat-select
+                    required
+                    [(ngModel)]="ownBusiness"
+                    [ngModelOptions]="{ standalone: true }"
+					placeholder="Do you own business ?"
+					(ngModelChange)="businessChecked($event)"
+					
+                  >
+                    <mat-option
+                      *ngFor="let data of businessInfo; let i = index"
+                      [value]="businessInfo[i].value"
+                    >
                       {{ businessInfo[i].viewValue }}
                     </mat-option>
                   </mat-select>
@@ -257,24 +426,39 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="text" placeholder="Contact Phone" formControlName="referalMobile" appPhoneMask
-                    id="phone-number" required />
+                  <input
+                    matInput
+                    type="text"
+                    placeholder="Contact Phone"
+                    formControlName="referalMobile"
+                    appPhoneMask
+                    id="phone-number"
+                    required
+                  />
                 </mat-form-field>
-                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is
-                  11
-                  digits</mat-error>
+                <mat-error *ngIf="firstFormGroup.get('phone')?.invalid"
+                  >First digit should be 1 if the phone number is 11
+                  digits</mat-error
+                >
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
               <div class="p-2 flex-fill">
                 <mat-list-item class="primary-imenu-item" role="listitem">
                   <mat-form-field class="select-form">
-                    <mat-select placeholder="Area of interests" formControlName="interestSelected" class="filter-select"
-                      multiple>
+                    <mat-select
+                      placeholder="Area of interests"
+                      formControlName="interestSelected"
+                      class="filter-select"
+                      multiple
+                    >
                       <mat-option disabled="disabled" class="filter-option">
                         <!--<mat-option (click)="selectAll(yearSelect, years)" #checkAll> Select All-->
                       </mat-option>
-                      <mat-option *ngFor="let interest of interests" [value]="interest.viewValue">
+                      <mat-option
+                        *ngFor="let interest of interests"
+                        [value]="interest.viewValue"
+                      >
                         {{ interest.viewValue }}
                       </mat-option>
                     </mat-select>
@@ -294,44 +478,84 @@
               </div>
             </div>
             <div fxLayout="row" class="d-flex">
-              <div fxLayout="column" formGroupName="business" fxLayoutAlign="start start" class="d-flex col-6">
+              <div
+                fxLayout="column"
+                formGroupName="business"
+                fxLayoutAlign="start start"
+                class="d-flex col-6"
+              >
                 <div *ngIf="ownBusiness === 'Y'" class="col-12 dynamic-colms">
                   <div class="p-2 flex-fill">
                     <mat-form-field class="spacer">
-                      <input matInput placeholder="Business Name" formControlName="businessName" required />
+                      <input
+                        matInput
+                        placeholder="Business Name"
+                        formControlName="businessName"
+                        required
+                      />
                     </mat-form-field>
                   </div>
                   <div class="p-2 flex-fill">
                     <mat-form-field class="spacer">
-                      <input matInput placeholder="Website Url" formControlName="websiteUrl" required />
+                      <input
+                        matInput
+                        placeholder="Website Url"
+                        formControlName="websiteUrl"
+                        required
+                      />
                     </mat-form-field>
                   </div>
                   <div class="p-2 flex-fill">
                     <mat-form-field>
                       <mat-label class="label">Business Details</mat-label>
-                      <textarea matInput formControlName="businessDetails" cdkTextareaAutosize
-                        #autosize="cdkTextareaAutosize" cdkAutosizeMinRows="1" cdkAutosizeMaxRows="5"></textarea>
+                      <textarea
+                        matInput
+                        formControlName="businessDetails"
+                        cdkTextareaAutosize
+                        #autosize="cdkTextareaAutosize"
+                        cdkAutosizeMinRows="1"
+                        cdkAutosizeMaxRows="5"
+                      ></textarea>
                     </mat-form-field>
                   </div>
                 </div>
               </div>
+
               <div fxLayout="column" class="d-flex col-6 user-fields">
-                <div class="p-2 flex-fill">
+                <div
+                  class="p-2 flex-fill"
+                  class="example-tooltip-host"
+                  matTooltip="Minimum length of the password is 8, should contain uppercase and lower case letters, shoul contain letters and numbers, should contain special charactes"
+                  [matTooltipPosition]="position"
+                >
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Password" formControlName="password" type="password" required />
+                    <input
+                      matInput
+                      placeholder="Password"
+                      formControlName="password"
+                      type="password"
+                      required
+                    />
                   </mat-form-field>
-                  <mat-error *ngIf="firstFormGroup.get('password')?.invalid">Min 8 chars with atleast 1 letter, number
-                    and special
-                    char</mat-error>
+                  <mat-error *ngIf="firstFormGroup.get('password')?.invalid"
+                    >Min 8 chars with atleast 1 letter, number and special
+                    char</mat-error
+                  >
                 </div>
                 <div class="p-2 flex-fill">
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Confirm Password" formControlName="cpassword" type="password"
-                      required />
+                    <input
+                      matInput
+                      placeholder="Confirm Password"
+                      formControlName="cpassword"
+                      type="password"
+                      required
+                    />
                   </mat-form-field>
-                  <mat-error *ngIf="firstFormGroup.get('cpassword')?.invalid">Min 8 chars with atleast 1 letter, number
-                    and special
-                    char</mat-error>
+                  <mat-error *ngIf="firstFormGroup.get('cpassword')?.invalid"
+                    >Min 8 chars with atleast 1 letter, number and special
+                    char</mat-error
+                  >
                 </div>
               </div>
             </div>

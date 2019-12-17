@@ -51,7 +51,9 @@
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
   display: none;
 }
-::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
+::ng-deep
+  .mat-horizontal-stepper-header-container
+  .mat-stepper-horizontal-line {
   border-top-style: solid;
   height: 0;
   margin: 0 -16px;
@@ -133,7 +135,9 @@ button {
 }
 
 @media (max-width: 767px) {
-  ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
+  ::ng-deep
+    .mat-horizontal-stepper-header-container
+    .mat-stepper-horizontal-line {
     left: 14%;
   }
   ::ng-deep .mat-step-header {
@@ -271,3 +275,7 @@ button {
 ::ng-deep .navbar .nav li a {
   color: black !important;
 }
+// .example-tooltip-host {
+//   display: inline-flex;
+//   align-items: center;
+// }
