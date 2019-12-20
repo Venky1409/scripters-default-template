@@ -20,7 +20,7 @@ export class PhoneMaskDirective {
 
   @HostListener('keydown', ['$event'])
   keydown(event) {
-    event.target.maxLength = 18;
+    event.target.maxLength = 14;
     event.target.minLength = 14;
   }
   
@@ -39,15 +39,18 @@ export class PhoneMaskDirective {
     } else if (newVal.length <= 10) {
       newVal = newVal.replace(/^(\d{0,3})(\d{0,3})(\d{0,4})/, '($1)-$2-$3');
     } else {
-      newVal = newVal.substring(0, 11);
-      let numVal = newVal.substring(0, 1);
-      if (numVal == 1) {
-        newVal = newVal.replace(/^(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,4})/, '$1 ($2)-$3-$4');
-      } else {
-        newVal = newVal.substring(0, 10);
-        newVal = newVal.replace(/^(\d{1,3})(\d{1,3})(\d{1,4})/, '($1)-$2-$3');
-      }
+      newVal = newVal.replace(/^(\d{1,3})(\d{1,3})(\d{1,4})/, '($1)-$2-$3');
     }
+    // else {
+    //   newVal = newVal.substring(0, 11);
+    //   let numVal = newVal.substring(0, 1);
+    //   if (numVal == 1) {
+    //     newVal = newVal.replace(/^(\d{0,1})(\d{0,3})(\d{0,3})(\d{0,4})/, '$1 ($2)-$3-$4');
+    //   } else {
+    //     newVal = newVal.substring(0, 10);
+    //     newVal = newVal.replace(/^(\d{1,3})(\d{1,3})(\d{1,4})/, '($1)-$2-$3');
+    //   }
+    // }
     this.ngControl.valueAccessor.writeValue(newVal);
   }
 }
