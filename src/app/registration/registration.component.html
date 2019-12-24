@@ -575,9 +575,12 @@
       <!-- <button type="button" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button> -->
-      <h3>User Registration Successfull</h3>
-      <button (click)="login()" class="register-back">
+      <h3>{{regMessage}}</h3>
+      <button (click)="login()" class="register-back" *ngIf="showLoginButton">
         Login
+      </button>
+      <button (click)="back()" class="register-back" *ngIf="!showLoginButton">
+        Back
       </button>
     </div>
   </div>

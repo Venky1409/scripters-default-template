@@ -59,6 +59,8 @@ export class RegistrationComponent implements OnInit {
   childrenList: FormArray;
   children: Number[];
   submitSuccess: boolean = false;
+  regMessage: String;
+  showLoginButton: boolean = false;
   isExistedEmail: boolean = false;
   showBusinessFields: boolean;
   maritalStatusList = [
@@ -296,14 +298,18 @@ export class RegistrationComponent implements OnInit {
     postdata["password"] = this.thirdFormGroup.value.password;
     postdata["userGender"] = this.firstFormGroup.value.homeAddress.userGender;
 
-    console.log(postdata);
     if (this.thirdFormGroup.valid) {
       this.registerService.registerUser(postdata).subscribe(
         res => {
-          console.log(res);
           this.submitSuccess = true;
-        },
-        error => {
+          if (res.status) {
+            this.regMessage = 'User registration was successfull.';
+            this.showLoginButton = true;
+          } else {
+            this.regMessage = 'Error occured, please try again after sometime.';
+            this.showLoginButton = false;
+          }
+        }, error => {
           console.log(error);
         }
       );
@@ -312,6 +318,10 @@ export class RegistrationComponent implements OnInit {
 
   login() {
     this.router.navigate(["/login"]);
+  }
+
+  back() {
+    this.submitSuccess = false;
   }
 
   isEmailUnique(control: FormControl) {

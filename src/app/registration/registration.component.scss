@@ -1,3 +1,24 @@
+// To remove arrow icons in input type number field
+// We have input type number for Zipcode input
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+// To hide stepper header dot icons
+::ng-deep .mat-horizontal-stepper-header-container {
+  display: none !important;
+}
+
+// To decrease width of the multi-select select box options
+// we have used muliti-select for areas-of-interests input
+::ng-deep .cdk-overlay-pane {
+  min-width: auto !important;
+}
+
 .spacer {
   margin: 20px;
 }
@@ -51,9 +72,7 @@
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
   display: none;
 }
-::ng-deep
-  .mat-horizontal-stepper-header-container
-  .mat-stepper-horizontal-line {
+::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
   border-top-style: solid;
   height: 0;
   margin: 0 -16px;
@@ -135,9 +154,7 @@ button {
 }
 
 @media (max-width: 767px) {
-  ::ng-deep
-    .mat-horizontal-stepper-header-container
-    .mat-stepper-horizontal-line {
+  ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
     left: 14%;
   }
   ::ng-deep .mat-step-header {
