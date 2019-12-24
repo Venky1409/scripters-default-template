@@ -6,7 +6,7 @@
   </header>
   <main class="main-container">
     <div class="container-fluid ml-3 mt-5">
-      <div class="flex-container" *ngIf="isDataAvailale">
+      <div class="flex-container" *ngIf="isDataAvailale" [class.just-end]="maritalStatus == 'Married'">
         <div>
           <mdb-card cascade="true" narrower="true">
             <mdb-card-body _ngcontent-nde-c9="">
