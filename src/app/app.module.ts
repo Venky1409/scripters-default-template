@@ -51,6 +51,8 @@ import { AuthnavComponent } from "./authnav/authnav.component";
 import { BlogsComponent } from "./blogs/blogs.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
 
+import { NumberDirective } from './registration/numbers-only.directive';
+
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
   { path: "dashboard", component: DashboardComponent },
@@ -68,6 +70,7 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
+    NumberDirective,
     AppComponent,
     HomeComponent,
     HeaderComponent,
