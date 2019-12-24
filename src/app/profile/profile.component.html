@@ -5,7 +5,7 @@
     <app-sidebar></app-sidebar>
   </header>
   <main class="main-container">
-    <div class="container-fluid mt-5">
+    <div class="container-fluid ml-3 mt-5">
       <div class="flex-container" *ngIf="isDataAvailale">
         <div>
           <mdb-card cascade="true" narrower="true">
@@ -27,10 +27,10 @@
                 </div>
                 <div class="col-md-4 pf-label">Marital Status</div>
                 <div class="col-md-8">{{ maritalStatus }}</div>
-                <div class="col-md-4 pf-label">Occupation</div>
+                <!-- <div class="col-md-4 pf-label">Occupation</div>
                 <div class="col-md-8">
                   {{ profileInfo.businessinfo.personal_occupation }}
-                </div>
+                </div> -->
                 <div class="col-md-4 pf-label">Address</div>
                 <div class="col-md-8 pf-content">
                   {{ profileInfo.personal_address1 }},
