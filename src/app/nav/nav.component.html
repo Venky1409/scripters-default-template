@@ -4,7 +4,8 @@
         <a class="side-menu-button"> <i class="fa fa-bars" aria-hidden="true"></i> </a>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/"><img class="image-fluid" src="images/upasa_web_logo.jpg" style="width: 230px;" alt="logo"></a>
+            <a class="navbar-brand" href="/"><img class="image-fluid" src="images/upasa_web_logo.jpg"
+                    style="width: 230px;" alt="logo"></a>
         </div>
 
         <div class="container">
@@ -15,12 +16,22 @@
                     <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li>
                     <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
                     <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
-                    <li><a routerLink="/social" routerLinkActive="active" class="scroll">Gallery</a></li>
+                    <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
+                            data-toggle="dropdown">Gallery</a>
+                        <ul class="dropdown-menu">
+                            <li><a routerLink="/gallery/images">Photos</a></li>
+                            <li><a routerLink="/gallery/videos">Videos</a></li>
+                            <!-- <li><a routerLink="/gallery">Media</a></li> -->
+                        </ul>
+                    </li>
                     <!-- <li><a routerLink="/blogs" routerLinkActive="active" class="scroll">Blogs</a></li> -->
-                    <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length">Profile</a></li>
+                    <li><a routerLink="/profile" routerLinkActive="active" class="scroll"
+                            *ngIf="profileInfo.length">Profile</a></li>
                     <li><a class="scroll" *ngIf="profileInfo.length" (click)="logout()">Logout</a></li>
-                    <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Login</a></li>
-                    <li><a routerLink="/register" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Register</a></li>
+                    <li><a routerLink="/login" routerLinkActive="active" class="scroll"
+                            *ngIf="!profileInfo.length">Login</a></li>
+                    <li><a routerLink="/register" routerLinkActive="active" class="scroll"
+                            *ngIf="!profileInfo.length">Register</a></li>
                     <!-- <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
                     <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
                     <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
@@ -36,12 +47,15 @@
                 <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li>
                 <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
                 <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
-                <li><a routerLink="/social" routerLinkActive="active" class="scroll">Gallery</a></li>
+                <li><a routerLink="/gallery" routerLinkActive="active" class="scroll">Gallery</a></li>
                 <!-- <li><a routerLink="/blogs" routerLinkActive="active" class="scroll">Blogs</a></li> -->
-                <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length">Profile</a></li>
+                <li><a routerLink="/profile" routerLinkActive="active" class="scroll"
+                        *ngIf="profileInfo.length">Profile</a></li>
                 <li><a class="scroll" *ngIf="profileInfo.length" (click)="logout()">Logout</a></li>
-                <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Login</a></li>
-                <li><a routerLink="/register" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Register</a></li>
+                <li><a routerLink="/login" routerLinkActive="active" class="scroll"
+                        *ngIf="!profileInfo.length">Login</a></li>
+                <li><a routerLink="/register" routerLinkActive="active" class="scroll"
+                        *ngIf="!profileInfo.length">Register</a></li>
                 <!-- <li><a (click)="navigate('#/about')" class="scroll">About</a></li>
                 <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
                 <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>

@@ -1,0 +1,26 @@
+.images-section {
+  padding-top: 15rem;
+}
+navbar .side-menu-button {
+  position: absolute !important;
+  top: 35px !important;
+  right: 50px !important;
+}
+@media (min-width: 1200px) {
+  .navbar,
+  .page-footer {
+    padding-left: 0px !important;
+  }
+}
+@media (max-width: 767px) {
+  .navbar-header {
+    position: absolute;
+    top: 10px;
+  }
+  .nav {
+    display: block;
+  }
+}
+::ng-deep .navbar .nav li a {
+  color: black !important;
+}
