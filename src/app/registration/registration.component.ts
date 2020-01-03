@@ -303,7 +303,7 @@ export class RegistrationComponent implements OnInit {
         res => {
           this.submitSuccess = true;
           if (res.status) {
-            this.regMessage = 'User registration was successfull.';
+            this.regMessage = 'You have successfully completed registration and will send you your membership details on email with in day.';
             this.showLoginButton = true;
           } else {
             this.regMessage = 'Error occured, please try again after sometime.';
