@@ -1,9 +1,11 @@
 <app-loader *ngIf="loading" [position]="'fixed'"></app-loader>
 <div class="container-for-admin">
-  <header>
+  <!-- <header>
     <app-header></app-header>
     <app-sidebar></app-sidebar>
-  </header>
+  </header> -->
+  <app-nav></app-nav>
+  <app-sidebar></app-sidebar>
   <main class="main-container">
     <div class="container-fluid ml-3 mt-5">
       <div class="flex-container" *ngIf="isDataAvailale" [class.just-end]="maritalStatus == 'Married'">
@@ -144,10 +146,5 @@
       </div>
     </div>
   </main>
-  <footer id="profileFooter" class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
-    <div class="footer-copyright py-3">
-      © 2018 Copyright:
-      <a href="" target="_blank"> Scripters.com </a>
-    </div>
-  </footer>
+  <app-footer></app-footer>
 </div>

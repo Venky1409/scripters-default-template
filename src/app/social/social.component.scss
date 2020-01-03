@@ -27,29 +27,31 @@ navbar .side-menu-button {
 ::ng-deep .navbar .nav li a {
   color: black !important;
 }
-// .side-panel {
-//   background: grey;
-//   position: relative;
-//   top: 115px;
-//   width: 20%;
-// }
-// .main-section {
-//   height: 74.6vh;
-//   overflow: auto;
-//   width: 60%;
-// }
-// .sponsor-title {
-//   border: 1px solid white;
-//   background: white;
-//   font-weight: 700;
-//   color: red;
-//   padding: 7px;
-//   text-align: center;
-//   margin: 10px;
-// }
-// .flex-container {
-//   display: flex;
-// }
-// .side-panel img {
-//   margin-left: 35px;
-// }
+
+/* SPONSOR BLOCK*/
+.side-panel {
+  background: grey;
+  position: relative;
+  top: 115px;
+  width: 20%;
+}
+.main-section {
+  height: 74.6vh;
+  overflow: auto;
+  width: 60%;
+}
+.sponsor-title {
+  border: 1px solid white;
+  background: white;
+  font-weight: 700;
+  color: red;
+  padding: 7px;
+  text-align: center;
+  margin: 10px;
+}
+.flex-container {
+  display: flex;
+}
+.side-panel img {
+  margin-left: 35px;
+}

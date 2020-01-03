@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { RegisterService } from "../services/register.service";
 declare var $: any;
 
 
@@ -12,8 +13,10 @@ export class NavbarComponent implements OnInit {
   url = "/assets/js/script.js";
   loadAPI: any;
   count = 0;
+  sessionid: any;
+  profileInfo = '';
 
-  constructor() {
+  constructor(private registerService: RegisterService) {
     this.loadScript();
   }
 
@@ -23,6 +26,18 @@ export class NavbarComponent implements OnInit {
     });
     const hamburger = $(".side-menu-button");
     hamburger.on("click", (evt) => this.changeView(evt) );
+
+    if (sessionStorage.length) {
+      this.sessionid = sessionStorage.getItem("sessionid");
+      this.registerService.getProfile(this.sessionid).subscribe(
+        res => {
+          if (res.userinfo) this.profileInfo = res.userinfo.firstName;
+        },
+        error => {
+          console.log(error);
+        }
+      );
+    }
   }
 
   public loadScript() {
@@ -32,6 +47,12 @@ export class NavbarComponent implements OnInit {
     node.async = true;
     node.charset = "utf-8";
     document.getElementsByTagName("head")[0].appendChild(node);
+  }
+
+  logout() {
+    sessionStorage.clear();
+    // this.router.navigate(["/"]);
+    location.href = 'index.html';
   }
 
   navigate(url) {
