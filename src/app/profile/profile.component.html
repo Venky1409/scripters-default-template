@@ -23,7 +23,7 @@
                 <div class="col-md-8">{{ profileInfo.personal_phoneno }}</div>
                 <div class="col-md-4 pf-label">Date of Birth</div>
                 <div class="col-md-8">
-                  {{ profileInfo.personal_dateofbirth | date: "MM/dd/yyyy" }}
+                  {{ profileInfo.personal_dateofbirth | date: "MM/dd" }}
                 </div>
                 <div class="col-md-4 pf-label">Marital Status</div>
                 <div class="col-md-8">{{ maritalStatus }}</div>
@@ -74,10 +74,7 @@
                     <div class="col-md-3 pf-label">Gender</div>
                     <div class="col-md-3 pf-label">Grade</div>
                   </div>
-                  <div
-                    class="row pf-table"
-                    *ngFor="let child of profileInfo.family; let i = index"
-                  >
+                  <div class="row pf-table" *ngFor="let child of profileInfo.family; let i = index">
                     <div class="col-md-3 pf-child">
                       {{ i + 1 }}
                     </div>
@@ -114,26 +111,26 @@
                   {{ profileInfo.referredby.referphone }}
                 </div>
 
-                <div class="col-md-12 pf-header-label">Business Info</div>
+                <div *ngIf="isBusinessDetailsAvaialable">
+                  <div class="col-md-12 pf-header-label">Business Info</div>
 
-                <div class="col-md-4 pf-label">Name</div>
-                <div class="col-md-8">
-                  {{ profileInfo.businessinfo.personal_businessName }}
-                </div>
-                <div class="col-md-4 pf-label">Website</div>
-                <div class="col-md-8">
-                  {{ profileInfo.businessinfo.personal_businessurl }}
-                </div>
-                <div class="col-md-4 pf-label">Details</div>
-                <div class="col-md-8">
-                  {{ profileInfo.businessinfo.personal_businessdetails }}
+                  <div class="col-md-4 pf-label">Name</div>
+                  <div class="col-md-8">
+                    {{ profileInfo.businessinfo.personal_businessName }}
+                  </div>
+                  <div class="col-md-4 pf-label">Website</div>
+                  <div class="col-md-8">
+                    {{ profileInfo.businessinfo.personal_businessurl }}
+                  </div>
+                  <div class="col-md-4 pf-label">Details</div>
+                  <div class="col-md-8">
+                    {{ profileInfo.businessinfo.personal_businessdetails }}
+                  </div>
                 </div>
 
                 <div class="col-md-4 pf-label">Interests</div>
                 <div class="col-md-8">
-                  <span
-                    *ngFor="let item of profileInfo.interests; let i = index"
-                  >
+                  <span *ngFor="let item of profileInfo.interests; let i = index">
                     {{ item.name }},
                   </span>
                 </div>
@@ -147,10 +144,7 @@
       </div>
     </div>
   </main>
-  <footer
-    id="profileFooter"
-    class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn"
-  >
+  <footer id="profileFooter" class="page-footer text-center font-small primary-color-dark darken-2 mt-4 wow fadeIn">
     <div class="footer-copyright py-3">
       © 2018 Copyright:
       <a href="" target="_blank"> Scripters.com </a>
