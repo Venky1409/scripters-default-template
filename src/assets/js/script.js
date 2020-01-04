@@ -390,14 +390,12 @@ jQuery(document).ready(function () {
             $load.unbind();
             $load.text('Load More....');
             var $filter = $('.filter');
-            $filter.hide('3000');
+            // $filter.hide('3000');
             $filter.each(function (index) {
                 if (index === 2) {
                     return false;
                 }
                 $(this).addClass('even').show('3000');
-
-
             });
 
 
