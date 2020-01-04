@@ -54,6 +54,7 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 import { NumberDirective } from './registration/numbers-only.directive';
 import { ImagesComponent } from './images/images.component';
 import { VideosComponent } from './videos/videos.component';
+import { MediaComponent } from './media/media.component';
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -68,8 +69,9 @@ const appRoutes: Routes = [
   { path: "events", component: EventsComponent },
   {
     path: "gallery", children: [
-      { path: 'images', component: ImagesComponent },
-      { path: 'videos', component: VideosComponent }
+      { path: 'photos', component: ImagesComponent },
+      { path: 'videos', component: VideosComponent },
+      { path: 'media', component: MediaComponent }
     ]
   },
   { path: "blogs", component: BlogsComponent }
@@ -99,7 +101,8 @@ const appRoutes: Routes = [
     FooterComponent,
     BlogsComponent,
     ImagesComponent,
-    VideosComponent
+    VideosComponent,
+    MediaComponent
   ],
   imports: [
     BrowserModule,
