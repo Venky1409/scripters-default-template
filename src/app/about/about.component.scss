@@ -1,5 +1,12 @@
 .about-section {
   padding-top: 5rem;
+  width: 80%;
+}
+.sponsors-section {
+  width: 20%;
+  float: right;
+  position: relative;
+  right: -36px;
 }
 navbar .side-menu-button {
     position: absolute !important;
@@ -18,6 +25,12 @@ navbar .side-menu-button {
   }
   .nav {
     display: block;
+  }
+  .about-section {
+    width: 100%;
+  }
+  .sponsors-section {
+    display: none;
   }
 }
 ::ng-deep .navbar .nav li a {
