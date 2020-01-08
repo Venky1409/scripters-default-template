@@ -52,10 +52,10 @@ import { AuthnavComponent } from "./authnav/authnav.component";
 import { BlogsComponent } from "./blogs/blogs.component";
 import { MatTooltipModule } from "@angular/material/tooltip";
 
-import { NumberDirective } from './registration/numbers-only.directive';
-import { ImagesComponent } from './images/images.component';
-import { VideosComponent } from './videos/videos.component';
-import { MediaComponent } from './media/media.component';
+import { NumberDirective } from "./registration/numbers-only.directive";
+import { ImagesComponent } from "./images/images.component";
+import { VideosComponent } from "./videos/videos.component";
+import { MediaComponent } from "./media/media.component";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -69,10 +69,11 @@ const appRoutes: Routes = [
   { path: "services", component: WelcomeComponent },
   { path: "events", component: EventsComponent },
   {
-    path: "gallery", children: [
-      { path: 'photos', component: ImagesComponent },
-      { path: 'videos', component: VideosComponent },
-      { path: 'media', component: MediaComponent }
+    path: "gallery",
+    children: [
+      { path: "photos", component: ImagesComponent },
+      { path: "videos", component: VideosComponent },
+      { path: "media", component: MediaComponent }
     ]
   },
   { path: "blogs", component: BlogsComponent }
@@ -127,7 +128,10 @@ const appRoutes: Routes = [
     MatDatepickerModule,
     MatNativeDateModule,
     MatTooltipModule,
-    RouterModule.forRoot(appRoutes, { useHash: false }),
+    RouterModule.forRoot(appRoutes, {
+      useHash: false,
+      scrollPositionRestoration: "enabled"
+    }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",
       timeOut: 0, // disable auto-dismiss
@@ -156,4 +160,4 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule { }
+export class AppModule {}
