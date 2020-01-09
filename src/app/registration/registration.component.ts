@@ -147,7 +147,7 @@ export class RegistrationComponent implements OnInit {
       ],
       spouseMobile: ["", Validators.required],
       spouseDOB: ["", Validators.required],
-      occupation: [""],
+      occupation: ["",Validators.required],
       numberOfChildren: [""],
       childrenList: this._formBuilder.array([])
       // children : this._formBuilder.group({
