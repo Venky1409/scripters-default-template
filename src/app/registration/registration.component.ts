@@ -23,6 +23,7 @@ import { Router } from "@angular/router";
 import { RegisterService } from "../services/register.service";
 import { DateAdapter, MAT_DATE_FORMATS } from "@angular/material/core";
 import { AppDateAdapter, APP_DATE_FORMATS } from "./format-datepicker";
+import { MatOption } from "@angular/material";
 
 @Component({
   selector: "app-registration",
@@ -54,8 +55,6 @@ export class RegistrationComponent implements OnInit {
   ownBusiness: string;
   states: any[];
   selected = "option2";
-  selectedInterests: any[];
-  interests: any[];
   childrenList: FormArray;
   children: Number[];
   submitSuccess: boolean = false;
@@ -64,10 +63,10 @@ export class RegistrationComponent implements OnInit {
   isExistedEmail: boolean = false;
   showBusinessFields: boolean;
   maritalStatusList = [
-    { name: "Married", value: "married" },
-    { name: "Single", value: "single" }
+    { name: "Married", value: "married", checked: false },
+    { name: "Single", value: "single", checked: true }
   ];
-  chosenMaritalStatus;
+  chosenMaritalStatus = "single";
   chosenUserGender;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
@@ -96,23 +95,23 @@ export class RegistrationComponent implements OnInit {
     { value: 9, viewValue: "9" },
     { value: 10, viewValue: "10" }
   ];
+  interests = [
+    { key: 1, viewValue: "Cultural" },
+    { key: 2, viewValue: "Sports" },
+    { key: 3, viewValue: "Business" },
+    { key: 4, viewValue: "Political" },
+    { key: 5, viewValue: "Service" }
+  ];
   // @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   @ViewChild("viewContainer", { read: ViewContainerRef, static: false })
   viewContainer: ViewContainerRef;
   @ViewChild("template", { static: false }) template: TemplateRef<any>;
-
+  @ViewChild("allSelected", { static: false }) private allSelected: MatOption;
   ngOnInit() {
     if (sessionStorage.length) {
       this.router.navigate(["/profile"]);
     }
     this.showBusinessFields = false;
-    this.interests = [
-      { id: 1, viewValue: "Cultural" },
-      { id: 2, viewValue: "Sports" },
-      { id: 3, viewValue: "Business" },
-      { id: 4, viewValue: "Political" },
-      { id: 5, viewValue: "Service" }
-    ];
     this.firstFormGroup = this._formBuilder.group({
       firstName: ["", Validators.required],
       lastName: ["", Validators.required],
@@ -126,7 +125,7 @@ export class RegistrationComponent implements OnInit {
       ],
       mobile: ["", Validators.required],
       dateOfBirth: ["", Validators.required],
-      maritalStatus: ["", Validators.required],
+      maritalStatus: [""],
       homeAddress: this._formBuilder.group({
         address1: ["", Validators.required],
         userGender: ["", Validators.required],
@@ -147,7 +146,7 @@ export class RegistrationComponent implements OnInit {
       ],
       spouseMobile: ["", Validators.required],
       spouseDOB: ["", Validators.required],
-      occupation: ["",Validators.required],
+      occupation: ["", Validators.required],
       numberOfChildren: [""],
       childrenList: this._formBuilder.array([])
       // children : this._formBuilder.group({
@@ -168,7 +167,7 @@ export class RegistrationComponent implements OnInit {
         websiteUrl: ["", Validators.required],
         businessDetails: ["", Validators.required]
       }),
-      interestSelected: ["", Validators.required],
+      userType: new FormControl("", [Validators.required]),
       password: [
         "",
         Validators.compose([
@@ -193,6 +192,16 @@ export class RegistrationComponent implements OnInit {
     this.thirdFormGroup.get("business")["controls"].websiteUrl.disable();
     this.thirdFormGroup.get("business")["controls"].businessDetails.disable();
     this.enableSecondStep = true;
+  }
+  selectAll() {
+    if (this.allSelected.selected) {
+      this.thirdFormGroup.controls.userType.patchValue([
+        ...this.interests.map(item => item.viewValue),
+        0
+      ]);
+    } else {
+      this.thirdFormGroup.controls.userType.patchValue([]);
+    }
   }
   createChild(): FormGroup {
     return this._formBuilder.group({
@@ -294,7 +303,7 @@ export class RegistrationComponent implements OnInit {
     postdata.referredby["mobile"] = this.thirdFormGroup.value.referalMobile;
     postdata["businessinfo"] = this.thirdFormGroup.value.business;
     postdata["ownbusiness"] = this.ownBusiness;
-    postdata["areasofinterests"] = this.thirdFormGroup.value.interestSelected;
+    postdata["areasofinterests"] = this.thirdFormGroup.value.userType;
     postdata["password"] = this.thirdFormGroup.value.password;
     postdata["userGender"] = this.firstFormGroup.value.homeAddress.userGender;
 
@@ -303,13 +312,15 @@ export class RegistrationComponent implements OnInit {
         res => {
           this.submitSuccess = true;
           if (res.status) {
-            this.regMessage = 'You have successfully completed registration and will send you your membership details on email with in day.';
+            this.regMessage =
+              "You have successfully completed registration and will send you your membership details on email with in day.";
             this.showLoginButton = true;
           } else {
-            this.regMessage = 'Error occured, please try again after sometime.';
+            this.regMessage = "Error occured, please try again after sometime.";
             this.showLoginButton = false;
           }
-        }, error => {
+        },
+        error => {
           console.log(error);
         }
       );
