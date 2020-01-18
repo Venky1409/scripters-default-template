@@ -62,6 +62,7 @@ export class RegistrationComponent implements OnInit {
   showLoginButton: boolean = false;
   isExistedEmail: boolean = false;
   showBusinessFields: boolean;
+  hide = true;
   maritalStatusList = [
     { name: "Married", value: "married", checked: false },
     { name: "Single", value: "single", checked: true }
@@ -192,6 +193,9 @@ export class RegistrationComponent implements OnInit {
     this.thirdFormGroup.get("business")["controls"].websiteUrl.disable();
     this.thirdFormGroup.get("business")["controls"].businessDetails.disable();
     this.enableSecondStep = true;
+  }
+  get cpassword() {
+    return this.thirdFormGroup.get("cpassword");
   }
   selectAll() {
     if (this.allSelected.selected) {

@@ -306,7 +306,9 @@
                   matTooltip="Minimum length of the password is 8, should contain uppercase and lower case letters, shoul contain letters and numbers, should contain special charactes"
                   [matTooltipPosition]="position">
                   <mat-form-field class="spacer">
-                    <input matInput placeholder="Password" formControlName="password" type="password" required />
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password"
+                      formControlName="password" required />
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </mat-form-field>
                   <mat-error *ngIf="firstFormGroup.get('password')?.invalid">Min 8 chars with atleast 1 letter, number
                     and special
@@ -317,21 +319,25 @@
                     <input matInput placeholder="Confirm Password" formControlName="cpassword" type="password"
                       required />
                   </mat-form-field>
-                  <mat-error *ngIf="firstFormGroup.get('cpassword')?.invalid">Min 8 chars with atleast 1 letter, number
+                  <mat-error *ngIf="!cpassword.hasError('required')">Min 8 chars with atleast
+                    1
+                    letter, number
                     and special
                     char</mat-error>
+
+                </div>
+                <div class="d-flex justify-content-center d-buttons">
+                  <button mat-button matStepperPrevious>
+                    <i class="material-icons">arrow_back</i> Back
+                  </button>
+                  <button mat-button class="submit-btn" (click)="register()">
+                    Submit <i class="material-icons">check</i>
+                  </button>
                 </div>
               </div>
             </div>
           </div>
-          <div class="d-flex justify-content-center d-buttons">
-            <button mat-button matStepperPrevious>
-              <i class="material-icons">arrow_back</i> Back
-            </button>
-            <button mat-button class="submit-btn" (click)="register()">
-              Submit <i class="material-icons">check</i>
-            </button>
-          </div>
+
         </form>
       </mat-step>
     </mat-horizontal-stepper>

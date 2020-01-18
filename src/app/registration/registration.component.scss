@@ -22,13 +22,16 @@ input[type="number"]::-webkit-outer-spin-button {
 .spacer {
   margin: 20px;
 }
+
 .form-header {
   text-align: center;
   background-color: #fff;
 }
+
 #registerationTitleContainer {
   padding-top: 13px !important;
 }
+
 .registration-heading {
   font-size: 22px;
   color: #453e79;
@@ -39,18 +42,22 @@ input[type="number"]::-webkit-outer-spin-button {
   border: 1px solid #dad8e4;
   font-weight: 400;
 }
+
 .mat-form-field {
   display: block;
 }
+
 .label {
   color: gray !important;
   font-size: 15px;
   margin-left: -7px;
 }
+
 .dynamic-colms {
   margin-left: -30px;
   margin-right: -30px;
 }
+
 ::ng-deep .mat-error {
   font-size: 7px;
   font-weight: inherit;
@@ -60,18 +67,23 @@ input[type="number"]::-webkit-outer-spin-button {
 .mat-stepper-vertical {
   font-family: "Muli-SemiBold";
 }
+
 ::ng-deep .mat-form-field {
   font-family: "Muli-SemiBold";
 }
+
 ::ng-deep .mat-radio-button {
   font-family: "Muli-SemiBold";
 }
+
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-label {
   display: none;
 }
+
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-content {
   display: none;
 }
+
 ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
   border-top-style: solid;
   height: 0;
@@ -81,12 +93,15 @@ input[type="number"]::-webkit-outer-spin-button {
   position: relative;
   left: 30%;
 }
+
 ::ng-deep .mat-step-header {
   left: 30%;
 }
+
 ::ng-deep .mat-form-field-type-mat-native-select {
   margin-left: 20px;
 }
+
 button {
   padding: 0;
   border: none;
@@ -101,9 +116,11 @@ button {
   position: relative;
   margin-right: 15px;
 }
+
 ::ng-deep .mat-button-wrapper {
   width: 100% !important;
 }
+
 .submit-btn {
   background: #6d7f52;
   color: white;
@@ -118,6 +135,7 @@ button {
 :host ::ng-deep .mat-form-field {
   margin: 3px !important;
 }
+
 .registerSuccess {
   background: white;
   padding: 20px;
@@ -125,24 +143,29 @@ button {
   width: 100%;
   color: green;
 }
+
 .success-text {
   position: relative;
   top: 25%;
   font-weight: bolder;
 }
+
 .register-back {
   margin-top: 30px;
   padding-left: 30px;
 }
+
 // ::ng-deep .mat-button-wrapper {
 //   display: none;
 // }
 ::ng-deep .mat-calendar-period-button {
   display: none !important;
 }
+
 ::ng-deep .mat-calendar-spacer {
   display: none;
 }
+
 ::ng-deep .mat-calendar-controls {
   display: block;
   justify-content: space-between;
@@ -157,40 +180,51 @@ button {
   ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
     left: 14%;
   }
+
   ::ng-deep .mat-step-header {
     left: 14%;
   }
+
   ::ng-deep .container-fluid {
     padding-top: 5px !important;
     padding: 10px 5px 5px 5px;
   }
+
   ::ng-deep .d-flex {
     flex-direction: column !important;
   }
+
   ::ng-deep .d-buttons {
     flex-direction: inherit !important;
   }
+
   .image-holder {
     display: none;
   }
+
   ::ng-deep .business-section {
     display: block;
   }
+
   ::ng-deep .col-6,
   .col-4 {
     max-width: 100%;
   }
+
   ::ng-deep .spouse-personal {
     display: block !important;
   }
+
   .success-text {
     height: 100vh;
   }
+
   .stepper-container {
     position: relative;
     left: 2%;
   }
 }
+
 @media (min-width: 1200px) {
   ::ng-deep .register-container {
     margin-top: 8%;
@@ -200,10 +234,12 @@ button {
     margin-right: auto;
     margin-left: auto;
   }
+
   ::ng-deep .second-section {
-    height: 325px;
+    height: 355px;
     overflow: auto;
   }
+
   /*::ng-deep .group-section {
     margin-left: -15px;
   }*/
@@ -212,6 +248,7 @@ button {
 ::ng-deep .mainContainer {
   background: #f9f6f1;
 }
+
 ::ng-deep .registration-container {
   display: flex;
   // margin-top: 132px;
@@ -222,76 +259,97 @@ button {
   height: 15px;
   width: 15px;
 }
+
 ::ng-deep .mat-horizontal-stepper-header-container .mat-step-icon-selected {
   background: #6d7f52;
 }
+
 ::ng-deep .mat-horizontal-stepper-header-container .mat-form-field-wrapper {
   padding-bottom: 0px;
 }
+
 ::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
   padding-bottom: 0px;
 }
+
 ::ng-deep .mat-form-field-underline {
   position: initial !important;
 }
+
 ::ng-deep .spacer.mat-radio-button {
   margin: 20px 0 0 20px !important;
 }
+
 ::ng-deep .mat-horizontal-content-container .d-buttons {
   margin-top: 25px;
 }
+
 ::ng-deep .mat-horizontal-content-container {
   padding: 0 24px 16px 24px !important;
 }
+
 ::ng-deep .logo-image {
   width: 350px !important;
   height: 350px !important;
 }
+
 ::ng-deep .image-holder {
   background: #ccc;
   display: flex;
   align-items: center;
 }
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+
+@media screen and (-ms-high-contrast: active),
+(-ms-high-contrast: none) {
   ::ng-deep .mat-form-field {
     line-height: 3.5 !important;
   }
+
   ::ng-deep .mat-input-element {
     position: relative !important;
     top: -15px !important;
   }
 }
+
 .navbar .side-menu-button {
   position: absolute !important;
   top: 35px !important;
   right: 50px !important;
 }
+
 @media (min-width: 1200px) {
+
   .navbar,
   .page-footer {
     padding-left: 0px !important;
   }
 }
+
 @media (max-width: 767px) {
   .navbar-header {
     position: absolute;
     top: 10px;
   }
+
   .nav {
     display: block;
   }
+
   ::ng-deep .registration-container {
     display: flex;
     margin-top: 132px;
     margin-left: 6px;
   }
+
   .user-fields {
     margin-left: -15px;
   }
 }
+
 ::ng-deep .navbar .nav li a {
   color: black !important;
 }
+
 // .example-tooltip-host {
 //   display: inline-flex;
 //   align-items: center;
