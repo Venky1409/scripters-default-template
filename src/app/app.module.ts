@@ -45,6 +45,8 @@ import { EventsComponent } from "./events/events.component";
 import { SocialComponent } from "./social/social.component";
 import { FooterComponent } from "./footer/footer.component";
 import { SponsorsComponent } from "./sponsors/sponsors.component";
+import { LawsComponent } from "./laws/laws.component";
+import { GoalsComponent } from "./goals/goals.component";
 
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from "./about/about.component";
@@ -65,6 +67,8 @@ const appRoutes: Routes = [
   { path: "sample", component: SampleComponent },
   { path: "login", component: LoginComponent },
   { path: "about", component: AboutComponent },
+  { path: "laws", component: LawsComponent },
+  { path: "goals", component: GoalsComponent },
   { path: "home", component: HomeComponent },
   { path: "services", component: WelcomeComponent },
   { path: "events", component: EventsComponent },
@@ -105,7 +109,9 @@ const appRoutes: Routes = [
     ImagesComponent,
     VideosComponent,
     MediaComponent,
-    SponsorsComponent
+    SponsorsComponent,
+    LawsComponent,
+    GoalsComponent
   ],
   imports: [
     BrowserModule,

@@ -1482,9 +1482,9 @@ a:focus {
 #portfolio #portfolio1 img {
   width: 100%;
 }
-#portfolio #portfolio1 .block-container .even:nth-child(even) {
+/* #portfolio #portfolio1 .block-container .even:nth-child(even) {
   top: -275px;
-}
+} */
 @media screen and (max-width: 767px) {
   #portfolio #portfolio1 .block-container .even:nth-child(even) {
     top: 0;

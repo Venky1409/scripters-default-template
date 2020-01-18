@@ -10,6 +10,46 @@
   right: -36px;
 }
 
+.about-desc h4 {
+  margin-bottom: 10px;
+  font-family: "Raleway", sans-serif;
+  text-align: center;
+}
+
+.about-desc {
+  border: 1px solid white;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    -webkit-transition: all 400ms ease-in-out;
+    transition: all 400ms ease-in-out;
+    font-size: 13px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: black;
+}
+
+.about-desc hr {
+  width: 45px;
+  height: 3px;
+  background: #f1c30f;
+  margin: 0 auto 20px;
+  -webkit-transition: all 400ms ease-in-out;
+  transition: all 400ms ease-in-out;
+  border: none;
+}
+
+.about-desc:hover {
+  background: #f1c30f;
+  color: #fff !important;
+  hr {
+    background: #fff;
+  }
+  h4 {
+    color: #fff;
+  }
+}
+
 navbar .side-menu-button {
   position: absolute !important;
   top: 35px !important;

@@ -1,7 +1,10 @@
 .home-section {
     padding-top: 15rem;
-    width: 80%;
+    width: 83%;
     margin-top: -50px;
+  }
+  ::ng-deep .rev_slider_wrapper {
+    width: 100% !important;
   }
   .sponsors-section {
     width: 20%;
