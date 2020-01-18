@@ -20,6 +20,16 @@ navbar .side-menu-button {
   min-height: 360px;
 }
 
+#toggleButton {
+  cursor: pointer;
+  color: #007bff !important;
+  text-decoration: underline !important;
+}
+
+#textArea {
+  display: none;
+}
+
 @media (min-width: 1200px) {
 
   .navbar,

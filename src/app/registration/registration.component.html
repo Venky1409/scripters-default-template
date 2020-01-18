@@ -304,9 +304,9 @@
               <div fxLayout="column" class="d-flex col-6 user-fields">
                 <div class="p-2 flex-fill" class="example-tooltip-host"
                   matTooltip="Minimum length of the password is 8, should contain uppercase and lower case letters, shoul contain letters and numbers, should contain special charactes"
-                  [matTooltipPosition]="position">
+                  [matTooltipPosition]="position" [matTooltipClass]="my-tooltip" #tooltip="matTooltip">
                   <mat-form-field class="spacer">
-                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password"
+                    <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" (focus)="tooltip.show()"
                       formControlName="password" required />
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                   </mat-form-field>

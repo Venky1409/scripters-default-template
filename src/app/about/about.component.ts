@@ -9,6 +9,7 @@ export class AboutComponent implements OnInit {
 
   url = "/assets/js/script.js";
   loadAPI: any;
+  status = "more";
 
   constructor() {
     this.loadScript();
@@ -30,5 +31,17 @@ export class AboutComponent implements OnInit {
     node.charset = "utf-8";
     document.getElementsByTagName("head")[0].appendChild(node);
   }
+
+  toggleText() {
+    if (this.status == "less") {
+        document.getElementById("textArea").style.display="none";
+        document.getElementById("toggleButton").innerText = "See More";
+        this.status = "more";
+    } else if (this.status == "more") {
+        document.getElementById("textArea").style.display="block";
+        document.getElementById("toggleButton").innerText = "See Less";
+        this.status = "less"
+    }
+}
 
 }
