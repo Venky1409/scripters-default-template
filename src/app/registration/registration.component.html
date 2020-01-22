@@ -302,9 +302,11 @@
               </div>
 
               <div fxLayout="column" class="d-flex col-6 user-fields">
-                <div class="p-2 flex-fill" class="example-tooltip-host"
-                  matTooltip="Minimum length of the password is 8, should contain uppercase and lower case letters, shoul contain letters and numbers, should contain special charactes"
-                  [matTooltipPosition]="position" [matTooltipClass]="my-tooltip" #tooltip="matTooltip">
+                <div class="p-2 flex-fill" class="example-tooltip-host" matTooltip="Minimum 8 characters in length, &#13;
+                   One special character, &#13;
+                   One uppercase, &#13;
+                   One lowercase and &#13;
+                   One number" matTooltipPosition="above" matTooltipClass="my-tooltip" #tooltip="matTooltip">
                   <mat-form-field class="spacer">
                     <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" (focus)="tooltip.show()"
                       formControlName="password" required />
@@ -326,7 +328,7 @@
                     char</mat-error>
 
                 </div>
-                <div class="d-flex justify-content-center d-buttons">
+                <div style="display: flex; margin-top: 17px;">
                   <button mat-button matStepperPrevious>
                     <i class="material-icons">arrow_back</i> Back
                   </button>

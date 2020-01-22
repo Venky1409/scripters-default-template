@@ -176,6 +176,10 @@ button {
   height: 50vh !important;
 }
 
+::ng-deep .my-tooltip {
+  white-space: pre-line !important;
+}
+
 @media (max-width: 767px) {
   ::ng-deep .mat-horizontal-stepper-header-container .mat-stepper-horizontal-line {
     left: 14%;
@@ -222,6 +226,7 @@ button {
   .stepper-container {
     position: relative;
     left: 2%;
+    width: 92%;
   }
 }
 
@@ -235,10 +240,11 @@ button {
     margin-left: auto;
   }
 
-  ::ng-deep .second-section {
-    height: 355px;
-    overflow: auto;
-  }
+  // Commented as we need not have a scroll for third stepper section
+  // ::ng-deep .second-section {
+  //   height: 355px;
+  //   overflow: auto;
+  // }
 
   /*::ng-deep .group-section {
     margin-left: -15px;
@@ -285,7 +291,7 @@ button {
 }
 
 ::ng-deep .mat-horizontal-content-container {
-  padding: 0 24px 16px 24px !important;
+  padding: 0 24px 49px 24px !important;
 }
 
 ::ng-deep .logo-image {
