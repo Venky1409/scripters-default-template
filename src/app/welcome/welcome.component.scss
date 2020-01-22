@@ -12,12 +12,21 @@
   height: 100%;
 }
 .mid-level-padding {
-  margin-top: 10px;
+  margin-top: 50px;
 }
 navbar .side-menu-button {
     position: absolute !important;
     top: 35px !important;
     right: 50px !important;
+}
+#toggleButton1, #toggleButton2, #toggleButton3, #toggleButton4, #toggleButton5 {
+  cursor: pointer;
+  color: #007bff !important;
+  text-decoration: underline !important;
+}
+
+#textArea1, #textArea2, #textArea3, #textArea4, #textArea5 {
+  display: none;
 }
 @media (min-width: 1200px) {
   .navbar, .page-footer {
@@ -37,6 +46,10 @@ navbar .side-menu-button {
   }
   .sponsors-section {
     display: none;
+  }
+  ::ng-deep #services #service-2 #responsiveTabsDemo .r-tabs-anchor {
+    color: #f1c30f;
+    cursor: pointer !important;
   }
 }
 ::ng-deep .navbar .nav li a {

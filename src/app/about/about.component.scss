@@ -27,6 +27,12 @@
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     color: black;
+    line-height: 24px;
+}
+
+.about-heading {
+  border: 1px solid white;
+  background: white;
 }
 
 .about-desc hr {
@@ -60,13 +66,13 @@ navbar .side-menu-button {
   min-height: 360px;
 }
 
-#toggleButton {
+#toggleButton, #toggleButton1 {
   cursor: pointer;
   color: #007bff !important;
   text-decoration: underline !important;
 }
 
-#textArea {
+#textArea, #textArea1 {
   display: none;
 }
 
@@ -94,6 +100,16 @@ navbar .side-menu-button {
 
   .sponsors-section {
     display: none;
+  }
+
+  .about-heading {
+    border: none;
+    background: transparent;
+  }
+
+  .about-desc {
+    margin-right: 15px;
+    margin-left: 15px;
   }
 }
 

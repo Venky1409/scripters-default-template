@@ -10,6 +10,7 @@ export class AboutComponent implements OnInit {
   url = "/assets/js/script.js";
   loadAPI: any;
   status = "more";
+  aboutStatus = "more";
 
   constructor() {
     this.loadScript();
@@ -42,6 +43,18 @@ export class AboutComponent implements OnInit {
         document.getElementById("toggleButton").innerText = "See Less";
         this.status = "less"
     }
-}
+  }
+
+  toggleAboutText() {
+    if (this.aboutStatus == "less") {
+        document.getElementById("textArea1").style.display="none";
+        document.getElementById("toggleButton1").innerText = "See More";
+        this.aboutStatus = "more";
+    } else if (this.aboutStatus == "more") {
+        document.getElementById("textArea1").style.display="block";
+        document.getElementById("toggleButton1").innerText = "See Less";
+        this.aboutStatus = "less"
+    }
+  }
 
 }

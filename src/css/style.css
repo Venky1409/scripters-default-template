@@ -1429,7 +1429,7 @@ a:focus {
           transform: translateY(-20px);
 }
 @media screen and (max-width: 767px) {
-  #services #service-3 .section.left-section {
+  #services #service-3 .section.left-section, .section.right-section {
     margin-bottom: 50px;
   }
 }

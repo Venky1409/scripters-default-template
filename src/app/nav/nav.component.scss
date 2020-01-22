@@ -20,6 +20,16 @@
 .nav {
   display: block !important;
 }
+.about-menu-list:hover {
+  .about-menu {
+    display: block !important;
+  }
+}
+.gallery-menu-list:hover {
+  .gallery-menu {
+    display: block !important;
+  }
+}
 @media (min-width: 1200px) {
   .navbar,
   .page-footer {
