@@ -240,11 +240,10 @@ button {
     margin-left: auto;
   }
 
-  // Commented as we need not have a scroll for third stepper section
-  // ::ng-deep .second-section {
-  //   height: 355px;
-  //   overflow: auto;
-  // }
+  ::ng-deep .second-section {
+    max-height: 355px;
+    overflow: auto;
+  }
 
   /*::ng-deep .group-section {
     margin-left: -15px;
