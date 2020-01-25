@@ -79,4 +79,9 @@ export class NavbarComponent implements OnInit {
     this.toggleButtons = true;
     document.getElementById("myNav").style.width = "0%";
   }
+
+  linkClick() {
+    this.toggleButtons = true;
+    document.getElementById("myNav").style.width = "0%";
+  }
 }

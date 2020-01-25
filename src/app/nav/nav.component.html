@@ -101,33 +101,33 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a routerLink="/" routerLinkActive="active" class="scroll">Home</a></li>
+          <li><a routerLink="/" routerLinkActive="active" class="scroll" (click)="linkClick()">Home</a></li>
           <!-- <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li> -->
           <li class="about-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
               data-toggle="dropdown">About Us</a>
             <ul class="dropdown-menu about-menu">
-              <li><a routerLink="/about">About UPASA</a></li>
-              <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank">ByLaws</a></li>
+              <li><a routerLink="/about" (click)="linkClick()">About UPASA</a></li>
+              <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank" (click)="linkClick()">ByLaws</a></li>
               <li><a routerLink="/goals">Goals & Objectives</a></li>
             </ul>
           </li>
-          <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
-          <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
+          <li><a routerLink="/services" routerLinkActive="active" class="scroll" (click)="linkClick()">Services</a></li>
+          <li><a routerLink="/events" routerLinkActive="active" class="scroll" (click)="linkClick()">Events</a></li>
           <li class="gallery-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
               data-toggle="dropdown">Gallery</a>
             <ul class="dropdown-menu gallery-menu">
-              <li><a routerLink="/gallery/photos">Photos</a></li>
-              <li><a routerLink="/gallery/videos">Videos</a></li>
-              <li><a routerLink="/gallery/media">Media</a></li>
+              <li><a routerLink="/gallery/photos" (click)="linkClick()">Photos</a></li>
+              <li><a routerLink="/gallery/videos" (click)="linkClick()">Videos</a></li>
+              <li><a routerLink="/gallery/media" (click)="linkClick()">Media</a></li>
             </ul>
           </li>
           <!-- <li><a routerLink="/blogs" routerLinkActive="active" class="scroll">Blogs</a></li> -->
-          <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length">Profile</a>
+          <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length" (click)="linkClick()">Profile</a>
           </li>
           <li><a class="scroll" *ngIf="profileInfo.length" (click)="logout()">Logout</a></li>
-          <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Login</a></li>
+          <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length" (click)="linkClick()">Login</a></li>
           <li><a routerLink="/register" routerLinkActive="active" class="scroll"
-              *ngIf="!profileInfo.length">Register</a></li>
+              *ngIf="!profileInfo.length" (click)="linkClick()">Register</a></li>
           <!-- <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
                         <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
                         <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
@@ -139,32 +139,32 @@
     <div class="sidenav">
       <!-- Use any element to open the sidenav -->
       <ul class="nav">
-        <li><a routerLink="/" routerLinkActive="active" class="scroll">Home</a></li>
+        <li><a routerLink="/" routerLinkActive="active" class="scroll" (click)="linkClick()">Home</a></li>
         <!-- <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li> -->
         <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">About
             Us</a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/about">About UPASA</a></li>
-            <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank">ByLaws</a></li>
-            <li><a routerLink="/goals">Goals & Objectives</a></li>
+            <li><a routerLink="/about" (click)="linkClick()">About UPASA</a></li>
+            <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank" (click)="linkClick()">ByLaws</a></li>
+            <li><a routerLink="/goals" (click)="linkClick()">Goals & Objectives</a></li>
           </ul>
         </li>
-        <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
-        <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
+        <li><a routerLink="/services" routerLinkActive="active" class="scroll" (click)="linkClick()">Services</a></li>
+        <li><a routerLink="/events" routerLinkActive="active" class="scroll" (click)="linkClick()">Events</a></li>
         <!-- <li><a routerLink="/gallery" routerLinkActive="active" class="scroll">Gallery</a></li> -->
         <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">Gallery</a>
           <ul class="dropdown-menu">
-            <li><a routerLink="/gallery/photos">Photos</a></li>
-            <li><a routerLink="/gallery/videos">Videos</a></li>
-            <li><a routerLink="/gallery/media">Media</a></li>
+            <li><a routerLink="/gallery/photos" (click)="linkClick()">Photos</a></li>
+            <li><a routerLink="/gallery/videos" (click)="linkClick()">Videos</a></li>
+            <li><a routerLink="/gallery/media" (click)="linkClick()">Media</a></li>
           </ul>
         </li>
         <!-- <li><a routerLink="/blogs" routerLinkActive="active" class="scroll">Blogs</a></li> -->
-        <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length">Profile</a>
+        <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length" (click)="linkClick()">Profile</a>
         </li>
         <li><a class="scroll" *ngIf="profileInfo.length" (click)="logout()">Logout</a></li>
-        <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Login</a></li>
-        <li><a routerLink="/register" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Register</a>
+        <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length" (click)="linkClick()">Login</a></li>
+        <li><a routerLink="/register" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length" (click)="linkClick()">Register</a>
         </li>
         <!-- <li><a (click)="navigate('#/about')" class="scroll">About</a></li>
                     <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>

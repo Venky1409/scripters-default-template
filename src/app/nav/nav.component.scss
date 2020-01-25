@@ -100,4 +100,32 @@
     top: 15px;
     right: 35px;
   }
+  .dropdown-menu > li > a {
+    font-size: 20px !important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .dropdown-menu > li > a {
+    font-size: 18px !important;
+  }
+  .dropdown-menu {
+    position: absolute;
+    top: 100%;
+    width: 200px;
+    left: 27%;
+    z-index: 1000;
+    float: left;
+    min-width: 10rem;
+    padding: .5rem 0;
+    margin: .125rem 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: center;
+    list-style: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: .25rem;
+}
 }
