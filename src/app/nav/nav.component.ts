@@ -15,6 +15,7 @@ export class NavbarComponent implements OnInit {
   count = 0;
   sessionid: any;
   profileInfo = '';
+  toggleButtons = true;
 
   constructor(private registerService: RegisterService) {
     this.loadScript();
@@ -25,7 +26,7 @@ export class NavbarComponent implements OnInit {
       this.loadScript();
     });
     const hamburger = $(".side-menu-button");
-    hamburger.on("click", (evt) => this.changeView(evt) );
+    // hamburger.on("click", (evt) => this.changeView(evt) );
 
     if (sessionStorage.length) {
       this.sessionid = sessionStorage.getItem("sessionid");
@@ -67,5 +68,15 @@ export class NavbarComponent implements OnInit {
       $('.sidenav').toggleClass("mySideBar");
       $(".side-menu-button").toggleClass("actives");
     }, 2000);
+  }
+
+  openNav() {
+    this.toggleButtons = false;
+    document.getElementById("myNav").style.width = "100%";
+  }
+
+  closeNav() {
+    this.toggleButtons = true;
+    document.getElementById("myNav").style.width = "0%";
   }
 }

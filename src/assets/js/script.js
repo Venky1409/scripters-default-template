@@ -12,14 +12,14 @@ jQuery(document).ready(function () {
         // full screen side navbar
         sideNavBar: function () {
             $('.side-menu-button').on('click', function () {
-                $('.sidenav').toggleClass("mySideBar");
-                $(this).toggleClass("actives");
+                // $('.sidenav').toggleClass("mySideBar");
+                // $(this).toggleClass("actives");
                 //$('.side-menu-button > i').toggleClass("fa-bars");
                 //$('.side-menu-button > i').toggleClass("fa-times");
             });
             $('.sidenav ul >li a').on('click', function () {
-                $('.sidenav').removeClass("mySideBar");
-                $('.side-menu-button').removeClass("actives");
+                // $('.sidenav').removeClass("mySideBar");
+                // $('.side-menu-button').removeClass("actives");
                 //$('.side-menu-button > i').toggleClass("fa-bars");
                 //$('.side-menu-button > i').toggleClass("fa-times");
             });

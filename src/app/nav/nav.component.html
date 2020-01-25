@@ -1,20 +1,23 @@
 <nav class="navbar navbar-fixed-top">
   <div class="container-fluid">
     <!--second nav button -->
-    <a class="side-menu-button"> <i class="fa fa-bars" aria-hidden="true"></i> </a>
+    <!-- <a class="side-menu-button"> <i class="fa fa-bars" aria-hidden="true"></i> </a> -->
+    <a class="side-menu-button" *ngIf="toggleButtons" style="cursor:pointer" (click)="openNav()">
+      <i class="fa fa-bars" aria-hidden="true"></i>
+    </a>
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="col-3 navbar-header">
       <a class="navbar-brand" href="/"><img class="image-fluid" src="images/upasa_web_logo.jpg" style="width: 230px;"
           alt="logo"></a>
     </div>
-
     <div class="col-9 container">
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a routerLink="/" routerLinkActive="active" class="scroll">Home</a></li>
           <!-- <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li> -->
-          <li class="about-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+          <li class="about-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
+              data-toggle="dropdown">About Us</a>
             <ul class="dropdown-menu about-menu">
               <li><a routerLink="/about">About UPASA</a></li>
               <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank">ByLaws</a></li>
@@ -23,7 +26,8 @@
           </li>
           <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
           <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
-          <li class="gallery-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">Gallery</a>
+          <li class="gallery-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
+              data-toggle="dropdown">Gallery</a>
             <ul class="dropdown-menu gallery-menu">
               <li><a routerLink="/gallery/photos">Photos</a></li>
               <li><a routerLink="/gallery/videos">Videos</a></li>
@@ -38,19 +42,21 @@
           <li><a routerLink="/register" routerLinkActive="active" class="scroll"
               *ngIf="!profileInfo.length">Register</a></li>
           <!-- <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
-                    <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
-                    <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
-                    <li><a (click)="navigate('#/login')" class="scroll">Login</a></li>
-                    <li><a (click)="navigate('#/register')" class="scroll">Register</a></li> -->
+                        <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
+                        <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
+                        <li><a (click)="navigate('#/login')" class="scroll">Login</a></li>
+                        <li><a (click)="navigate('#/register')" class="scroll">Register</a></li> -->
         </ul>
       </div><!-- /.navbar-collapse -->
     </div>
+
     <div class="sidenav">
       <!-- Use any element to open the sidenav -->
       <ul class="nav">
         <li><a routerLink="/" routerLinkActive="active" class="scroll">Home</a></li>
         <!-- <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li> -->
-        <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">About Us</a>
+        <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">About
+            Us</a>
           <ul class="dropdown-menu">
             <li><a routerLink="/about">About UPASA</a></li>
             <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank">ByLaws</a></li>
@@ -75,13 +81,98 @@
         <li><a routerLink="/register" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Register</a>
         </li>
         <!-- <li><a (click)="navigate('#/about')" class="scroll">About</a></li>
-                <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
-                <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
-                <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
-                <li><a (click)="navigate('#/login')" class="scroll">Login</a></li>
-                <li><a (click)="navigate('#/register')" class="scroll">Register</a></li> -->
+                    <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
+                    <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
+                    <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
+                    <li><a (click)="navigate('#/login')" class="scroll">Login</a></li>
+                    <li><a (click)="navigate('#/register')" class="scroll">Register</a></li> -->
       </ul>
     </div>
-
   </div>
 </nav>
+
+<div id="myNav" class="overlay">
+
+  <div class="overlay-content">
+    <a href="javascript:void(0)" *ngIf="!toggleButtons" class="closebtn" (click)="closeNav()">
+      <i class="fa fa-close" aria-hidden="true"></i>
+    </a>
+    <div class="col-9 container">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navbar-ex1-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a routerLink="/" routerLinkActive="active" class="scroll">Home</a></li>
+          <!-- <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li> -->
+          <li class="about-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
+              data-toggle="dropdown">About Us</a>
+            <ul class="dropdown-menu about-menu">
+              <li><a routerLink="/about">About UPASA</a></li>
+              <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank">ByLaws</a></li>
+              <li><a routerLink="/goals">Goals & Objectives</a></li>
+            </ul>
+          </li>
+          <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
+          <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
+          <li class="gallery-menu-list"><a routerLinkActive="active" class="scroll" class="dropdown-toggle"
+              data-toggle="dropdown">Gallery</a>
+            <ul class="dropdown-menu gallery-menu">
+              <li><a routerLink="/gallery/photos">Photos</a></li>
+              <li><a routerLink="/gallery/videos">Videos</a></li>
+              <li><a routerLink="/gallery/media">Media</a></li>
+            </ul>
+          </li>
+          <!-- <li><a routerLink="/blogs" routerLinkActive="active" class="scroll">Blogs</a></li> -->
+          <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length">Profile</a>
+          </li>
+          <li><a class="scroll" *ngIf="profileInfo.length" (click)="logout()">Logout</a></li>
+          <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Login</a></li>
+          <li><a routerLink="/register" routerLinkActive="active" class="scroll"
+              *ngIf="!profileInfo.length">Register</a></li>
+          <!-- <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
+                        <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
+                        <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
+                        <li><a (click)="navigate('#/login')" class="scroll">Login</a></li>
+                        <li><a (click)="navigate('#/register')" class="scroll">Register</a></li> -->
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div>
+    <div class="sidenav">
+      <!-- Use any element to open the sidenav -->
+      <ul class="nav">
+        <li><a routerLink="/" routerLinkActive="active" class="scroll">Home</a></li>
+        <!-- <li><a routerLink="/about" routerLinkActive="active" class="scroll">About</a></li> -->
+        <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">About
+            Us</a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/about">About UPASA</a></li>
+            <li><a href="https://ils.unc.edu/daniel/405/Montana11.pdf" target="_blank">ByLaws</a></li>
+            <li><a routerLink="/goals">Goals & Objectives</a></li>
+          </ul>
+        </li>
+        <li><a routerLink="/services" routerLinkActive="active" class="scroll">Services</a></li>
+        <li><a routerLink="/events" routerLinkActive="active" class="scroll">Events</a></li>
+        <!-- <li><a routerLink="/gallery" routerLinkActive="active" class="scroll">Gallery</a></li> -->
+        <li><a routerLinkActive="active" class="scroll" class="dropdown-toggle" data-toggle="dropdown">Gallery</a>
+          <ul class="dropdown-menu">
+            <li><a routerLink="/gallery/photos">Photos</a></li>
+            <li><a routerLink="/gallery/videos">Videos</a></li>
+            <li><a routerLink="/gallery/media">Media</a></li>
+          </ul>
+        </li>
+        <!-- <li><a routerLink="/blogs" routerLinkActive="active" class="scroll">Blogs</a></li> -->
+        <li><a routerLink="/profile" routerLinkActive="active" class="scroll" *ngIf="profileInfo.length">Profile</a>
+        </li>
+        <li><a class="scroll" *ngIf="profileInfo.length" (click)="logout()">Logout</a></li>
+        <li><a routerLink="/login" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Login</a></li>
+        <li><a routerLink="/register" routerLinkActive="active" class="scroll" *ngIf="!profileInfo.length">Register</a>
+        </li>
+        <!-- <li><a (click)="navigate('#/about')" class="scroll">About</a></li>
+                    <li><a (click)="navigate('#/services')" class="scroll">Services</a></li>
+                    <li><a (click)="navigate('#/events')" class="scroll">Our Events</a></li>
+                    <li><a (click)="navigate('#/social')" class="scroll">Social Media</a></li>
+                    <li><a (click)="navigate('#/login')" class="scroll">Login</a></li>
+                    <li><a (click)="navigate('#/register')" class="scroll">Register</a></li> -->
+      </ul>
+    </div>
+  </div>
+</div>
