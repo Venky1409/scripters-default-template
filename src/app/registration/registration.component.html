@@ -32,7 +32,7 @@
             </div>
             <div class="p-2 flex-fill">
               <mat-form-field class="spacer">
-                <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="mobile" id="phone-number"
+                <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="mobile" id="phone-number" minlength="14"
                   required />
               </mat-form-field>
               <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is 11
@@ -139,7 +139,7 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="spouseMobile"
+                  <input matInput type="text" placeholder="Phone" appPhoneMask formControlName="spouseMobile" minlength="14"
                     id="phone-number" required />
                 </mat-form-field>
                 <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is
@@ -191,8 +191,8 @@
                   <mat-form-field>
                     <mat-label>Gender</mat-label>
                     <select formControlName="gender" matNativeControl required>
-                      <option value="M">Male</option>
-                      <option value="F">Female</option>
+                      <option value="MALE">Male</option>
+                      <option value="FEMALE">Female</option>
                     </select>
                   </mat-form-field>
                 </div>
@@ -258,7 +258,7 @@
               </div>
               <div class="p-2 flex-fill">
                 <mat-form-field class="spacer">
-                  <input matInput type="text" placeholder="Contact Phone" formControlName="referalMobile" appPhoneMask
+                  <input matInput type="text" placeholder="Contact Phone" formControlName="referalMobile" appPhoneMask minlength="14"
                     id="phone-number" required />
                 </mat-form-field>
                 <mat-error *ngIf="firstFormGroup.get('phone')?.invalid">First digit should be 1 if the phone number is

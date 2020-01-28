@@ -136,7 +136,8 @@ const appRoutes: Routes = [
     MatTooltipModule,
     RouterModule.forRoot(appRoutes, {
       useHash: false,
-      scrollPositionRestoration: "enabled"
+      scrollPositionRestoration: "enabled",
+      onSameUrlNavigation: "reload"
     }),
     ToastrModule.forRoot({
       positionClass: "toast-bottom-right",

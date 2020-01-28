@@ -71,8 +71,8 @@ export class RegistrationComponent implements OnInit {
   chosenUserGender;
   @ViewChild("AddChildren", { static: false }) AddChildren: ElementRef;
   genders = [
-    { value: "1", viewValue: "Male" },
-    { value: "0", viewValue: "Female" }
+    { value: "MALE", viewValue: "Male" },
+    { value: "FEMALE", viewValue: "Female" }
   ];
   businessInfo = [
     { value: "Y", viewValue: "Yes" },
