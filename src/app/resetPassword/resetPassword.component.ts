@@ -1,7 +1,7 @@
 import { Component, OnInit} from "@angular/core";
 import { FormBuilder, FormGroup, Validators, FormControl, ValidatorFn, AbstractControl, NgModel, FormArray, ValidationErrors } from "@angular/forms";
 import { RegisterService } from '../services/register.service';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-reset-password',
@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class ResetPasswordComponent implements OnInit {
 
-  constructor(private _formBuilder: FormBuilder, private registerService: RegisterService, private router: Router) {}
+  constructor(private _formBuilder: FormBuilder, private registerService: RegisterService, private router: Router, private route: ActivatedRoute) {}
   resetFormGroup: FormGroup;
   accountid;
   hashcode;
@@ -20,8 +20,10 @@ export class ResetPasswordComponent implements OnInit {
     if (sessionStorage.length) {
       this.router.navigate(['/profile']);
     }
-    this.accountid = this.router.browserUrlTree.queryParams.accountid;
-    this.hashcode = this.router.browserUrlTree.queryParams.hashcode;
+    this.route.queryParams.subscribe((response) => {
+      this.accountid = response.accountid;
+      this.hashcode = response.hashcode;
+    });
     if (this.accountid && this.hashcode) {
         this.registerService.verifyLink({'userid': this.accountid, 'hashcode': this.hashcode})
       .subscribe(res => {
