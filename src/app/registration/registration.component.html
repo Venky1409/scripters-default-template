@@ -347,12 +347,12 @@
       <!-- <button type="button" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button> -->
-      <h3>{{regMessage}}</h3>
+      <h3 class="email-notification">{{regMessage}}</h3>
       <button (click)="login()" class="register-back" *ngIf="showLoginButton">
         Login
       </button>
       <button (click)="back()" class="register-back" *ngIf="!showLoginButton">
-        Back
+        <i class="material-icons">arrow_back</i> Back
       </button>
     </div>
   </div>

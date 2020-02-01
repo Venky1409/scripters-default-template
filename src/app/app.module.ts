@@ -47,6 +47,8 @@ import { FooterComponent } from "./footer/footer.component";
 import { SponsorsComponent } from "./sponsors/sponsors.component";
 import { LawsComponent } from "./laws/laws.component";
 import { GoalsComponent } from "./goals/goals.component";
+import { ForgotPasswordComponent } from "./forgotPassword/forgotPassword.component";
+import { ResetPasswordComponent } from "./resetPassword/resetPassword.component";
 
 import { RegisterService } from "./services/register.service";
 import { AboutComponent } from "./about/about.component";
@@ -72,6 +74,8 @@ const appRoutes: Routes = [
   { path: "home", component: HomeComponent },
   { path: "services", component: WelcomeComponent },
   { path: "events", component: EventsComponent },
+  { path: "forgotPassword", component: ForgotPasswordComponent },
+  { path: "resetpassword", component: ResetPasswordComponent },
   {
     path: "gallery",
     children: [
@@ -111,7 +115,9 @@ const appRoutes: Routes = [
     MediaComponent,
     SponsorsComponent,
     LawsComponent,
-    GoalsComponent
+    GoalsComponent,
+    ForgotPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     BrowserModule,

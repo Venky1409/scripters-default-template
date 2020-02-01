@@ -37,7 +37,32 @@ export class RegisterService {
 
   sendEmail(email): Observable<any> {
     const result: Subject<any> = new Subject();
-    this.http.post(this.serviceUrl + "sendforgotemail", email).subscribe(
+    let data = {"useremail": email};
+    this.http.post(this.serviceUrl + "sendforgotemail", data).subscribe(
+    res => {
+      result.next(res);
+    },
+    err => {
+      result.error(err);
+    });
+    return result;
+  }
+
+  verifyLink(data): Observable<any> {
+    const result: Subject<any> = new Subject();
+    this.http.post(this.serviceUrl + "validateresetlink", data).subscribe(
+    res => {
+      result.next(res);
+    },
+    err => {
+      result.error(err);
+    });
+    return result;
+  }
+
+  resetPwd(data): Observable<any> {
+    const result: Subject<any> = new Subject();
+    this.http.post(this.serviceUrl + "updateforgotpassword", data).subscribe(
     res => {
       result.next(res);
     },

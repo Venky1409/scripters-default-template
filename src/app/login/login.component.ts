@@ -87,9 +87,10 @@ export class LoginComponent implements OnInit {
   }
 
   forgotpwd() {
-    this.loginFormGroup.reset();
-    this.isLogin = false;
-    this.isForgot = true;
+    // this.loginFormGroup.reset();
+    // this.isLogin = false;
+    // this.isForgot = true;
+    this.router.navigate(['/forgotPassword']);
   }
 
 }
