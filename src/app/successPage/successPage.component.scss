@@ -1,0 +1,158 @@
+.spacer {
+    margin: 20px;
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+  .form-header {
+    text-align: center;
+    background-color: #fff;
+  }
+  #registerationTitleContainer {
+    padding-top: 30px !important;
+    // margin-top: 125px;
+  }
+  .stepper-container {
+    background: white;
+    width: 100%;
+  }
+  .registration-heading {
+    font-size: 22px;
+    color: #453e79;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    padding: 5px 15px;
+    display: inline-block;
+    border: 1px solid #dad8e4;
+    font-weight: 400;
+  }
+  .mat-form-field {
+    display: block;
+  }
+  ::ng-deep .mat-error  {
+    font-size: 7px;
+    font-weight: inherit;
+  }
+  button {
+    padding: 0;
+    border: none;
+    display: inline-flex;
+    height: 41px;
+    width: 135px;
+    align-items: center;
+    background: #e9e0cf;
+    font-family: "Muli-SemiBold";
+    color: #666;
+    cursor: pointer;
+    position: relative;
+    margin-right: 15px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+  }
+  ::ng-deep .mat-button-wrapper {
+    width: 100% !important;
+  }
+  .submit-btn {
+    background: #6d7f52;
+    color: white;
+  }
+  .registerSuccess {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    color: green;
+  }
+  .success-text {
+    position: relative;
+    top: 25%;
+    font-weight: bolder;
+  }
+  .register-back {
+    margin-top: 30px;
+    padding-left: 30px;
+  }
+  .email-notification {
+      color: green;
+      font-weight: bold;
+      text-align: center;
+  }
+  @media (max-width: 767px) {
+    ::ng-deep .container-fluid {
+      padding-top: 5px !important;
+      padding: 10px 5px 5px 5px;
+    }
+    ::ng-deep .d-flex {
+      flex-direction: column !important;
+    }
+    ::ng-deep .d-buttons {
+      flex-direction: inherit !important;
+    }
+    .image-holder {
+      display: none;
+    }
+    .registration-container {
+      height: 100vh;
+    }
+    .spacer {
+      margin: 20px;
+      margin-left: 40px;
+      margin-right: 40px;
+    }
+    #registerationTitleContainer {
+      padding-top: 30px !important;
+      margin-top: 125px;
+    }
+  }
+  @media (min-width: 1200px) {
+    ::ng-deep .login-container {
+      margin-top: 8%;
+      width: 70% !important;
+      padding-right: 15px;
+      padding-left: 15px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+  }
+  
+  ::ng-deep .mainContainer {
+    background: #f9f6f1;
+  }
+  ::ng-deep .registration-container {
+    display: flex;
+  }
+  ::ng-deep .logo-image {
+    width: 350px !important;
+    height: 350px !important;
+  }
+  ::ng-deep .image-holder {
+    background: #ccc;
+    display: flex;
+    align-items: center;
+  }
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+     ::ng-deep .mat-form-field {
+        line-height: 3.5 !important;
+      }
+  }
+  .navbar .side-menu-button {
+      position: absolute !important;
+      top: 35px !important;
+      right: 50px !important;
+  }
+  @media (min-width: 1200px) {
+    .navbar, .page-footer {
+         padding-left: 0px !important; 
+    }
+  }
+  @media (max-width: 767px) {
+    .navbar-header {
+         position: absolute;
+        top: 10px;
+    }
+    .nav {
+      display: block;
+    }
+  }
+  ::ng-deep .navbar .nav li a {
+    color: black !important;
+  }

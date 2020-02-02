@@ -314,29 +314,24 @@ export class RegistrationComponent implements OnInit {
     if (this.thirdFormGroup.valid) {
       this.registerService.registerUser(postdata).subscribe(
         res => {
-          this.submitSuccess = true;
+          // this.submitSuccess = true;
           if (res.status) {
-            this.regMessage =
-              "You have successfully completed registration and will send you your membership details on email with in day.";
-            this.showLoginButton = true;
+            this.router.navigate(['/success']);
+            // this.regMessage =
+            //   "You have successfully completed registration and will send you your membership details on email with in day.";
+            // this.showLoginButton = true;
           } else {
-            this.regMessage = "Error occured, please try again after sometime.";
-            this.showLoginButton = false;
+            // this.regMessage = "Error occured, please try again after sometime.";
+            // this.showLoginButton = false;
+            alert("Error occured, please try again after sometime.");
           }
         },
         error => {
           console.log(error);
+          alert("Error occured, please try again after sometime.");
         }
       );
     }
-  }
-
-  login() {
-    this.router.navigate(["/login"]);
-  }
-
-  back() {
-    this.submitSuccess = false;
   }
 
   isEmailUnique(control: FormControl) {

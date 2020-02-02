@@ -7,7 +7,7 @@
     <div id="registerationTitleContainer" class="form-header pt-5">
       <h3 class="registration-heading">Registration</h3>
     </div>
-    <mat-horizontal-stepper [linear]="isLinear" #stepper *ngIf="!submitSuccess">
+    <mat-horizontal-stepper [linear]="isLinear" #stepper>
       <mat-step [stepControl]="firstFormGroup">
         <form [formGroup]="firstFormGroup">
           <!-- <ng-template matStepLabel>Fill out your details</ng-template> -->
@@ -343,10 +343,10 @@
         </form>
       </mat-step>
     </mat-horizontal-stepper>
-    <div class="success-text" *ngIf="submitSuccess">
-      <!-- <button type="button" class="close" aria-label="Close">
+    <!-- <div class="success-text" *ngIf="submitSuccess">
+      <button type="button" class="close" aria-label="Close">
         <span aria-hidden="true">&times;</span>
-      </button> -->
+      </button>
       <h3 class="email-notification">{{regMessage}}</h3>
       <button (click)="login()" class="register-back" *ngIf="showLoginButton">
         Login
@@ -354,6 +354,6 @@
       <button (click)="back()" class="register-back" *ngIf="!showLoginButton">
         <i class="material-icons">arrow_back</i> Back
       </button>
-    </div>
+    </div> -->
   </div>
 </div>
