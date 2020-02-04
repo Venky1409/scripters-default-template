@@ -59,8 +59,25 @@ import { MatTooltipModule } from "@angular/material/tooltip";
 
 import { NumberDirective } from "./registration/numbers-only.directive";
 import { ImagesComponent } from "./images/images.component";
+import { ImagesService } from "./images/images.services";
 import { VideosComponent } from "./videos/videos.component";
 import { MediaComponent } from "./media/media.component";
+
+/* Custom Hammer configuration */
+import { HammerGestureConfig, HAMMER_GESTURE_CONFIG } from '@angular/platform-browser';
+import * as Hammer from 'hammerjs';
+
+export class CustomHammerConfig extends HammerGestureConfig {
+  overrides = {
+    'bread': {
+      direction: Hammer.DIRECTION_ALL,
+    }
+  }
+}
+/* End Custom hammer configuration */
+
+import { NgxGalleryModule } from "ngx-gallery";
+
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -156,9 +173,10 @@ const appRoutes: Routes = [
     ToastContainerModule,
     UserIdleModule.forRoot({ idle: 0, timeout: 0, ping: 0 }),
     MDBBootstrapModule.forRoot(),
-    FlexLayoutModule
+    FlexLayoutModule,
+    NgxGalleryModule
   ],
-  providers: [RegisterService],
+  providers: [RegisterService, ImagesService, { provide: HAMMER_GESTURE_CONFIG, useClass: CustomHammerConfig }],
   exports: [
     MatButtonModule,
     MatFormFieldModule,
@@ -176,4 +194,4 @@ const appRoutes: Routes = [
   bootstrap: [AppComponent],
   schemas: [NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA]
 })
-export class AppModule {}
+export class AppModule { }

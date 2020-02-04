@@ -9,7 +9,50 @@
                 </div>
             </div>
             <div class="row mt-4 mb-4">
-                <div class="col-md-4">
+                <div class="col-sm-6 col-md-3" *ngFor="let album of galleryThumbnails; let i = index">
+                    <img src="{{album.thumbnailimage}}" style="cursor: pointer; width: 200px; height: 200px;" class="thumbnail img-fluid"
+                        alt="{{album.name}}" (click)="openGalleryModal(album)">
+                    <p class="mt-3">{{album.name}}</p>
+                </div>
+
+                <!-- <button type="button" class="btn btn-primary" data-toggle="modal"
+                    (click)="openModal(true)">Extra large modal</button> -->
+
+                <div class="modal bd-example-modal-xl" tabindex="-1" role="dialog"
+                    aria-labelledby="myExtraLargeModalLabel" aria-hidden="true"
+                    [ngStyle]="{'display': mdlSampleIsOpen ? 'block' : 'none', 'opacity': 1}">
+                    <div class="modal-dialog modal-xl" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="exampleModalLabel">Gallery</h4>
+                                <button type="button" class="close" (click)="closeModal(false)" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <ngx-gallery [options]="galleryOptions" [images]="galleryImages"> </ngx-gallery>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary"
+                                    (click)="closeModal(false)">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- <div class="sponsors-section">
+    <app-sponsors></app-sponsors>
+</div> -->
+<app-footer></app-footer>
+
+
+
+
+<!-- <div class="col-md-4">
                     <img src="../../images/photos/1.jpg" class="img-fluid" alt="Img">
                 </div>
                 <div class="col-md-4">
@@ -20,12 +63,4 @@
                 </div>
                 <div class="col-md-4">
                     <img src="../../images/photos/4.jpg" class="img-fluid" alt="Img">
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- <div class="sponsors-section">
-    <app-sponsors></app-sponsors>
-</div> -->
-<app-footer></app-footer>
+                </div> -->
